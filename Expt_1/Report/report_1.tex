@@ -207,6 +207,102 @@ In this case, with the use of $\mathrm{R_c}$, we see that the output voltage is 
 \end{figure}
 \subsection{IC 7805}
 \subsubsection{Line Regulation}
+For the line regulation, kept the resistance $\mathrm{R_c+R_L}=2.2 \ \mathrm{k}\Omega$ and varied the input voltage. The output voltage, current across IC 7805 and the current in the circuit was measured for each input voltage. The data is tabulated below:
+\begin{longtable}{|c|c|c|}
+        \hline
+       {$\mathrm{V_{in} (V)}$} & $\mathrm{I_L (mA)}$ & $\mathrm{V_o (V)}$ \\ \hline
+        \endfirsthead
+        
+        \hline
+        {$\mathrm{V_{in} (V)}$} & $\mathrm{I_L (mA)}$ & $\mathrm{V_o (V)}$ 
+        \endhead
+        
+        \hline
+        \endfoot
+        
+        \hline
+        \endlastfoot
+        
+        0         & 0         & 0         \\ \hline
+        0.12      & 0         & 0         \\ \hline
+        0.13      & 0         & 0         \\ \hline
+        0.14      & 0.01      & 0.01      \\ \hline
+        0.15      & 0.76      & 0.18      \\ \hline
+        1.6       & 0.85      & 0.38      \\ \hline
+        1.7       & 1.04      & 0.46      \\ \hline
+        1.8       & 1.17      & 0.51      \\ \hline
+        2.5       & 1.76      & 0.77      \\ \hline
+        3         & 1.02      & 2.23      \\ \hline
+        3.4       & 1.22      & 2.66      \\ \hline
+        4         & 1.47      & 3.2       \\ \hline
+        4.5       & 1.67      & 3.62      \\ \hline
+        5.1       & 1.92      & 4.17      \\ \hline
+        5.4       & 2.03      & 4.41      \\ \hline
+        5.5       & 2.12      & 4.6       \\ \hline
+        5.8       & 2.21      & 4.79      \\ \hline
+        5.9       & 2.25      & 4.89      \\ \hline
+        6         & 2.3       & 4.99      \\ \hline
+        6.5       & 2.31      & 5.0         \\ \hline
+        7.1       & 2.3       & 5.0        \\ \hline
+        7.5       & 2.3       & 5.0         \\ \hline
+        8         & 2.3       & 5.0         \\ \hline
+        9         & 2.3       & 5.0         \\ \hline
+        10        & 2.3       & 5.0         \\ \hline
+        11        & 2.3       & 5.0         \\ \hline
+        12        & 2.3       & 5.0         \\ \hline
+        
+        \end{longtable}
+\begin{figure}[H]
+        \centering
+        \includesvg[width=0.8\textwidth]{IC_line_Vo_vs_Vin.svg}
+        \caption{Plot of $\mathrm{V_o}$ vs $\mathrm{V_i}$ for IC 7805}
+\end{figure}
+\noindent
+We plotted the input voltage by varying the output voltage. From the plot, we can see that the output voltage remains constant for a wide range of input voltage after $\mathrm{V_{in}=6 \ \mathrm{V}}$. Thus, from the experimental plot, we can estimate the minimum voltage of the given IC to be $6 \ \mathrm{V}$. The stable voltage obtained after the minimum applied voltage is $5 \ \mathrm{V}$ which matches with the expectation since the last digit of the IC implies so.
 \subsubsection{Load Regulation}
+For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ and varied the load resistance using a potentiometer. The output voltage, current across load was measured for each load resistance. The data is tabulated below:
+\begin{longtable}{|c|c|c|}
+        \caption{Resistance, Current, and Voltage Measurements with Boxed Lines Spanning Multiple Pages} \\ 
+        \hline
+        \textbf{$\mathbf{R_L}$ ($\mathbf{\Omega}$)} & \textbf{$\mathbf{i_L}$ (A)} & \textbf{$\mathbf{V_0}$ (V)} \\ \hline
+        \endfirsthead
+        
+        \hline
+        \textbf{$\mathbf{R_L}$ ($\mathbf{\Omega}$)} & \textbf{$\mathbf{i_L}$ (A)} & \textbf{$\mathbf{V_0}$ (V)} \\ \hline
+        \endhead
+        
+        \hline
+        \endfoot
+        
+        \hline
+        \endlastfoot
+        
+        0.001      & 2.35      & 5.09 \\ \hline
+        0.025      & 2.29      & 5.03 \\ \hline
+        0.033      & 2.27      & 4.98 \\ \hline
+        0.082      & 2.23      & 5.02 \\ \hline
+        0.143      & 2.16      & 5.00 \\ \hline
+        0.196      & 2.12      & 5.00 \\ \hline
+        0.28       & 2.07      & 5.06 \\ \hline
+        0.342      & 2.00      & 5.03 \\ \hline
+        0.403      & 2.08      & 5.42 \\ \hline
+        0.492      & 1.95      & 5.19 \\ \hline
+        0.557      & 1.88      & 5.12 \\ \hline
+        0.63       & 1.83      & 5.12 \\ \hline
+        0.706      & 1.75      & 5.03 \\ \hline
+        0.778      & 1.77      & 5.19 \\ \hline
+        0.863      & 1.76      & 5.35 \\ \hline
+        0.926      & 1.66      & 5.12 \\ \hline
+        0.988      & 1.64      & 5.16 \\ \hline
+        1.036      & 1.61      & 5.17 \\ \hline
+        
+        \end{longtable}
+\begin{figure}[H]
+        \centering
+        \includesvg[width=0.8\textwidth]{IC_load_Vo_vs_Rl.svg}
+        \caption{Plot of $\mathrm{V_o}$ vs $\mathrm{R_L}$ for IC 7805}
+\end{figure}
+\noindent
+From the above plot, we can see that the output voltage remains constant for a wide range of load resistance. The output voltage remains constant at an avrage voltage of $5.12 \ \mathrm{V}$ which matches closely with out expectation for IC7805. Thus, the IC 7805 is a good voltage stabiliser.
 \section{Conclusion}
 \end{document}
