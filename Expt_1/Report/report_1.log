@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.1.10)  25 JAN 2025 16:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.1.10)  25 JAN 2025 17:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1076,9 +1076,52 @@ LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
 (Font)              using `T1/cmss/bx/n' instead on input line 28.
 
 )
+Package svg Info: Last page of `./svg-inkscape/Zener_characteristic_svg-tex.pdf' is 4 on input line 35.
+ (./svg-inkscape/Zener_characteristic_svg-tex.pdf_tex
+<./svg-inkscape/Zener_characteristic_svg-tex.pdf, id=42, page=1, 175.95981pt x 126.98935pt>
+File: ./svg-inkscape/Zener_characteristic_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/Zener_characteristic_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/Zener_characteristic_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 248.16461pt x 179.10536pt.
+<./svg-inkscape/Zener_characteristic_svg-tex.pdf, id=43, page=2, 175.95981pt x 126.98935pt>
+File: ./svg-inkscape/Zener_characteristic_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/Zener_characteristic_svg-tex.pdf, page 2>
+Package pdftex.def Info: ./svg-inkscape/Zener_characteristic_svg-tex.pdf , page2 used on input line 58.
+(pdftex.def)             Requested size: 248.16461pt x 179.10536pt.
+<./svg-inkscape/Zener_characteristic_svg-tex.pdf, id=44, page=3, 175.95981pt x 126.98935pt>
+File: ./svg-inkscape/Zener_characteristic_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/Zener_characteristic_svg-tex.pdf, page 3>
+Package pdftex.def Info: ./svg-inkscape/Zener_characteristic_svg-tex.pdf , page3 used on input line 60.
+(pdftex.def)             Requested size: 248.16461pt x 179.10536pt.
+<./svg-inkscape/Zener_characteristic_svg-tex.pdf, id=45, page=4, 175.95981pt x 126.98935pt>
+File: ./svg-inkscape/Zener_characteristic_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/Zener_characteristic_svg-tex.pdf, page 4>
+Package pdftex.def Info: ./svg-inkscape/Zener_characteristic_svg-tex.pdf , page4 used on input line 62.
+(pdftex.def)             Requested size: 248.16461pt x 179.10536pt.
+)
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 33.
+(Font)              using `T1/cmss/bx/n' instead on input line 36.
+
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/bx/n' instead on input line 36.
+
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/bx/n' instead on input line 36.
+
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/bx/n' instead on input line 36.
+
+[1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/bx/n' instead on input line 39.
 
 (./IC7805.tex
 
@@ -1097,30 +1140,36 @@ LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
 (Font)              using `T1/cmss/bx/n' instead on input line 24.
 
-) [1
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+)
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 41.
+(Font)              using `T1/cmss/bx/n' instead on input line 47.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 42.
+(Font)              using `T1/cmss/bx/n' instead on input line 48.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 43.
+(Font)              using `T1/cmss/bx/n' instead on input line 49.
 
-[2]
+[2 <./svg-inkscape/Zener_characteristic_svg-tex.pdf> <./svg-inkscape/Zener_characteristic_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/Zener_characteristic_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/Zener_characteristic_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/Zener_characteristic_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/Zener_characteristic_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/Zener_characteristic_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 91.
+(Font)              using `T1/cmss/bx/n' instead on input line 97.
 
-Package svg Info: Last page of `./svg-inkscape/Zener_line_Is_vs_Iz_svg-tex.pdf' is 1 on input line 95.
+Package svg Info: Last page of `./svg-inkscape/Zener_line_Is_vs_Iz_svg-tex.pdf' is 1 on input line 101.
 (./svg-inkscape/Zener_line_Is_vs_Iz_svg-tex.pdf_tex
-<./svg-inkscape/Zener_line_Is_vs_Iz_svg-tex.pdf, id=63, page=1, 451.6875pt x 301.125pt>
+<./svg-inkscape/Zener_line_Is_vs_Iz_svg-tex.pdf, id=70, page=1, 451.6875pt x 301.125pt>
 File: ./svg-inkscape/Zener_line_Is_vs_Iz_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/Zener_line_Is_vs_Iz_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/Zener_line_Is_vs_Iz_svg-tex.pdf , page1 used on input line 56.
@@ -1128,27 +1177,27 @@ Package pdftex.def Info: ./svg-inkscape/Zener_line_Is_vs_Iz_svg-tex.pdf , page1 
 )
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 96.
+(Font)              using `T1/cmss/bx/n' instead on input line 102.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 96.
+(Font)              using `T1/cmss/bx/n' instead on input line 102.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 96.
+(Font)              using `T1/cmss/bx/n' instead on input line 102.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 96.
+(Font)              using `T1/cmss/bx/n' instead on input line 102.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 100.
+(Font)              using `T1/cmss/bx/n' instead on input line 106.
 
-Package svg Info: Last page of `./svg-inkscape/Zener_line_V0_vs_Vin_svg-tex.pdf' is 1 on input line 103.
+Package svg Info: Last page of `./svg-inkscape/Zener_line_V0_vs_Vin_svg-tex.pdf' is 1 on input line 110.
 (./svg-inkscape/Zener_line_V0_vs_Vin_svg-tex.pdf_tex
-<./svg-inkscape/Zener_line_V0_vs_Vin_svg-tex.pdf, id=65, page=1, 451.6875pt x 301.125pt>
+<./svg-inkscape/Zener_line_V0_vs_Vin_svg-tex.pdf, id=72, page=1, 451.6875pt x 301.125pt>
 File: ./svg-inkscape/Zener_line_V0_vs_Vin_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/Zener_line_V0_vs_Vin_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/Zener_line_V0_vs_Vin_svg-tex.pdf , page1 used on input line 56.
@@ -1156,56 +1205,107 @@ Package pdftex.def Info: ./svg-inkscape/Zener_line_V0_vs_Vin_svg-tex.pdf , page1
 )
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 104.
+(Font)              using `T1/cmss/bx/n' instead on input line 111.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 104.
+(Font)              using `T1/cmss/bx/n' instead on input line 111.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 104.
+(Font)              using `T1/cmss/bx/n' instead on input line 111.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 104.
+(Font)              using `T1/cmss/bx/n' instead on input line 111.
 
 [3 <./svg-inkscape/Zener_line_Is_vs_Iz_svg-tex.pdf>]
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 109.
+(Font)              using `T1/cmss/bx/n' instead on input line 116.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 110.
+(Font)              using `T1/cmss/bx/n' instead on input line 117.
 
 [4 <./svg-inkscape/Zener_line_V0_vs_Vin_svg-tex.pdf>]
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 148.
+(Font)              using `T1/cmss/bx/n' instead on input line 156.
 
+Package svg Info: Last page of `./svg-inkscape/Zener_load_Iz_vs_Il_svg-tex.pdf' is 1 on input line 196.
+(./svg-inkscape/Zener_load_Iz_vs_Il_svg-tex.pdf_tex
+<./svg-inkscape/Zener_load_Iz_vs_Il_svg-tex.pdf, id=921, page=1, 451.6875pt x 301.125pt>
+File: ./svg-inkscape/Zener_load_Iz_vs_Il_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/Zener_load_Iz_vs_Il_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/Zener_load_Iz_vs_Il_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 397.0649pt x 264.7243pt.
+)
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-
- []
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/bx/n' instead on input line 197.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 150.
+(Font)              using `T1/cmss/bx/n' instead on input line 197.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 151.
+(Font)              using `T1/cmss/bx/n' instead on input line 197.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 152.
+(Font)              using `T1/cmss/bx/n' instead on input line 197.
+
+[5]
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/bx/n' instead on input line 201.
+
+Package svg Info: Last page of `./svg-inkscape/Zener_load_Vo_vs_Rl_svg-tex.pdf' is 1 on input line 205.
+(./svg-inkscape/Zener_load_Vo_vs_Rl_svg-tex.pdf_tex
+<./svg-inkscape/Zener_load_Vo_vs_Rl_svg-tex.pdf, id=926, page=1, 451.6875pt x 301.125pt>
+File: ./svg-inkscape/Zener_load_Vo_vs_Rl_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/Zener_load_Vo_vs_Rl_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/Zener_load_Vo_vs_Rl_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 397.0649pt x 264.7243pt.
+)
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/bx/n' instead on input line 206.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 153.
+(Font)              using `T1/cmss/bx/n' instead on input line 206.
 
-[5] (./report_1.aux)
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/bx/n' instead on input line 206.
+
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/bx/n' instead on input line 206.
+
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/bx/n' instead on input line 208.
+
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/bx/n' instead on input line 209.
+
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/bx/n' instead on input line 210.
+
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/bx/n' instead on input line 211.
+
+[6 <./svg-inkscape/Zener_load_Iz_vs_Il_svg-tex.pdf> <./svg-inkscape/Zener_load_Vo_vs_Rl_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/Zener_load_Vo_vs_Rl_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [7] (./report_1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1216,18 +1316,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 52181 strings out of 476076
- 1292567 string characters out of 5793775
- 2045340 words of memory out of 5000000
- 73653 multiletter control sequences out of 15000+600000
+ 52243 strings out of 476076
+ 1295625 string characters out of 5793775
+ 2042404 words of memory out of 5000000
+ 73706 multiletter control sequences out of 15000+600000
  583136 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,15n,110p,10990b,1126s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1440.pfb>
-Output written on report_1.pdf (5 pages, 330172 bytes).
+ 108i,16n,110p,10990b,1126s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1440.pfb>
+Output written on report_1.pdf (7 pages, 448201 bytes).
 PDF statistics:
- 979 PDF objects out of 1000 (max. 8388607)
- 631 compressed objects within 7 object streams
+ 1685 PDF objects out of 1728 (max. 8388607)
+ 1095 compressed objects within 11 object streams
  0 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 222 words of extra memory for PDF output out of 10000 (max. 10000000)
 

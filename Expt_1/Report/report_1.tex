@@ -30,6 +30,12 @@ a4paper]{geometry}
 \subsection{Zener Diode}
 \input{zener_circ.tex}
 Zener diode is a specialised diode which works as a regular diode when forward biased but on reverse biasing, the voltage remain constant for a wide range of current. Thus, Zener diode is used as a shunt voltage regulator for regulating voltage across small loads. The breakdown voltage of Zener diodes will be constant for a wide range of current. Zener diode is connected parallel to the load to make it reverse bias and once the Zener diode exceeds knee voltage, the voltage across the load will become constant.
+\begin{figure}[H]
+        \centering
+        \includesvg[width=0.5\textwidth]{Zener_characteristic.svg}
+        \caption{Typical Zener diode characteristic curve}
+\end{figure}
+\noindent
 \subsection{Integrated Circuit}
 In Zener diode, the regulation is not perfect and output
 voltage increases very slowly with increasing reverse input voltage. To resolve this, we use Integrated Circuit (IC) based voltage regulators. We will use IC 7805 for the experiment.
@@ -97,9 +103,10 @@ From the data, we plotted $Iz$ vs $Is$ and found that the graph is linear. Intia
 \end{figure}
 \noindent
 From the linear fit, we obtained the slope to be $m = 0.98\pm0.04$ which verifies $\delta \mathrm{Iz} = \delta \mathrm{Is}$.\\[0.3cm]
-\textbf{Estimating Breakdown Voltage}
+\textbf{Estimating Breakdown Voltage}\\[0.3cm]
 From the above table, we plot the input vs the output voltage. 
 \begin{figure}[H]
+        \centering
         \includesvg[width=0.8\textwidth]{Zener_line_V0_vs_Vin.svg}
         \caption{Plot between input and output voltage with constant load}
 \end{figure}
@@ -144,9 +151,60 @@ $\mathrm{R_L}$ ($\mathrm{k}\Omega$) & $\mathrm{I_L}$ (mA) & Iz (mA) & $\mathrm{V
 0.955       & 4.84      & 0       & 4.9       \\ \hline
 1.017       & 4.73      & 0       & 5         \\ \hline
 \end{longtable}
+\noindent
+From the above table, we see that the maximum output voltage reached without using $\mathrm{R_c}$ is $V_o = 5 \ \mathrm{V}$ which is much less than the output voltage obtained after the breakdown voltage (close to $6V \mathrm{V}$) calculated from the previous part. Thus, it indicates that the breakdown has not been reached and explains why we are obtaining negligible current through the zener diode since breakdown has not been reached. \\[0.3cm]
+\textbf{With $\mathrm{R_c}: 2.2 \mathrm{k}\Omega$ }\\[0.3cm]
+We now introduce a current limiting resistor $R_c = 2.2 \ \mathrm{k}\Omega$
 
-\textbf{With $\mathrm{R_c}:$ }\\[0.3cm]
-
+\begin{longtable}{|c|c|c|c|} 
+        \hline
+        $R_L$ (k$\Omega$) & {$I_L$ ($\mathrm{mA}$)} & {Iz ($\mathrm{mA}$)} & {$\mathrm{V_o}$ ($\mathrm{V}$)} \\ \hline
+        \endfirsthead
+        \hline 
+        {$R_L$ (k$\Omega$)} & {$I_L$ ($\mathrm{mA}$)} & {Iz ($\mathrm{mA}$)} & {$\mathrm{V_o}$ ($\mathrm{V}$)} \\ \hline
+        \endhead
+        
+        \hline
+        \endfoot
+        
+        \hline
+        \endlastfoot
+        
+        0.065       & 2.83      & 1.22    & 6.4     \\ \hline
+        0.107       & 2.78      & 1.33    & 6.4     \\ \hline
+        0.154       & 2.72      & 1.41    & 6.4     \\ \hline
+        0.177       & 2.68      & 1.46    & 6.4     \\ \hline
+        0.242       & 2.63      & 1.41    & 6.6     \\ \hline
+        0.312       & 2.55      & 1.45    & 6.52    \\ \hline
+        0.317       & 2.49      & 1.55    & 6.6     \\ \hline
+        0.406       & 2.46      & 1.67    & 6.6     \\ \hline
+        0.467       & 2.4       & 1.64    & 6.6     \\ \hline
+        0.532       & 2.35      & 1.71    & 6.7     \\ \hline
+        0.61        & 2.28      & 1.76    & 6.6     \\ \hline
+        0.672       & 2.23      & 1.81    & 6.4     \\ \hline
+        0.713       & 2.2       & 1.9     & 6.6     \\ \hline
+        0.752       & 2.17      & 1.94    & 6.6     \\ \hline
+        0.815       & 2.13      & 1.98    & 6.6     \\ \hline
+        0.902       & 2.07      & 2       & 6.6     \\ \hline
+        0.951       & 2.04      & 1.94    & 6.6     \\ \hline
+        1.033       & 1.98      & 2.14    & 6.6     \\ \hline
+        
+        \end{longtable}
+        \noindent
+\begin{figure}[H]
+        \centering
+        \includesvg[width=0.8\textwidth]{Zener_load_Iz_vs_Il.svg}
+        \caption{Plot of $\mathrm{I_z}$ vs $\mathrm{I_L}$ with $\mathrm{R_c} = 2.2 \mathrm{k}\Omega$}
+\end{figure}
+\noindent
+From the above plot, we obtained the slope for the linear fit curve as: ${m = -0.98\pm0.09}$, thus verifying  $\delta\mathrm{I_z} = - \delta\mathrm{I_L}$ \\[0.3cm]
+\textbf{Constancy of Output Voltage:}\\[0.3cm]
+In this case, with the use of $\mathrm{R_c}$, we see that the output voltage is greater than $6 \mathrm{V}$, indicating that breakdown has been reached. It remains constant for a wide range of load resistance. The plot of output voltage vs load resistance is shown below:
+\begin{figure}[H]
+        \centering
+        \includesvg[width=0.8\textwidth]{Zener_load_Vo_vs_Rl.svg}
+        \caption{Plot of $\mathrm{V_o}$ vs $\mathrm{R_L}$ with $\mathrm{R_c} = 2.2 \mathrm{k}\Omega$}
+\end{figure}
 \subsection{IC 7805}
 \subsubsection{Line Regulation}
 \subsubsection{Load Regulation}
