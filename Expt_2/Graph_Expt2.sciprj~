@@ -1,0 +1,112 @@
+SciDAVis 2.9.2 project file
+<scripting-lang>	muParser
+<windows>	3
+<table>
+6983
+<table creation_time="2025-23-01 15:54:34:992" caption_spec="%n%C{ - }%c" name="VCE2" columns="4" rows="30"><comment><![CDATA[]]></comment><column creation_time="2025-23-01 15:54:34:992" caption_spec="%n%C{ - }%c" name="1" type="TypeDouble" mode="Numeric" plot_designation="X"><comment><![CDATA[]]></comment><input_filter><simple_filter creation_time="2025-23-01 15:54:34:992" caption_spec="%n%C{ - }%c" name="InputFilter" filter_name="String2DoubleFilter"><comment><![CDATA[]]></comment></simple_filter></input_filter><output_filter><simple_filter creation_time="2025-23-01 15:54:34:992" caption_spec="%n%C{ - }%c" name="OutputFilter" format="g" digits="6" filter_name="Double2StringFilter"><comment><![CDATA[]]></comment></simple_filter></output_filter><row type="TypeDouble" index="0" invalid="no">3.5999999999999997e-02</row><row type="TypeDouble" index="1" invalid="no">1.7799999999999999e-01</row><row type="TypeDouble" index="2" invalid="no">2.5100000000000000e-01</row><row type="TypeDouble" index="3" invalid="no">3.7800000000000000e-01</row><row type="TypeDouble" index="4" invalid="no">4.4900000000000001e-01</row><row type="TypeDouble" index="5" invalid="no">5.8899999999999997e-01</row><row type="TypeDouble" index="6" invalid="no">6.5500000000000003e-01</row><row type="TypeDouble" index="7" invalid="no">6.9799999999999995e-01</row><row type="TypeDouble" index="8" invalid="no">7.2899999999999998e-01</row><row type="TypeDouble" index="9" invalid="no">7.3799999999999999e-01</row><row type="TypeDouble" index="10" invalid="no">7.6200000000000001e-01</row><row type="TypeDouble" index="11" invalid="no">7.7800000000000002e-01</row><row type="TypeDouble" index="12" invalid="no">7.9200000000000004e-01</row><row type="TypeDouble" index="13" invalid="yes">0.0000000000000000e+00</row><row type="TypeDouble" index="14" invalid="yes">0.0000000000000000e+00</row></column><column creation_time="2025-23-01 15:54:34:992" caption_spec="%n%C{ - }%c" name="2" type="TypeDouble" mode="Numeric" plot_designation="Y"><comment><![CDATA[]]></comment><input_filter><simple_filter creation_time="2025-23-01 15:54:34:992" caption_spec="%n%C{ - }%c" name="InputFilter" filter_name="String2DoubleFilter"><comment><![CDATA[]]></comment></simple_filter></input_filter><output_filter><simple_filter creation_time="2025-23-01 15:54:34:992" caption_spec="%n%C{ - }%c" name="OutputFilter" format="g" digits="6" filter_name="Double2StringFilter"><comment><![CDATA[]]></comment></simple_filter></output_filter><row type="TypeDouble" index="0" invalid="no">0.0000000000000000e+00</row><row type="TypeDouble" index="1" invalid="no">0.0000000000000000e+00</row><row type="TypeDouble" index="2" invalid="no">0.0000000000000000e+00</row><row type="TypeDouble" index="3" invalid="no">0.0000000000000000e+00</row><row type="TypeDouble" index="4" invalid="no">0.0000000000000000e+00</row><row type="TypeDouble" index="5" invalid="no">3.0000000000000000e+00</row><row type="TypeDouble" index="6" invalid="no">2.8000000000000000e+01</row><row type="TypeDouble" index="7" invalid="no">9.1000000000000000e+01</row><row type="TypeDouble" index="8" invalid="no">1.8200000000000000e+02</row><row type="TypeDouble" index="9" invalid="no">2.2600000000000000e+02</row><row type="TypeDouble" index="10" invalid="no">3.3800000000000000e+02</row><row type="TypeDouble" index="11" invalid="no">4.1400000000000000e+02</row><row type="TypeDouble" index="12" invalid="no">4.9900000000000000e+02</row><row type="TypeDouble" index="13" invalid="yes">0.0000000000000000e+00</row><row type="TypeDouble" index="14" invalid="yes">0.0000000000000000e+00</row></column><column creation_time="2025-23-01 16:22:45:161" caption_spec="%n%C{ - }%c" name="3" type="TypeDouble" mode="Numeric" plot_designation="X"><comment><![CDATA[]]></comment><input_filter><simple_filter creation_time="2025-23-01 16:22:45:161" caption_spec="%n%C{ - }%c" name="InputFilter" filter_name="String2DoubleFilter"><comment><![CDATA[]]></comment></simple_filter></input_filter><output_filter><simple_filter creation_time="2025-23-01 16:22:45:162" caption_spec="%n%C{ - }%c" name="OutputFilter" format="g" digits="6" filter_name="Double2StringFilter"><comment><![CDATA[]]></comment></simple_filter></output_filter><row type="TypeDouble" index="0" invalid="no">3.7999999999999999e-02</row><row type="TypeDouble" index="1" invalid="no">1.9000000000000000e-01</row><row type="TypeDouble" index="2" invalid="no">2.5900000000000001e-01</row><row type="TypeDouble" index="3" invalid="no">3.5499999999999998e-01</row><row type="TypeDouble" index="4" invalid="no">4.6600000000000003e-01</row><row type="TypeDouble" index="5" invalid="no">6.0699999999999998e-01</row><row type="TypeDouble" index="6" invalid="no">6.4200000000000002e-01</row><row type="TypeDouble" index="7" invalid="no">6.8400000000000005e-01</row><row type="TypeDouble" index="8" invalid="no">7.0999999999999996e-01</row><row type="TypeDouble" index="9" invalid="no">7.2899999999999998e-01</row><row type="TypeDouble" index="10" invalid="no">7.4900000000000000e-01</row><row type="TypeDouble" index="11" invalid="no">7.6700000000000002e-01</row><row type="TypeDouble" index="12" invalid="no">7.6500000000000001e-01</row></column><column creation_time="2025-23-01 16:22:47:298" caption_spec="%n%C{ - }%c" name="4" type="TypeDouble" mode="Numeric" plot_designation="Y"><comment><![CDATA[]]></comment><input_filter><simple_filter creation_time="2025-23-01 16:22:47:299" caption_spec="%n%C{ - }%c" name="InputFilter" filter_name="String2DoubleFilter"><comment><![CDATA[]]></comment></simple_filter></input_filter><output_filter><simple_filter creation_time="2025-23-01 16:22:47:299" caption_spec="%n%C{ - }%c" name="OutputFilter" format="g" digits="6" filter_name="Double2StringFilter"><comment><![CDATA[]]></comment></simple_filter></output_filter><row type="TypeDouble" index="0" invalid="no">0.0000000000000000e+00</row><row type="TypeDouble" index="1" invalid="no">0.0000000000000000e+00</row><row type="TypeDouble" index="2" invalid="no">0.0000000000000000e+00</row><row type="TypeDouble" index="3" invalid="no">1.0000000000000000e+00</row><row type="TypeDouble" index="4" invalid="no">1.0000000000000000e+00</row><row type="TypeDouble" index="5" invalid="no">9.0000000000000000e+00</row><row type="TypeDouble" index="6" invalid="no">2.7000000000000000e+01</row><row type="TypeDouble" index="7" invalid="no">8.8000000000000000e+01</row><row type="TypeDouble" index="8" invalid="no">1.5800000000000000e+02</row><row type="TypeDouble" index="9" invalid="no">2.4200000000000000e+02</row><row type="TypeDouble" index="10" invalid="no">3.3400000000000000e+02</row><row type="TypeDouble" index="11" invalid="no">4.4900000000000000e+02</row><row type="TypeDouble" index="12" invalid="no">4.6800000000000000e+02</row></column><column_width column="0">120</column_width><column_width column="1">120</column_width><column_width column="2">120</column_width><column_width column="3">120</column_width></table>
+geometry	0	0	566	379	
+
+</table>
+<multiLayer>
+VCE--2	1	1	Thursday, January 23, 2025 4:19:14 PM IST
+geometry	696	12	500	400	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	421	275
+Alignement	0	0
+<graph>
+ggeometry	5	5	481	341
+PlotTitle	Title	#ff000000	4228
+<Antialiasing>1</Antialiasing>
+Background	#ffffffff	255
+Margin	0
+Border	0	#ff000000
+grid	0	0	0	0	#ff0000ff	0	0	#ffa0a0a4	2	0	#ff0000ff	0	0	#ffa0a0a4	2	0	0	0	2	0
+EnabledAxes	1	0	1	0	
+AxesTitles	X Axis Title	Y Axis Title			
+AxesTitleColors	#ff000000	#ff000000	#ff000000	#ff000000	
+AxesTitleAlignment	5124	4	5124	4
+TitleFont	Sans Serif	11	75	0	0	0
+ScaleFont0	Sans Serif	9	75	0	0	0
+ScaleFont1	Sans Serif	9	75	0	0	0
+ScaleFont2	Sans Serif	9	75	0	0	0
+ScaleFont3	Sans Serif	9	75	0	0	0
+AxisFont0	Sans Serif	9	50	0	0	0
+AxisFont1	Sans Serif	9	50	0	0	0
+AxisFont2	Sans Serif	9	50	0	0	0
+AxisFont3	Sans Serif	9	50	0	0	0
+EnabledTickLabels	1	1	1	1	
+AxesColors	#ff000000	#ff000000	#ff000000	#ff000000
+AxesNumberColors	#ff000000	#ff000000	#ff000000	#ff000000
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffffff	255
+curve	VCE2_1	VCE2_2	2	1	#ff000000	0	1	7	1	#ff000000	#ff000000	0	#ff000000	0	1	0	64		2	0	0	29	1
+scale	0	-100	600	0	8	5	0	0
+scale	1	-100	600	0	8	5	0	0
+scale	2	0	0.9	0	8	5	0	0
+scale	3	0	0.9	0	8	5	0	0
+LabelsFormat	0	4	0	4	0	4	0	4	
+AxisType	0	0	0	0	
+MajorTicks	1	1	1	1	
+MinorTicks	1	1	1	1	
+TicksLength	5	9
+DrawAxesBackbone	1
+AxesLineWidth	1
+LabelsRotation	0	0
+<legend>	0.0208816705336427	578.723404255319	Sans Serif	9	50	0	0	0	#ff000000	1	0	#00ffffff	0	\c{1}VCE2_2	</legend>
+</graph>
+</multiLayer>
+<multiLayer>
+Graph1	1	1	Thursday, January 23, 2025 4:23:15 PM IST
+geometry	695	19	500	400	
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	421	275
+Alignement	0	0
+<graph>
+ggeometry	5	5	481	341
+PlotTitle	Title	#ff000000	4228
+<Antialiasing>1</Antialiasing>
+Background	#ffffffff	255
+Margin	0
+Border	0	#ff000000
+grid	0	0	0	0	#ff0000ff	0	0	#ffa0a0a4	2	0	#ff0000ff	0	0	#ffa0a0a4	2	0	0	0	2	0
+EnabledAxes	1	0	1	0	
+AxesTitles	X Axis Title	Y Axis Title			
+AxesTitleColors	#ff000000	#ff000000	#ff000000	#ff000000	
+AxesTitleAlignment	5124	4	5124	4
+TitleFont	Sans Serif	11	75	0	0	0
+ScaleFont0	Sans Serif	9	75	0	0	0
+ScaleFont1	Sans Serif	9	75	0	0	0
+ScaleFont2	Sans Serif	9	75	0	0	0
+ScaleFont3	Sans Serif	9	75	0	0	0
+AxisFont0	Sans Serif	9	50	0	0	0
+AxisFont1	Sans Serif	9	50	0	0	0
+AxisFont2	Sans Serif	9	50	0	0	0
+AxisFont3	Sans Serif	9	50	0	0	0
+EnabledTickLabels	1	1	1	1	
+AxesColors	#ff000000	#ff000000	#ff000000	#ff000000
+AxesNumberColors	#ff000000	#ff000000	#ff000000	#ff000000
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffffff	255
+curve	VCE2_1	VCE2_2	2	1	#ff000000	0	1	7	1	#ff000000	#ff000000	0	#ff000000	0	1	0	64		2	0	0	29	1
+curve	VCE2_3	VCE2_4	2	1	#ffff0000	0	1	7	2	#ffff0000	#ffff0000	0	#ff000000	0	1	0	64		2	0	0	29	1
+scale	0	-100	600	0	8	5	0	0
+scale	1	-100	600	0	8	5	0	0
+scale	2	0	0.9	0	8	5	0	0
+scale	3	0	0.9	0	8	5	0	0
+LabelsFormat	0	4	0	4	0	4	0	4	
+AxisType	0	0	0	0	
+MajorTicks	1	1	1	1	
+MinorTicks	1	1	1	1	
+TicksLength	5	9
+DrawAxesBackbone	1
+AxesLineWidth	1
+LabelsRotation	0	0
+<legend>	0.0208816705336427	578.723404255319	Sans Serif	9	50	0	0	0	#ff000000	1	0	#00ffffff	0	\c{1}VCE2_2	\c{2}VCE2_4	</legend>
+</graph>
+</multiLayer>
+<log>
+</log>

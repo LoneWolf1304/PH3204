@@ -1,8 +1,10 @@
 \documentclass{scrartcl}
 \usepackage{Style_File}
+\usepackage{circuitikz}
+\usepackage{longtable} 
 \usepackage[left = 0.8in,
 right = 0.6in,
-bottom = 0.6in,
+bottom = 0.9in,
 top = 0.3in,
 a4paper]{geometry}
 
@@ -12,7 +14,7 @@ a4paper]{geometry}
 }
 
 
-\author{{\Large Sagnik Seth} \\ \texttt{22MS026} \and {\Large Sayan Karmakar} \\ \texttt{22MS163}}
+\author{{\Large Sagnik Seth} \\ \texttt{22MS026}}
 \date{}
 
 
@@ -23,7 +25,130 @@ a4paper]{geometry}
         \item To study Zener diode as a voltage regulator.
         \item To study IC 7805 as a voltage stabiliser.
 \end{itemize}
+
 \section{Theory}
+\subsection{Zener Diode}
+\input{zener_circ.tex}
+Zener diode is a specialised diode which works as a regular diode when forward biased but on reverse biasing, the voltage remain constant for a wide range of current. Thus, Zener diode is used as a shunt voltage regulator for regulating voltage across small loads. The breakdown voltage of Zener diodes will be constant for a wide range of current. Zener diode is connected parallel to the load to make it reverse bias and once the Zener diode exceeds knee voltage, the voltage across the load will become constant.
+\subsection{Integrated Circuit}
+In Zener diode, the regulation is not perfect and output
+voltage increases very slowly with increasing reverse input voltage. To resolve this, we use Integrated Circuit (IC) based voltage regulators. We will use IC 7805 for the experiment.
+The 7805 IC voltage regulator has
+3 pins. Pin 1 takes the input voltage and Pin 3 produces the output
+voltage. The ground of both input and output are given to Pin 2.
+\input{IC7805.tex}
+
 \section{Data and Calculation}
+\subsection{Zener Diode:}
+\subsubsection{Line Regulation }
+For the line regulation, we first fixed the load resistance to $R_L = 1.1 \ \mathrm{k}\Omega$ and varied the input voltage. The output voltage, current across zener diode and the current in the circuit was measured for each input voltage. The data is tabulated below:
+
+\begin{longtable}{|l|l|l|l|}
+        \hline
+        $V_i$ (V) & Is (mA) & Iz (mA) & Vo (V) \\ \hline
+        \endfirsthead
+        \hline
+        $V_i$ (V) & Is (mA) & Iz (mA) & Vo (V) \\ \hline
+        \endhead
+        \hline
+        \endfoot
+        \hline
+        \endlastfoot
+        0      & 0       & 0.00000       & 0.01    \\ \hline
+        0.6    & 0       & 0.00000       & 0.4     \\ \hline
+        1      & 0.12    & 0.00000      & 0.69    \\ \hline
+        1.6    & 0.23    & 0.00000       & 1.02    \\ \hline
+        2.1    & 0.35    & 0.00000      & 1.31    \\ \hline
+        2.4    & 0.46    & 0.00000       & 1.52    \\ \hline
+        3      & 0.12    & 0.00000       & 1.85    \\ \hline
+        3.5    & 0.23    & 0.00000       & 2.16    \\ \hline
+        3.9    & 0.58    & 0.00000      & 2.43    \\ \hline
+        4.5    & 0.69    & 0.00000       & 2.77    \\ \hline
+        5      & 0.81    & 0.00002       & 3.09    \\ \hline
+        5.4    & 0.93    & 0.00008       & 3.31    \\ \hline
+        6      & 1.05    & 0.00023       & 3.68    \\ \hline
+        6.5    & 1.18    & 0.00040       & 3.92    \\ \hline
+        7      & 1.27    & 0.00083       & 4.23    \\ \hline
+        7.5    & 1.39    & 0.00161       & 4.57    \\ \hline
+        8      & 1.51    & 0.00337       & 4.87    \\ \hline
+        8.5    & 1.63    & 0.00637       & 5.16    \\ \hline
+        8.9    & 1.74    & 0.01132       & 5.40    \\ \hline
+        9.5    & 1.86    & 0.01666       & 5.71    \\ \hline
+        10     & 1.98    & 0.03700       & 6.05    \\ \hline
+        10.5   & 1.58    & 0.04000       & 6.35    \\ \hline
+        11     & 2.11    & 0.10000       & 6.50    \\ \hline
+        11.5   & 2.30    & 0.30000       & 6.53    \\ \hline
+        11.9   & 2.50    & 0.50000       & 6.57    \\ \hline
+        12.5   & 2.74    & 0.70000       & 6.55    \\ \hline
+        13     & 3.01    & 1.00000       & 6.56    \\ \hline
+        13.6   & 3.24    & 1.30000       & 6.57    \\ \hline
+        13.9   & 3.41    & 1.40000       & 6.57    \\ \hline
+        14.5   & 3.67    & 1.70000       & 6.57    \\ \hline
+        15     & 3.89    & 1.90000       & 6.58    \\ \hline
+        \end{longtable}
+        
+\noindent
+\textbf{Proportionality of Zener and circuit current:}\\[0.3cm]
+From the data, we plotted $Iz$ vs $Is$ and found that the graph is linear. Intially the current was very low (in range of microamperes). At around $V_i = 10.5 \ \mathrm{V}$, the current started to increase rapidly (in range of milliamperes). The graph for data points after $V_i = 10.5 \ \mathrm{V}$ is shown below along with linear fit curve:
+\begin{figure}[H]
+        \centering
+        \includesvg[width=0.8\textwidth]{Zener_line_Is_vs_Iz.svg}
+        \caption{Plot of $Iz$ vs $Is$ with constant load}
+\end{figure}
+\noindent
+From the linear fit, we obtained the slope to be $m = 0.98\pm0.04$ which verifies $\delta \mathrm{Iz} = \delta \mathrm{Is}$.\\[0.3cm]
+\textbf{Estimating Breakdown Voltage}
+From the above table, we plot the input vs the output voltage. 
+\begin{figure}[H]
+        \includesvg[width=0.8\textwidth]{Zener_line_V0_vs_Vin.svg}
+        \caption{Plot between input and output voltage with constant load}
+\end{figure}
+\noindent
+From the plot, we can see that initially there was no change in the output voltage but at $V_{\mathrm{in}} = 10.5$, the output voltage increased rapidly. Thus, from the experimental plot, we can estimate the breakdown voltage of the given Zener diode to be:
+$$\boxed{V_\mathrm{b} = 10.5 \mathrm{V}}$$
+\subsubsection{Load Regulation}
+\textbf{Without $\mathrm{R_c}:$ }\\[0.3cm]
+For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ and varied the load resistance using a potentiometer. The output voltage, current across zener diode and the load current was measured for each load resistance. The data is tabulated below:
+% Include this in the preamble
+
+\begin{longtable}{|l|l|l|l|}
+\hline
+$\mathrm{R_L}$ ($\mathrm{k}\Omega$) & $\mathrm{I_L}$ (mA) & Iz (mA) & $\mathrm{V_o}$ (V) \\ \hline
+\endfirsthead
+\hline
+$\mathrm{R_L}$ ($\mathrm{k}\Omega$) & $\mathrm{I_L}$ (mA) & Iz (mA) & $\mathrm{V_o}$ (V) \\ \hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+0.007       & 6.92      & 0       & 0.2       \\ \hline
+0.057       & 6.76      & 0       & 0.5       \\ \hline
+0.106       & 6.61      & 0       & 0.9       \\ \hline
+0.153       & 6.5       & 0       & 1.2       \\ \hline
+0.203       & 6.36      & 0       & 1.4       \\ \hline
+0.249       & 6.25      & 0       & 1.7       \\ \hline
+0.304       & 6.11      & 0       & 2.1       \\ \hline
+0.354       & 6.02      & 0       & 2.3       \\ \hline
+0.396       & 5.92      & 0       & 2.6       \\ \hline
+0.452       & 5.78      & 0       & 2.8       \\ \hline
+0.513       & 5.64      & 0       & 3.1       \\ \hline
+0.551       & 5.53      & 0       & 3.3       \\ \hline
+0.609       & 5.44      & 0       & 3.5       \\ \hline
+0.655       & 5.34      & 0       & 3.7       \\ \hline
+0.713       & 5.24      & 0       & 3.9       \\ \hline
+0.751       & 5.16      & 0       & 4.1       \\ \hline
+0.802       & 5.06      & 0       & 4.3       \\ \hline
+0.856       & 5         & 0       & 4.5       \\ \hline
+0.906       & 4.92      & 0       & 4.7       \\ \hline
+0.955       & 4.84      & 0       & 4.9       \\ \hline
+1.017       & 4.73      & 0       & 5         \\ \hline
+\end{longtable}
+
+\textbf{With $\mathrm{R_c}:$ }\\[0.3cm]
+
+\subsection{IC 7805}
+\subsubsection{Line Regulation}
+\subsubsection{Load Regulation}
 \section{Conclusion}
 \end{document}

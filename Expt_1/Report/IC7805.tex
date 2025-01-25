@@ -1,0 +1,25 @@
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}
+        \draw 
+        (-1,0) -- (1,0) 
+        ++(1,0) node[rectangle,draw,fill=cyan!30,
+          minimum width=2cm,minimum height=1.2cm,
+          label={[below]north:IC7805},
+          label={[right]west:In},
+          label={[above]south:Grnd},
+          label={[left]east:Out}]{} 
+        (2,-0.6) to [short, -*] (2,-5) 
+        (3,0) -- (5,0) 
+        to [short, -*] (5.3,0)
+        (5.3,0) to [short, -*] (6.5,0) % Junction point just above Rc
+        (5.3,0) to [short] (5.3,-0.3) to [R=$R_c$] (5.3,-1.5) 
+        to [rmeter, t=mA, l=$i_L$, fill=yellow!70] (5.3,-2.9)
+        to [vR, l=$R_{\mathrm{L}}$] (5.3,-5)
+        to [short] (-1,-5)
+        to [battery, l =$V_{\mathrm{in}}$] (-1,-1)
+        to [short] (-1,0)
+        (5.3,-5) to [short, -*] (6.5, -5);
+    \end{circuitikz}
+    \caption{Circuit Diagram for load and line regulation using IC 7805}
+\end{figure}
