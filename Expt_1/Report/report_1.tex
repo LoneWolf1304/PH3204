@@ -28,15 +28,21 @@ a4paper]{geometry}
 
 \section{Theory}
 \subsection{Zener Diode}
-\input{zener_circ.tex}
-Zener diode is a specialised diode which works as a regular diode when forward biased but on reverse biasing, the voltage remain constant for a wide range of current. Thus, Zener diode is used as a shunt voltage regulator for regulating voltage across small loads. The breakdown voltage of Zener diodes will be constant for a wide range of current. Zener diode is connected parallel to the load to make it reverse bias and once the Zener diode exceeds knee voltage, the voltage across the load will become constant.
 \begin{figure}[H]
         \centering
-        \includesvg[width=0.5\textwidth]{Zener_characteristic.svg}
+        \includesvg[width=0.3\textwidth]{Zener_characteristic.svg}
         \caption{Typical Zener diode characteristic curve}
 \end{figure}
+Zener diode is a specialised diode which works as a regular diode when forward biased but on reverse biasing, the voltage remain constant for a wide range of current after \textit{Avalanche} breakdown. Thus, Zener diode is used as a shunt voltage regulator for regulating voltage across small loads.\\[0.3cm]
+Initially there is negligible current in the diode in the reverse bias condition but as breakdown voltage is reached, the current increases rapidly, however the voltage across the diode remains nearly constant.
+\input{zener_circ.tex}
 \noindent
-\subsection{Integrated Circuit}
+From the above circuit diagram, we have:
+ $$I_s = I_z+I_L \implies I_s = \underbrace{\frac{V_i - V_z}{R_s}}_{I_z} + \underbrace{\frac{V_o}{R_L}}_{I_L}$$
+Hence in line regulation, where $R_s$ and $R_L$ are kept constant and $V_o$ becomes constant after breakdown, from where we get $\delta I_s = \delta I_z$. Thus, we are expected to get a linear graph between $I_z$ and $I_s$ with slope 1.\\[0.3cm]
+In load regulation, we keep $V_i$ constant and vary $R_L$. $I_s$ independent of load resistance, hence from above equation we get $\delta I_z = -\delta I_L$. Thus, we are expected to get a linear graph between $I_z$ and $I_L$ with slope -1.
+\noindent
+\subsection{Integrated Circuit based Regulator}
 In Zener diode, the regulation is not perfect and output
 voltage increases very slowly with increasing reverse input voltage. To resolve this, we use Integrated Circuit (IC) based voltage regulators. We will use IC 7805 for the experiment.
 The 7805 IC voltage regulator has
@@ -262,7 +268,6 @@ We plotted the input voltage by varying the output voltage. From the plot, we ca
 \subsubsection{Load Regulation}
 For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ and varied the load resistance using a potentiometer. The output voltage, current across load was measured for each load resistance. The data is tabulated below:
 \begin{longtable}{|c|c|c|}
-        \caption{Resistance, Current, and Voltage Measurements with Boxed Lines Spanning Multiple Pages} \\ 
         \hline
         \textbf{$\mathbf{R_L}$ ($\mathbf{\Omega}$)} & \textbf{$\mathbf{i_L}$ (A)} & \textbf{$\mathbf{V_0}$ (V)} \\ \hline
         \endfirsthead
@@ -295,8 +300,8 @@ For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ a
         0.926      & 1.66      & 5.12 \\ \hline
         0.988      & 1.64      & 5.16 \\ \hline
         1.036      & 1.61      & 5.17 \\ \hline
-        
         \end{longtable}
+        \noindent
 \begin{figure}[H]
         \centering
         \includesvg[width=0.8\textwidth]{IC_load_Vo_vs_Rl.svg}
@@ -305,4 +310,6 @@ For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ a
 \noindent
 From the above plot, we can see that the output voltage remains constant for a wide range of load resistance. The output voltage remains constant at an avrage voltage of $5.12 \ \mathrm{V}$ which matches closely with out expectation for IC7805. Thus, the IC 7805 is a good voltage stabiliser.
 \section{Conclusion}
+We studied the line and load regulation of Zener diode. From the line regulation, we found out the breakdown voltage of the Zener diode to be $10.5 \ \mathrm{V}$. We found out that the voltage across the diode remains constant for input voltage greater than the breakdown voltage. \\[0.3cm]
+To improve the regulation, we used IC 7805 as voltage regulator. From the line regulation, we found out the minimum voltage required for the IC to achieve a stable voltage to be $6 \ \mathrm{V}$. The stable votage for the IC was found to be $5 \ \mathrm{V}$ as expected.  
 \end{document}
