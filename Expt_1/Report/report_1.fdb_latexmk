@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1737966071.41706 "/home/shaggy1304/IISER/IISER_Courses/Sem_6/PH3204/Expt_1/Report/report_1.tex" "report_1.pdf" "report_1" 1737966073.5322 0
-  "/home/shaggy1304/IISER/IISER_Courses/Sem_6/PH3204/Expt_1/Report/report_1.tex" 1737966071.1529 17107 a015aca2dcc4c26ccdf2a5ccd58e7336 ""
+["pdflatex"] 1737981871.02077 "/home/shaggy1304/IISER/IISER_Courses/Sem_6/PH3204/Expt_1/Report/report_1.tex" "report_1.pdf" "report_1" 1737981873.32198 0
+  "/home/shaggy1304/IISER/IISER_Courses/Sem_6/PH3204/Expt_1/Report/report_1.tex" 1737981870.77892 17810 4a915c585c9b37845aabea3a1f018534 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1736268207 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1736268207 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1736268207 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -49,6 +49,8 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1736268207 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1736268207 1300 b62933e007d01cfd073f79b963c01526 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1736268207 1292 21c1c5bfeaebccffdb478fd231a0997d ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1736268207 1316 b636689f1933f24d1294acdf6041daaa ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1736268207 1296 d77f431d10d47c8ea2cc18cf45346274 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1736268207 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1736268207 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1736268207 1120 8b7d695260f3cff42e636090a8002094 ""
@@ -62,6 +64,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1736268207 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1736268207 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1736268207 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb" 1736268207 24457 5cbb7bdf209d5d1ce9892a9b80a307cc ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1736268207 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb" 1736268207 106965 72348192f7f7f7c44b4558f2996b4879 ""
   "/usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb" 1736268207 94269 4665f0d253cc3cca9439f89dbf2b9f33 ""
@@ -287,8 +290,8 @@
   "Zener_line_V0_vs_Vin.svg" 1737802733.29008 57814 6f10eaaf2557750f2a83c0c1f21810a7 ""
   "Zener_load_Iz_vs_Il.svg" 1737804649.70584 53804 ebd92386f9263616e7ade7594e7183e4 ""
   "Zener_load_Vo_vs_Rl.svg" 1737806157.46764 56672 112b78231021b8f82bfa4b3fe2ff0dc8 ""
-  "report_1.aux" 1737966073.4096 3536 11b76680d32b3bb43d242018eaf3b38b "pdflatex"
-  "report_1.tex" 1737966071.1529 17107 a015aca2dcc4c26ccdf2a5ccd58e7336 ""
+  "report_1.aux" 1737981873.18275 3536 4f7c31e92ddb337c1a418e799138ae2b "pdflatex"
+  "report_1.tex" 1737981870.77892 17810 4a915c585c9b37845aabea3a1f018534 ""
   "svg-inkscape/IC_line_Vo_vs_Vin_svg-tex.pdf" 1737807316.67099 76401 668894085270722c703b903236e7bc31 ""
   "svg-inkscape/IC_line_Vo_vs_Vin_svg-tex.pdf_tex" 1737807316.67099 2095 553c2bde8e44405cd60499b6178803e9 ""
   "svg-inkscape/IC_load_Vo_vs_Rl_svg-tex.pdf" 1737808400.53344 74685 b0e6ec3353edde70be078e05790a965f ""

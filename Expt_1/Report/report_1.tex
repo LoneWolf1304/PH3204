@@ -1,11 +1,34 @@
 \documentclass{scrartcl}
 \usepackage{Style_File}
 \usepackage{circuitikz}
+\usepackage{fancyhdr}
+
+
+\setlength{\headheight}{0.75in}
+\setlength{\oddsidemargin}{0in}
+        \setlength{\evensidemargin}{0in}
+        \setlength{\textwidth}{6.5in}
+        \setlength{\headwidth}{7.3in}
+        \setlength{\textheight}{8.75in}
+        \rfoot{\thepage}
+        \renewcommand{\headrulewidth}{0pt} % Remove the header line
+        \renewcommand{\footrulewidth}{0pt}
+\fancyhead[L,C]{}
+\fancyhead[L]{PH3204:Experiment 1}
+\fancyhead[R]{\thepage}
+\fancyhead[C]{Zener Diode and IC7805}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R,L]{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+
+
+\usepackage{siunitx}
 \usepackage{longtable} 
-\usepackage[left = 0.8in,
-right = 0.6in,
+\usepackage[left = 0.5in,
+right = 0.5in,
 bottom = 0.9in,
-top = 0.3in,
+top = 0.9in,
 a4paper]{geometry}
 
 \title{
@@ -14,7 +37,7 @@ a4paper]{geometry}
 }
 
 
-\author{{\Large Sagnik Seth} \\ \texttt{22MS026}}
+\author{{\Large Sagnik Seth} -\   \texttt{22MS026}\\ ({\small Subgroup - A7}) }
 \date{}
 
 
@@ -30,7 +53,7 @@ a4paper]{geometry}
 \subsection{Zener Diode}
 \begin{figure}[H]
         \centering
-        \includesvg[width=0.3\textwidth]{Zener_characteristic.svg}
+        \includesvg[width=0.7\textwidth]{Zener_characteristic.svg}
         \caption{Typical Zener diode characteristic curve}
 \end{figure}
 Zener diode is a specialised diode which works as a regular diode when forward biased but on reverse biasing, the voltage remain constant for a wide range of current after \textit{Avalanche} breakdown. Thus, Zener diode is used as a shunt voltage regulator for regulating voltage across small loads.\\[0.3cm]
@@ -53,7 +76,7 @@ voltage. The ground of both input and output are given to Pin 2.
 \section{Data and Calculation}
 \subsection{Zener Diode:}
 \subsubsection{Line Regulation }
-For the line regulation, we first fixed the load resistance to $R_L = 1.1 \ \mathrm{k}\Omega$ and varied the input voltage. The output voltage, current across zener diode and the current in the circuit was measured for each input voltage. The data is tabulated below:
+For the line regulation, we first fixed the load resistance to $R_L = \SI{1.1}{\kohm}$ and varied the input voltage. The output voltage, current across zener diode and the current in the circuit was measured for each input voltage. The data is tabulated below:
 
 \begin{longtable}{|l|l|l|l|}
         \hline
@@ -66,42 +89,42 @@ For the line regulation, we first fixed the load resistance to $R_L = 1.1 \ \mat
         \endfoot
         \hline
         \endlastfoot
-        0      & 0       & 0.00000       & 0.01    \\ \hline
+        0.0     & 0       & 0.00000       & 0.01    \\ \hline
         0.6    & 0       & 0.00000       & 0.4     \\ \hline
-        1      & 0.12    & 0.00000      & 0.69    \\ \hline
+        1.0     & 0.12    & 0.00000      & 0.69    \\ \hline
         1.6    & 0.23    & 0.00000       & 1.02    \\ \hline
         2.1    & 0.35    & 0.00000      & 1.31    \\ \hline
         2.4    & 0.46    & 0.00000       & 1.52    \\ \hline
-        3      & 0.12    & 0.00000       & 1.85    \\ \hline
+        3.0     & 0.12    & 0.00000       & 1.85    \\ \hline
         3.5    & 0.23    & 0.00000       & 2.16    \\ \hline
         3.9    & 0.58    & 0.00000      & 2.43    \\ \hline
         4.5    & 0.69    & 0.00000       & 2.77    \\ \hline
-        5      & 0.81    & 0.00002       & 3.09    \\ \hline
+        5.0      & 0.81    & 0.00002       & 3.09    \\ \hline
         5.4    & 0.93    & 0.00008       & 3.31    \\ \hline
-        6      & 1.05    & 0.00023       & 3.68    \\ \hline
+        6.0      & 1.05    & 0.00023       & 3.68    \\ \hline
         6.5    & 1.18    & 0.00040       & 3.92    \\ \hline
-        7      & 1.27    & 0.00083       & 4.23    \\ \hline
+        7.0      & 1.27    & 0.00083       & 4.23    \\ \hline
         7.5    & 1.39    & 0.00161       & 4.57    \\ \hline
-        8      & 1.51    & 0.00337       & 4.87    \\ \hline
+        8.0      & 1.51    & 0.00337       & 4.87    \\ \hline
         8.5    & 1.63    & 0.00637       & 5.16    \\ \hline
         8.9    & 1.74    & 0.01132       & 5.40    \\ \hline
         9.5    & 1.86    & 0.01666       & 5.71    \\ \hline
-        10     & 1.98    & 0.03700       & 6.05    \\ \hline
+        10.0     & 1.98    & 0.03700       & 6.05    \\ \hline
         10.5   & 1.58    & 0.04000       & 6.35    \\ \hline
-        11     & 2.11    & 0.10000       & 6.50    \\ \hline
+        11.0     & 2.11    & 0.10000       & 6.50    \\ \hline
         11.5   & 2.30    & 0.30000       & 6.53    \\ \hline
         11.9   & 2.50    & 0.50000       & 6.57    \\ \hline
         12.5   & 2.74    & 0.70000       & 6.55    \\ \hline
-        13     & 3.01    & 1.00000       & 6.56    \\ \hline
+        13.0     & 3.01    & 1.00000       & 6.56    \\ \hline
         13.6   & 3.24    & 1.30000       & 6.57    \\ \hline
         13.9   & 3.41    & 1.40000       & 6.57    \\ \hline
         14.5   & 3.67    & 1.70000       & 6.57    \\ \hline
-        15     & 3.89    & 1.90000       & 6.58    \\ \hline
+        15.0     & 3.89    & 1.90000       & 6.58    \\ \hline
         \end{longtable}
         
 \noindent
 \textbf{Proportionality of Zener and circuit current:}\\[0.3cm]
-From the data, we plotted $Iz$ vs $Is$ and found that the graph is linear. Intially the current was very low (in range of microamperes). At around $V_i = 10.5 \ \mathrm{V}$, the current started to increase rapidly (in range of milliamperes). The graph for data points after $V_i = 10.5 \ \mathrm{V}$ is shown below along with linear fit curve:
+From the data, we plotted $Iz$ vs $Is$ and found that the graph is linear. Intially the current was very low (in range of microamperes). At around $V_{\mathrm{in}} = \SI{10.5}{\volt}$, the current started to increase rapidly (in range of milliamperes). The graph for data points after $V_{\mathrm{in}} = \SI{10.5}{\volt}$ is shown below along with linear fit curve:
 \begin{figure}[H]
         \centering
         \includesvg[width=0.8\textwidth]{Zener_line_Is_vs_Iz.svg}
@@ -117,8 +140,8 @@ From the above table, we plot the input vs the output voltage.
         \caption{Plot between input and output voltage with constant load}
 \end{figure}
 \noindent
-From the plot, we can see that initially there is gradual change in the output voltage with changing input but after $V_{\mathrm{in}} = 10.5$, the output voltage saturated and became almost constant. This indicates breakdown has occured and breakdown voltage equals to the output voltage of the circuit.
-We take the average of the voltage obtained after $V_{\mathrm{in}} = 10.5$. Thus, from the experimental plot, we estimate the breakdown voltage of the given Zener diode to be:
+From the plot, we can see that initially there is gradual change in the output voltage with changing input but after $V_{\mathrm{in}} = \SI{10.5}{\volt}$, the output voltage saturated and became almost constant. This indicates breakdown has occured and breakdown voltage equals to the output voltage of the circuit.
+We take the average of the voltage obtained after $V_{\mathrm{in}} = \SI{10.5}{\volt}$. Thus, from the experimental plot, we estimate the breakdown voltage of the given Zener diode to be:
 $$\boxed{V_\mathrm{b} = 6.55 \mathrm{V}}$$
 \subsubsection{Load Regulation}
 \textbf{Without $\mathrm{R_c}:$ }\\[0.3cm]
@@ -265,7 +288,7 @@ For the line regulation, kept the resistance $\mathrm{R_c+R_L}=2.2 \ \mathrm{k}\
         \caption{Plot of $\mathrm{V_o}$ vs $\mathrm{V_i}$ for IC 7805}
 \end{figure}
 \noindent
-We plotted the input voltage by varying the output voltage. From the plot, we can see that the output voltage remains constant for a wide range of input voltage after $\mathrm{V_{in}=6 \ \mathrm{V}}$. Thus, from the experimental plot, we can estimate the minimum voltage of the given IC to be $6 \ \mathrm{V}$. The stable voltage obtained after the minimum applied voltage is $5 \ \mathrm{V}$ which matches with the expectation since the last digit of the IC implies so.
+We plotted the input voltage by varying the output voltage. From the plot, we can see that the output voltage remains constant for a wide range of input voltage after $\mathrm{V_{in}}=\SI{6}{\volt}$. Thus, from the experimental plot, we can estimate the minimum voltage of the given IC to be $\SI{6}{\volt}$. The stable voltage obtained after the minimum applied voltage is $5 \ \mathrm{V}$ which matches with the expectation since the last digit of the IC implies so.
 \subsubsection{Load Regulation}
 For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ and varied the load resistance using a potentiometer. The output voltage, current across load was measured for each load resistance. The data is tabulated below:
 \begin{longtable}{|c|c|c|}
@@ -309,8 +332,8 @@ For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ a
         \caption{Plot of $\mathrm{V_o}$ vs $\mathrm{R_L}$ for IC 7805}
 \end{figure}
 \noindent
-From the above plot, we can see that the output voltage remains constant for a wide range of load resistance. The output voltage remains constant at an avrage voltage of $5.12 \ \mathrm{V}$ which matches closely with out expectation for IC7805. Thus, the IC 7805 is a good voltage stabiliser.
+From the above plot, we can see that the output voltage remains constant for a wide range of load resistance. The output voltage remains constant at an average voltage of $\SI{5.12}{\volt}$ which matches closely with out expectation for IC7805. Thus, the IC 7805 is a good voltage stabiliser.
 \section{Conclusion}
-We studied the line and load regulation of Zener diode. From the line regulation, we found out the average breakdown voltage of the Zener diode to be $6.55 \ \mathrm{V}$. We found out that the voltage across the diode remains almost constant for increasing input voltage once breakdown voltage is reached. \\[0.3cm]
-To improve the regulation, we used IC 7805 as voltage regulator. From the line regulation, we found out the minimum voltage required for the IC to achieve a stable voltage to be $6 \ \mathrm{V}$. The stable votage for the IC was found to be $5 \ \mathrm{V}$ as expected.  
+We studied the line and load regulation of Zener diode. From the line regulation, we found out the average breakdown voltage of the Zener diode to be $\SI{6.55}{\volt}$. We found out that the voltage across the diode remains almost constant for increasing input voltage once breakdown voltage is reached. \\[0.3cm]
+To improve the regulation, we used IC 7805 as voltage regulator. From the line regulation, we found out the minimum voltage required for the IC to achieve a stable voltage to be $\SI{6.0}{\volt}$. The stable votage for the IC was found to be $\SI{5.0}{\volt}$ as expected.  
 \end{document}
