@@ -117,8 +117,9 @@ From the above table, we plot the input vs the output voltage.
         \caption{Plot between input and output voltage with constant load}
 \end{figure}
 \noindent
-From the plot, we can see that initially there gradual change in the output voltage with changing input but after $V_{\mathrm{in}} = 10.5$, the output voltage saturated and became constant. Thus, from the experimental plot, we can estimate the breakdown voltage of the given Zener diode to be:
-$$\boxed{V_\mathrm{b} = 10.5 \mathrm{V}}$$
+From the plot, we can see that initially there is gradual change in the output voltage with changing input but after $V_{\mathrm{in}} = 10.5$, the output voltage saturated and became almost constant. This indicates breakdown has occured and breakdown voltage equals to the output voltage of the circuit.
+We take the average of the voltage obtained after $V_{\mathrm{in}} = 10.5$. Thus, from the experimental plot, we estimate the breakdown voltage of the given Zener diode to be:
+$$\boxed{V_\mathrm{b} = 6.55 \mathrm{V}}$$
 \subsubsection{Load Regulation}
 \textbf{Without $\mathrm{R_c}:$ }\\[0.3cm]
 For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ and varied the load resistance using a potentiometer. The output voltage, current across zener diode and the load current was measured for each load resistance. The data is tabulated below:
@@ -158,7 +159,7 @@ $\mathrm{R_L}$ ($\mathrm{k}\Omega$) & $\mathrm{I_L}$ (mA) & Iz (mA) & $\mathrm{V
 1.017       & 4.73      & 0       & 5         \\ \hline
 \end{longtable}
 \noindent
-From the above table, we see that the maximum output voltage reached without using $\mathrm{R_c}$ is $V_o = 5 \ \mathrm{V}$ which is much less than the output voltage obtained after the breakdown voltage (close to $6V \mathrm{V}$) calculated from the previous part. Thus, it indicates that the breakdown has not been reached and explains why we are obtaining negligible current through the zener diode since breakdown has not been reached. \\[0.3cm]
+From the above table, we see that the maximum output voltage reached without using $\mathrm{R_c}$ is $V_o = 5 \ \mathrm{V}$ which is less than the output voltage obtained after reaching the breakdown voltage ( $6.55\ \mathrm{V}$) calculated from the previous part. Thus, it indicates that the breakdown has not been reached and explains why we are obtaining negligible current through the zener diode since breakdown has not been reached. \\[0.3cm]
 \textbf{With $\mathrm{R_c}: 2.2 \mathrm{k}\Omega$ }\\[0.3cm]
 We now introduce a current limiting resistor $R_c = 2.2 \ \mathrm{k}\Omega$
 
@@ -199,16 +200,16 @@ We now introduce a current limiting resistor $R_c = 2.2 \ \mathrm{k}\Omega$
         \noindent
 \begin{figure}[H]
         \centering
-        \includesvg[width=0.8\textwidth]{Zener_load_Iz_vs_Il.svg}
+        \includesvg[width=0.7\textwidth]{Zener_load_Iz_vs_Il.svg}
         \caption{Plot of $\mathrm{I_z}$ vs $\mathrm{I_L}$ with $\mathrm{R_c} = 2.2 \mathrm{k}\Omega$}
 \end{figure}
 \noindent
 From the above plot, we obtained the slope for the linear fit curve as: ${m = -0.98\pm0.09}$, thus verifying  $\delta\mathrm{I_z} = - \delta\mathrm{I_L}$ \\[0.3cm]
 \textbf{Constancy of Output Voltage:}\\[0.3cm]
-In this case, with the use of $\mathrm{R_c}$, we see that the output voltage is greater than $6 \mathrm{V}$, indicating that breakdown has been reached. It remains constant for a wide range of load resistance. The plot of output voltage vs load resistance is shown below:
+In this case, with the use of $\mathrm{R_c}$, we see that the output voltage is greater than $6.55 \mathrm{V}$, indicating that breakdown has already been reached. Thus, it remains constant for a wide range of load resistance. The plot of output voltage vs load resistance is shown below:
 \begin{figure}[H]
         \centering
-        \includesvg[width=0.8\textwidth]{Zener_load_Vo_vs_Rl.svg}
+        \includesvg[width=0.7\textwidth]{Zener_load_Vo_vs_Rl.svg}
         \caption{Plot of $\mathrm{V_o}$ vs $\mathrm{R_L}$ with $\mathrm{R_c} = 2.2 \mathrm{k}\Omega$}
 \end{figure}
 \subsection{IC 7805}
@@ -310,6 +311,6 @@ For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ a
 \noindent
 From the above plot, we can see that the output voltage remains constant for a wide range of load resistance. The output voltage remains constant at an avrage voltage of $5.12 \ \mathrm{V}$ which matches closely with out expectation for IC7805. Thus, the IC 7805 is a good voltage stabiliser.
 \section{Conclusion}
-We studied the line and load regulation of Zener diode. From the line regulation, we found out the breakdown voltage of the Zener diode to be $10.5 \ \mathrm{V}$. We found out that the voltage across the diode remains constant for input voltage greater than the breakdown voltage. \\[0.3cm]
+We studied the line and load regulation of Zener diode. From the line regulation, we found out the average breakdown voltage of the Zener diode to be $6.55 \ \mathrm{V}$. We found out that the voltage across the diode remains almost constant for increasing input voltage once breakdown voltage is reached. \\[0.3cm]
 To improve the regulation, we used IC 7805 as voltage regulator. From the line regulation, we found out the minimum voltage required for the IC to achieve a stable voltage to be $6 \ \mathrm{V}$. The stable votage for the IC was found to be $5 \ \mathrm{V}$ as expected.  
 \end{document}
