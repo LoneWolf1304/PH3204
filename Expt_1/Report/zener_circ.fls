@@ -1,5 +1,0 @@
-PWD /home/shaggy1304/IISER/IISER_Courses/Sem_6/PH3204/Expt_1/Report
-INPUT /usr/share/texmf-dist/web2c/texmf.cnf
-INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/shaggy1304/IISER/IISER_Courses/Sem_6/PH3204/Expt_1/Report/zener_circ.tex
-OUTPUT zener_circ.log
