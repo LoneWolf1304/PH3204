@@ -2,7 +2,9 @@
 
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{svg}
 \usepackage{longtable} 
+\usepackage{circuitikz}
 \usepackage[margin=1.2in]{geometry}
 
 
@@ -30,30 +32,100 @@ As the current increases, the power dissipation in the zener diode also increase
 
 Purpose of a voltage regulator is to supply constant voltage to any load present in the circuit in spite of fluctuations in the supply voltage or load current. To do this, the zener diode is used in parallel to the load. So if the zener diode reaches breakdown region and the current through the zener diode is less than maximum current then voltage across the diode will remain almost constant and the same thing will happen to the load.
 
+\begin{figure}[!ht]
+    \centering
+    \resizebox{0.5\textwidth}{!}{%
+    \begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw (2.5,14.75) to[battery ] (2.5,10.25);
+    \draw (2.5,14.75) to[R] (5.25,14.75);
+    \node at (7,14.75) [circ] {};
+    \node at (7,14.75) [circ] {};
+    \draw (2.5,10.25) to[short] (8.5,10.25);
+    \draw (7,14.75) to[short] (8.5,14.75);
+    \draw (8.5,14.75) to[R] (8.5,13);
+    \draw (7,10.25) to[empty tunnel diode] (7,12.25);
+    \draw (8.5,12) to[R] (8.5,10.25);
+    \draw [->, >=Stealth] (8.25,11.75) -- (9,10.75);
+    \draw  (6.25,14.75) circle (0.5cm);
+    \draw  (7,13.5) circle (0.5cm);
+    \draw  (8.5,12.5) circle (0.5cm);
+    \draw (5.25,14.75) to[short] (5.75,14.75);
+    \draw (6.75,14.75) to[short] (7.25,14.75);
+    \draw (7,14.75) to[short] (7,14);
+    \draw (7,13) to[short] (7,12);
+    \node [font=\normalsize] at (6.25,14.75) {mA};
+    \node [font=\normalsize] at (7,13.5) {mA};
+    \node [font=\normalsize] at (8.5,12.5) {mA};
+    \node [font=\normalsize] at (6,15.5) {$i_s$};
+    \node [font=\normalsize] at (6.25,13.5) {$i_z$};
+    \node [font=\normalsize] at (8,14.25) {$R_C$};
+    \node [font=\normalsize] at (7.75,12.5) {$i_L$};
+    \node [font=\normalsize] at (9,11.25) {$R_L$};
+    \draw (8.5,14.75) to[short, -o] (9.75,14.75) ;
+    \draw (8.5,10.25) to[short, -o] (9.75,10.25) ;
+    \node [font=\normalsize] at (3.25,12.5) {$V_{in}$};
+    \end{circuitikz}
+    }%
+    
+    \label{fig:my_label}
+    \end{figure}
+
 \subsection{IC:}
 Using a zener diode as a voltage regulator has a major drawback. Regulation is not perfect as the voltage is not really constant, it changes very slowly with the current. Also the maximum current that can flow through the diode without damaging it is quite low. So, tackle this, IC based voltage regulators are used. 
 
 In this experiment, IC7805 is used. This has three pins. These pins are input, output, and ground. The last two digits of the number represent the voltage it regulates. While maximum current in zener diode is in the milliampere range, for IC7805 it is 1 ampere. It also has thermal overload protection and short circuit protection. The circuit diagram is shown below.
 
+\begin{figure}[!ht]
+    \centering
+    \resizebox{0.5\textwidth}{!}{%
+    \begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw (2.5,14.75) to[battery ] (2.5,10.25);
+    \draw (2.5,10.25) to[short] (8.5,10.25);
+    \draw (8.5,14.75) to[R] (8.5,13);
+    \draw (8.5,12) to[R] (8.5,10.25);
+    \draw [->, >=Stealth] (8.25,11.75) -- (9,10.75);
+    \draw  (8.5,12.5) circle (0.5cm);
+    \node [font=\normalsize] at (8.5,12.5) {mA};
+    \node [font=\normalsize] at (8,14.25) {$R_C$};
+    \node [font=\normalsize] at (7.75,12.5) {$i_L$};
+    \node [font=\normalsize] at (9,11.25) {$R_L$};
+    \draw (8.5,14.75) to[short, -o] (9.75,14.75) ;
+    \draw (8.5,10.25) to[short, -o] (9.75,10.25) ;
+    \node [font=\normalsize] at (3.25,12.5) {$V_{in}$};
+    \draw (2.5,14.75) to[short] (4.5,14.75);
+    \draw  (4.5,15.25) rectangle (6.75,14);
+    \draw (6.75,14.75) to[short] (8.5,14.75);
+    \draw (5.5,14) to[short] (5.5,10.25);
+    \node [font=\normalsize] at (4,15) {In};
+    \node [font=\normalsize] at (6.25,13.75) {Ground};
+    \node [font=\normalsize] at (7.25,15) {Out};
+    \node [font=\normalsize] at (5.75,14.5) {\textbf{IC7805}};
+    \end{circuitikz}
+    }%
+    
+    \label{fig:my_label}
+    \end{figure}
 \section{Data and Calculation}
 For both zener diode and IC7805 there are two types of regulation - line regulation and load regulation. In line regulation the load resistance $R_l$ and series resistance $R_s$ is kept fixed and the input voltage is varied. And in load regulation, input voltage $V_m$ remains constant but the load resistance $R_l$ is varied. In this experiment data collection has been done for both the regulations in case of zener diode and IC7805.
 
 \subsection{Zener Diode:}
-\subsubsection{Line Regulation }
+\subsubsection{Line Regulation}
 
 In case of line regulation for zener diode, load resistance was kept at $R_l = 1.1 \ \text{k}\Omega$
 Variation of output volatge $V_o$, current across zener $I_z$ and current in the circuit $I_s$ with respest to the change in input voltage is shown in the following table:
 \begin{longtable}{|l|l|l|l|}
         \hline
-        $V_i$ (V) & Is (mA) & Iz (mA) & Vo (V) \\ \hline \hline
+        $\mathrm{V_i}$ (V) & $\text{I}_{s}$ (mA) & $\text{I}_\text{z}$ (mA) & $\text{V}_\text{o}$ (V) \\ \hline \hline
         \endfirsthead
         \hline
-        $V_i$ (V) & Is (mA) & Iz (mA) & Vo (V) \\ \hline \hline
+        $\mathrm{V_i}$ (V) & $\text{I}_{s}$ (mA) & $\text{I}_\text{z}$ (mA) & $\text{V}_\text{o}$ (V) \\ \hline \hline
         \endhead
-        \hline
-        \endfoot
-        \hline
-        \endlastfoot
+%        \hline
+%        \endfoot
+%        \hline
+%        \endlastfoot
         0      & 0       & 0.00000       & 0.01    \\ \hline
         0.6    & 0       & 0.00000       & 0.4     \\ \hline
         1      & 0.12    & 0.00000      & 0.69    \\ \hline
@@ -86,18 +158,18 @@ Variation of output volatge $V_o$, current across zener $I_z$ and current in the
         14.5   & 3.67    & 1.70000       & 6.57    \\ \hline
         15     & 3.89    & 1.90000       & 6.58    \\ \hline
 \end{longtable}
+We plotted \( \mathrm{I_s} \) and \( \mathrm{I_z} \) from this table.
+
 \subsubsection{Load Regulation}
 The load regulation of zener diode was studied in two cases. In the first case it was without $R_c$ and in the second case with $R_c$ set to 2.2 $\text{k}\Omega$.\\[0.3cm]
 \textbf{Without $\mathrm{R_c}:$ }\\[0.3cm]
 For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ and varied the load resistance using a potentiometer. The output voltage, current across zener diode and the load current was measured for each load resistance. The data is tabulated below:
-% Include this in the preamble
-
 \begin{longtable}{|l|l|l|l|}
 \hline
-$\mathrm{R_L}$ ($\mathrm{k}\Omega$) & $\mathrm{I_L}$ (mA) & Iz (mA) & $\mathrm{V_o}$ (V) \\ \hline \hline
+$\mathrm{R_L}$ ($\mathrm{k}\Omega$) & $\mathrm{I_L}$ (mA) & $\text{I}_\text{z}$ (mA) & $\mathrm{V_o}$ (V) \\ \hline \hline
 \endfirsthead
 \hline
-$\mathrm{R_L}$ ($\mathrm{k}\Omega$) & $\mathrm{I_L}$ (mA) & Iz (mA) & $\mathrm{V_o}$ (V) \\ \hline \hline
+$\mathrm{R_L}$ ($\mathrm{k}\Omega$) & $\mathrm{I_L}$ (mA) & $\text{I}_\text{z}$  (mA) & $\mathrm{V_o}$ (V) \\ \hline \hline
 \endhead
 \hline
 \endfoot
@@ -126,16 +198,15 @@ $\mathrm{R_L}$ ($\mathrm{k}\Omega$) & $\mathrm{I_L}$ (mA) & Iz (mA) & $\mathrm{V
 1.017       & 4.73      & 0       & 5         \\ \hline
 \end{longtable}
 \noindent
-From the above table, we see that the maximum output voltage reached without using $\mathrm{R_c}$ is $V_o = 5 \ \mathrm{V}$ which is much less than the output voltage obtained after the breakdown voltage (close to $6V \mathrm{V}$) calculated from the previous part. Thus, it indicates that the breakdown has not been reached and explains why we are obtaining negligible current through the zener diode since breakdown has not been reached. \\[0.3cm]
-\textbf{With $\mathrm{R_c}: 2.2 \mathrm{k}\Omega$ }\\[0.3cm]
+From the above table, we see that the maximum output voltage reached without using $\mathrm{R_c}$ is $V_o = 5 \ \mathrm{V}$ which is much less than the output voltage obtained after the breakdown voltage (close to $6V $) calculated from the previous part. Thus, it indicates that the breakdown has not been reached and explains why we are obtaining negligible current through the zener diode since breakdown has not been reached. \\[0.3cm]
+\textbf{With} $\mathrm{R_c}: 2.2$ $\mathrm{k}\Omega$\\[0.3cm]
 We now introduce a current limiting resistor $R_c = 2.2 \ \mathrm{k}\Omega$
-
 \begin{longtable}{|c|c|c|c|} 
         \hline 
-        $R_L$ (k$\Omega$) & {$I_L$ ($\mathrm{mA}$)} & {Iz ($\mathrm{mA}$)} & {$\mathrm{V_o}$ ($\mathrm{V}$)} \\ \hline \hline
+        $\text{R}_\text{L}$ (k$\Omega$) & {$\text{I}_\text{L}$ ($\mathrm{mA}$)} & $\text{I}_\text{A}$ (mA) & $\text{V}_\text{o}$ (V) \\ \hline \hline
         \endfirsthead
         \hline 
-        {$R_L$ (k$\Omega$)} & {$I_L$ ($\mathrm{mA}$)} & {Iz ($\mathrm{mA}$)} & {$\mathrm{V_o}$ ($\mathrm{V}$)} \\ \hline \hline
+        {$\text{R}_\text{L}$ (k$\Omega$)} & {$\text{I}_\text{L}$ ($\mathrm{mA}$)} & {Iz ($\mathrm{mA}$)} & {$\mathrm{V_o}$ ($\mathrm{V}$)} \\ \hline \hline
         \endhead
         
         \hline
@@ -163,26 +234,25 @@ We now introduce a current limiting resistor $R_c = 2.2 \ \mathrm{k}\Omega$
         0.951       & 2.04      & 1.94    & 6.6     \\ \hline
         1.033       & 1.98      & 2.14    & 6.6     \\ \hline
         
-\end{longtable}
-
+    \end{longtable}
+    
 \subsection{IC 7805}
 \subsubsection{Line Regulation}
-For the line regulation, kept the resistance $\mathrm{R_c+R_L}=2.2 \ \mathrm{k}\Omega$ and varied the input voltage. The output voltage, current across IC 7805 and the current in the circuit was measured for each input voltage. The data is tabulated below:
+For the line regulation, the resistance was kept at $\mathrm{R_c+R_L}=2.2 \ \mathrm{k}\Omega$. The input voltage was varied. The output voltage, current across IC 7805 and the current in the circuit was measured for each input voltage. The data is tabulated below:
 \begin{longtable}{|c|c|c|}
         \hline
        {$\mathrm{V_{in} (V)}$} & $\mathrm{I_L (mA)}$ & $\mathrm{V_o (V)}$ \\ \hline \hline
-        \endfirsthead
-
+%        \endfirsthead
+    
         
-%        {$\mathrm{V_{in} (V)}$} & $\mathrm{I_L (mA)}$ & $\mathrm{V_o (V)}$ 
-%        \endhead
-
-%        \hline \hline
-%        \endfoot
+    %        {$\mathrm{V_{in} (V)}$} & $\mathrm{I_L (mA)}$ & $\mathrm{V_o (V)}$ 
+    %        \endhead
+    
+    %        \hline \hline
+    %        \endfoot
         
-%        \hline
-%        \endlastfoot
-        
+    %        \hline
+    %        \endlastfoot       
         0         & 0         & 0         \\ \hline
         0.12      & 0         & 0         \\ \hline
         0.13      & 0         & 0         \\ \hline
@@ -210,19 +280,18 @@ For the line regulation, kept the resistance $\mathrm{R_c+R_L}=2.2 \ \mathrm{k}\
         10        & 2.3       & 5.0         \\ \hline
         11        & 2.3       & 5.0         \\ \hline
         12        & 2.3       & 5.0         \\ \hline
-\end{longtable}
+    \end{longtable}
 \noindent
 We plotted the input voltage by varying the output voltage. From the plot, we can see that the output voltage remains constant for a wide range of input voltage after $\mathrm{V_{in}=6 \ \mathrm{V}}$. Thus, from the experimental plot, we can estimate the minimum voltage of the given IC to be $6 \ \mathrm{V}$. The stable voltage obtained after the minimum applied voltage is $5 \ \mathrm{V}$ which matches with the expectation since the last digit of the IC implies so.
 \subsubsection{Load Regulation}
 For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ and varied the load resistance using a potentiometer. The output voltage, current across load was measured for each load resistance. The data is tabulated below:
 \begin{longtable}{|c|c|c|}
-        \caption{Resistance, Current, and Voltage Measurements with Boxed Lines Spanning Multiple Pages} \\ 
         \hline
-        \textbf{$\mathbf{R_L}$ ($\mathbf{\Omega}$)} & \textbf{$\mathbf{i_L}$ (A)} & \textbf{$\mathbf{V_0}$ (V)} \\ \hline
+        $\text{R}_\text{L}$ ($\Omega$) & $\text{i}_\text{L}$ (A) & $\text{V}_0$ (V) \\ \hline \hline
         \endfirsthead
         
         \hline
-        \textbf{$\mathbf{R_L}$ ($\mathbf{\Omega}$)} & \textbf{$\mathbf{i_L}$ (A)} & \textbf{$\mathbf{V_0}$ (V)} \\ \hline
+        $\text{R}_\text{L}$ ($\Omega$) & $\text{i}_\text{L}$ (A) & $\text{V}_0$ (V) \\ \hline
         \endhead
         
         \hline
