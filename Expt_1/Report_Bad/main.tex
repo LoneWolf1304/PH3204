@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{svg}
+\usepackage{float}
 \usepackage{longtable} 
 \usepackage{circuitikz}
 \usepackage[margin=1.2in]{geometry}
@@ -19,7 +20,7 @@
 \section{Aim}
 Aim of this experiment is to
 \begin{itemize}
-    \item Study voltage regulation of zener diode.
+    \item Study voltage regulation of Zener diode.
     \item Study voltage regulation of IC7805.
 \end{itemize}
 
@@ -27,24 +28,26 @@ Aim of this experiment is to
 \subsection{Zener Diode:}
 Zener diode is a general purpose diode that acts as a normal diode when connected to the circuit in forward bias but when it is connected in reverse bias it acts as a voltage regulator for a wide range of currents.
 
-In forward bias a zener diode has the same I-V characteristics as a  regular diode i.e. there is a knee voltage after which current starts increasing exponentially with voltage. In reverse bias initially for any voltage the current remains constant. This is called saturation current. But increasing the voltage further causes it to reach the reverse bias breakdown region. When breakdown voltage is reached, even a slight change in voltage can cause a very large increase in current through the zener diode. This change in saturation current to breakdown is smooth but after this the current increases rapidly. Because of this, voltage remains almost constant throughout this increase in current. This is the reason, zener diode is used as a voltage regulator.
-As the current increases, the power dissipation in the zener diode also increases. So for very current, due to excessive heat the zener diode can be damaged. So they have a maximum current rating. And it should be used below that current level.
+In forward bias a Zener diode has the same I-V characteristics as a  regular diode i.e. there is a knee voltage after which current starts increasing exponentially with voltage. In reverse bias initially for any voltage the current remains constant. This is called saturation current. But increasing the voltage further causes it to reach the reverse bias breakdown region. When breakdown voltage is reached, even a slight change in voltage can cause a very large increase in current through the Zener diode. This change in saturation current to breakdown is smooth but after this the current increases rapidly. Because of this, voltage remains almost constant throughout this increase in current. This is the reason, Zener diode is used as a voltage regulator.
+As the current increases, the power dissipation in the Zener diode also increases. So for very current, due to excessive heat the Zener diode can be damaged. So they have a maximum current rating. And it should be used below that current level.
 
-Purpose of a voltage regulator is to supply constant voltage to any load present in the circuit in spite of fluctuations in the supply voltage or load current. To do this, the zener diode is used in parallel to the load. So if the zener diode reaches breakdown region and the current through the zener diode is less than maximum current then voltage across the diode will remain almost constant and the same thing will happen to the load.
+Purpose of a voltage regulator is to supply constant voltage to any load present in the circuit in spite of fluctuations in the supply voltage or load current. To do this, the Zener diode is used in parallel to the load. So if the Zener diode reaches breakdown region and the current through the Zener diode is less than maximum current then voltage across the diode will remain almost constant and the same thing will happen to the load.
 
 \begin{figure}[!ht]
     \centering
+    \caption{Circuit Diagram for Zener Diode}
     \resizebox{0.5\textwidth}{!}{%
     \begin{circuitikz}
     \tikzstyle{every node}=[font=\normalsize]
     \draw (2.5,14.75) to[battery ] (2.5,10.25);
-    \draw (2.5,14.75) to[R] (5.25,14.75);
+    \draw (2.5,14.75) to[R, l=$R_s$] (5.25,14.75);
     \node at (7,14.75) [circ] {};
     \node at (7,14.75) [circ] {};
     \draw (2.5,10.25) to[short] (8.5,10.25);
     \draw (7,14.75) to[short] (8.5,14.75);
     \draw (8.5,14.75) to[R] (8.5,13);
-    \draw (7,10.25) to[empty tunnel diode] (7,12.25);
+%    \draw (7,10.25) to[empty tunnel diode] (7,12.25);
+    \draw (7,10.25) to[zzD] (7,12.25);
     \draw (8.5,12) to[R] (8.5,10.25);
     \draw [->, >=Stealth] (8.25,11.75) -- (9,10.75);
     \draw  (6.25,14.75) circle (0.5cm);
@@ -72,12 +75,13 @@ Purpose of a voltage regulator is to supply constant voltage to any load present
     \end{figure}
 
 \subsection{IC:}
-Using a zener diode as a voltage regulator has a major drawback. Regulation is not perfect as the voltage is not really constant, it changes very slowly with the current. Also the maximum current that can flow through the diode without damaging it is quite low. So, tackle this, IC based voltage regulators are used. 
+Using a Zener diode as a voltage regulator has a major drawback. Regulation is not perfect as the voltage is not really constant, it changes very slowly with the current. Also the maximum current that can flow through the diode without damaging it is quite low. So, tackle this, IC based voltage regulators are used. 
 
-In this experiment, IC7805 is used. This has three pins. These pins are input, output, and ground. The last two digits of the number represent the voltage it regulates. While maximum current in zener diode is in the milliampere range, for IC7805 it is 1 ampere. It also has thermal overload protection and short circuit protection. The circuit diagram is shown below.
+In this experiment, IC7805 is used. This has three pins. These pins are input, output, and ground. The last two digits of the number represent the voltage it regulates. While maximum current in Zener diode is in the milliampere range, for IC7805 it is 1 ampere. It also has thermal overload protection and short circuit protection. The circuit diagram is shown below.
 
 \begin{figure}[!ht]
     \centering
+    \caption{Circuit Diagram for IC7805}
     \resizebox{0.5\textwidth}{!}{%
     \begin{circuitikz}
     \tikzstyle{every node}=[font=\normalsize]
@@ -108,13 +112,13 @@ In this experiment, IC7805 is used. This has three pins. These pins are input, o
     \label{fig:my_label}
     \end{figure}
 \section{Data and Calculation}
-For both zener diode and IC7805 there are two types of regulation - line regulation and load regulation. In line regulation the load resistance $R_l$ and series resistance $R_s$ is kept fixed and the input voltage is varied. And in load regulation, input voltage $V_m$ remains constant but the load resistance $R_l$ is varied. In this experiment data collection has been done for both the regulations in case of zener diode and IC7805.
+For both Zener diode and IC7805 there are two types of regulation - line regulation and load regulation. In line regulation the load resistance $\mathrm{R_l}$ and series resistance $\mathrm{R_s}$ is kept fixed and the input voltage is varied. And in load regulation, input voltage $\mathrm{V_m}$ remains constant but the load resistance $\mathrm{R_l}$ is varied. In this experiment data collection has been done for both the regulations in case of Zener diode and IC7805.
 
 \subsection{Zener Diode:}
 \subsubsection{Line Regulation}
 
-In case of line regulation for zener diode, load resistance was kept at $R_l = 1.1 \ \text{k}\Omega$
-Variation of output volatge $V_o$, current across zener $I_z$ and current in the circuit $I_s$ with respest to the change in input voltage is shown in the following table:
+In case of line regulation for Zener diode, load resistance was kept at $\mathrm{R_l} = 1.1 \ \text{k}\Omega$
+Variation of output volatge $\mathrm{V_o}$, current across Zener $\mathrm{I_z}$ and current in the circuit $\mathrm{I_s}$ with respest to the change in input voltage is shown in the following table:
 \begin{longtable}{|l|l|l|l|}
         \hline
         $\mathrm{V_i}$ (V) & $\text{I}_{s}$ (mA) & $\text{I}_\text{z}$ (mA) & $\text{V}_\text{o}$ (V) \\ \hline \hline
@@ -158,12 +162,29 @@ Variation of output volatge $V_o$, current across zener $I_z$ and current in the
         14.5   & 3.67    & 1.70000       & 6.57    \\ \hline
         15     & 3.89    & 1.90000       & 6.58    \\ \hline
 \end{longtable}
-We plotted \( \mathrm{I_s} \) and \( \mathrm{I_z} \) from this table.
+We plotted \( \mathrm{I_s} \) and \( \mathrm{I_z} \) from this table. From this graph we see that \( \mathrm{I_s}\) and \( \mathrm{I_z }\) are proportional to each other. Here the graph was plotted for \( \mathrm{V_i} \) more than 10.5 V. Before this the current is very small and zero. Around 10.5 V the current increases rapidly. We fitted this data with linear fit. Slope of this curve is \( 0.98 \pm 0.04 \). From this we can say that \( \delta \mathrm{I_z} = \delta \mathrm{I_s}\).
+
+\begin{figure}[H]
+    \centering
+    %\caption{Plot of \( \mathrm{I_z} \) and \( \mathrm{I_s}\) for constant load 1.1 \( \mathrm{k \Omega}\) }
+    \includesvg[width = 0.9\textwidth]{../Report/Zener_line_Is_vs_Iz.svg}
+\end{figure}
+
+In the following graph, we plotted \( \mathrm{V_{out}}\) and \( \mathrm{V_{in}}\). From this plot, we can see that before \( \mathrm{V_{in}}\) reaches 10.5 V, the graph is increasing. But after that the graph becomes constant. This means the corresponding \( \mathrm{V_{out}}\) is the breakdown voltage. So, the breakdown voltage is 
+\begin{equation*}
+\mathrm{V_b} = 6.55 \ \mathrm{V}
+.\end{equation*}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width = 0.9\textwidth]{../Report/Zener_line_V0_vs_Vin.svg}
+\end{figure}
+
 
 \subsubsection{Load Regulation}
-The load regulation of zener diode was studied in two cases. In the first case it was without $R_c$ and in the second case with $R_c$ set to 2.2 $\text{k}\Omega$.\\[0.3cm]
-\textbf{Without $\mathrm{R_c}:$ }\\[0.3cm]
-For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ and varied the load resistance using a potentiometer. The output voltage, current across zener diode and the load current was measured for each load resistance. The data is tabulated below:
+The load regulation of Zener diode was studied in two cases. In the first case it was without $\mathrm{R_c}$ and in the second case with $\mathrm{R_c}$ set to 2.2 $\text{k}\Omega$.\\[0.3cm]
+\textbf{Without $R_c:$ }\\[0.3cm]
+In this case, the input voltage was fixed at \( \mathrm{V_i} = 15 \mathrm{V}\). The load resistance was changed using a potentiometer. The following table contains output voltage, current through Zener diode and the load current corresponding to each load resistance.
 \begin{longtable}{|l|l|l|l|}
 \hline
 $\mathrm{R_L}$ ($\mathrm{k}\Omega$) & $\mathrm{I_L}$ (mA) & $\text{I}_\text{z}$ (mA) & $\mathrm{V_o}$ (V) \\ \hline \hline
@@ -198,22 +219,23 @@ $\mathrm{R_L}$ ($\mathrm{k}\Omega$) & $\mathrm{I_L}$ (mA) & $\text{I}_\text{z}$ 
 1.017       & 4.73      & 0       & 5         \\ \hline
 \end{longtable}
 \noindent
-From the above table, we see that the maximum output voltage reached without using $\mathrm{R_c}$ is $V_o = 5 \ \mathrm{V}$ which is much less than the output voltage obtained after the breakdown voltage (close to $6V $) calculated from the previous part. Thus, it indicates that the breakdown has not been reached and explains why we are obtaining negligible current through the zener diode since breakdown has not been reached. \\[0.3cm]
+Breakdown voltage calculated in the first part was found to 6.55 V. Here we see that maximum output voltage reached without using \( \mathrm{R_c}\) is 5 V. This is less than the breakdown voltage, so  we are getting zero current.\\[0.3cm]
+\noindent
 \textbf{With} $\mathrm{R_c}: 2.2$ $\mathrm{k}\Omega$\\[0.3cm]
-We now introduce a current limiting resistor $R_c = 2.2 \ \mathrm{k}\Omega$
+The following table is with \( \mathrm{R_c} = 2.2 \ \mathrm{k} \Omega\). We tabulated the same data as in last table.
 \begin{longtable}{|c|c|c|c|} 
         \hline 
         $\text{R}_\text{L}$ (k$\Omega$) & {$\text{I}_\text{L}$ ($\mathrm{mA}$)} & $\text{I}_\text{A}$ (mA) & $\text{V}_\text{o}$ (V) \\ \hline \hline
-        \endfirsthead
-        \hline 
-        {$\text{R}_\text{L}$ (k$\Omega$)} & {$\text{I}_\text{L}$ ($\mathrm{mA}$)} & {Iz ($\mathrm{mA}$)} & {$\mathrm{V_o}$ ($\mathrm{V}$)} \\ \hline \hline
-        \endhead
+        %\endfirsthead
+        %\hline 
+        % {$\text{R}_\text{L}$ (k$\Omega$)} & {$\text{I}_\text{L}$ ($\mathrm{mA}$)} & {Iz ($\mathrm{mA}$)} & {$\mathrm{V_o}$ ($\mathrm{V}$)} \\ \hline \hline
+        % \endhead
         
-        \hline
-        \endfoot
+        % \hline
+        % \endfoot
         
-        \hline
-        \endlastfoot
+        % \hline
+        % \endlastfoot
         
         0.065       & 2.83      & 1.22    & 6.4     \\ \hline
         0.107       & 2.78      & 1.33    & 6.4     \\ \hline
@@ -233,26 +255,38 @@ We now introduce a current limiting resistor $R_c = 2.2 \ \mathrm{k}\Omega$
         0.902       & 2.07      & 2       & 6.6     \\ \hline
         0.951       & 2.04      & 1.94    & 6.6     \\ \hline
         1.033       & 1.98      & 2.14    & 6.6     \\ \hline
-        
-    \end{longtable}
-    
-\subsection{IC 7805}
+\end{longtable}
+In the following plot, we plotted \( \mathrm{V_o}\) and \( \mathrm{R_L}\). Here we see that the diode has already reached breakdown region. So \( \mathrm{V_{o}}\) is constant and remains about 6.6 V.
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.8\textwidth]{../Report/Zener_load_Iz_vs_Il.svg}
+\end{figure}
+In the following plot, we plotted \( \mathrm{I_z}\) and \( \mathrm{I_L}\). The fitting line for this graph has slope \( -0.98 \pm 0.09 \). This satisfies \( \delta \mathrm{I_z} = - \delta \mathrm{I_L}\).
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.8\textwidth]{../Report/Zener_load_Vo_vs_Rl.svg}
+\end{figure}
+
+
+\subsection{IC7805}
 \subsubsection{Line Regulation}
-For the line regulation, the resistance was kept at $\mathrm{R_c+R_L}=2.2 \ \mathrm{k}\Omega$. The input voltage was varied. The output voltage, current across IC 7805 and the current in the circuit was measured for each input voltage. The data is tabulated below:
+For line regulation in IC7805, resistance \( \mathrm{R_L + R_C }\) was kept at 2.2 \( \mathrm{k} \Omega\). The following table has value of current through the load and output voltage corresponding to different value of  input voltage \( \mathrm{V_{in }}\).
+
+% Tell Sagnik to change this current across IC7805
 \begin{longtable}{|c|c|c|}
         \hline
        {$\mathrm{V_{in} (V)}$} & $\mathrm{I_L (mA)}$ & $\mathrm{V_o (V)}$ \\ \hline \hline
-%        \endfirsthead
+       \endfirsthead
     
         
-    %        {$\mathrm{V_{in} (V)}$} & $\mathrm{I_L (mA)}$ & $\mathrm{V_o (V)}$ 
-    %        \endhead
+           {$\mathrm{V_{in} (V)}$} & $\mathrm{I_L (mA)}$ & $\mathrm{V_o (V)}$ 
+           \endhead
     
-    %        \hline \hline
-    %        \endfoot
+%          \hline \hline
+%          \endfoot
         
-    %        \hline
-    %        \endlastfoot       
+%           \hline
+%           \endlastfoot       
         0         & 0         & 0         \\ \hline
         0.12      & 0         & 0         \\ \hline
         0.13      & 0         & 0         \\ \hline
@@ -282,23 +316,28 @@ For the line regulation, the resistance was kept at $\mathrm{R_c+R_L}=2.2 \ \mat
         12        & 2.3       & 5.0         \\ \hline
     \end{longtable}
 \noindent
-We plotted the input voltage by varying the output voltage. From the plot, we can see that the output voltage remains constant for a wide range of input voltage after $\mathrm{V_{in}=6 \ \mathrm{V}}$. Thus, from the experimental plot, we can estimate the minimum voltage of the given IC to be $6 \ \mathrm{V}$. The stable voltage obtained after the minimum applied voltage is $5 \ \mathrm{V}$ which matches with the expectation since the last digit of the IC implies so.
+The following plot contains graph of \( \mathrm{V_{in }}\) vs \( \mathrm{ V_{out }}\). We can see that after input voltage reaches 6 V, output voltage becomes 5 V. So, IC works as voltage regulator when the input voltage reaches 6 V. As the last two digits of the IC7805 is 05 the output voltage should be 5 V. From the table we can see that the output voltage is 5 V.
+\begin{figure}[H]
+    \centering
+    \includesvg[width = 0.9\textwidth]{../Report/IC_line_Vo_vs_Vin.svg}
+\end{figure}
+
 \subsubsection{Load Regulation}
-For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ and varied the load resistance using a potentiometer. The output voltage, current across load was measured for each load resistance. The data is tabulated below:
+While checking load regulation, we fixed input voltage as 15 V. The load resistance was varied using potentiometer. The following table contains \( \mathrm{i_L }\) and \( \mathrm{V_o }\) corresponding to different values of resistance \( \mathrm{R_L }\).
 \begin{longtable}{|c|c|c|}
         \hline
-        $\text{R}_\text{L}$ ($\Omega$) & $\text{i}_\text{L}$ (A) & $\text{V}_0$ (V) \\ \hline \hline
+        $\text{R}_\text{L}$ (\text{k}$\Omega$) & $\text{i}_\text{L}$ (A) & $\text{V}_\text{o}$ (V) \\ \hline \hline
         \endfirsthead
         
         \hline
-        $\text{R}_\text{L}$ ($\Omega$) & $\text{i}_\text{L}$ (A) & $\text{V}_0$ (V) \\ \hline
+        $\text{R}_\text{L}$ (k$\Omega$) & $\text{i}_\text{L}$ (A) & $\text{V}_0$ (V) \\ \hline \hline
         \endhead
         
-        \hline
-        \endfoot
+%        \hline
+%        \endfoot
         
-        \hline
-        \endlastfoot
+%        \hline
+%        \endlastfoot
         
         0.001      & 2.35      & 5.09 \\ \hline
         0.025      & 2.29      & 5.03 \\ \hline
@@ -321,6 +360,15 @@ For the load regulation, we fixed the input voltage to $V_i = 15 \ \mathrm{V}$ a
         
 \end{longtable}
 
+In the following plot, we plotted input voltage with respect to output voltage.
+\begin{figure}[H]
+    \centering
+    \includesvg[width = 0.9\textwidth]{../Report/IC_load_Vo_vs_Rl.svg}
+\end{figure}
+From this graph we see that output voltage remains almost for different values of load resistance. Average value of the voltage is 5.12 V. The expected value is 5 V for IC7805.
         
 \section{Conclusion}
+In this experiment we studied different regulations for Zener diode. From line regulation, the breakdown voltage of the Zener diode was found be 6.55 V. In load regulation we got an understanding of what should be the load resistance for which the Zener diode reaches breakdown region.
+
+In Zener diode the regulation is not perfect. We see that for IC7805, we get as stable output voltage 5 V for input voltage 6 V. While in Zener diode, with increasing current the voltage increases slightly. But in IC we found out that the voltage was really stable as expected.
 \end{document}
