@@ -1,0 +1,25 @@
+
+\begin{figure}[H]    
+    \centering
+    \begin{circuitikz}[american voltages ]
+        \draw
+        % Transistor
+        (0,0) node[npn, anchor=E, tr circle, fill = cyan!40!white] (Q) {}
+        (Q.B) node[above left] {B}
+        (Q.C) node[right] {C}
+        (Q.E) node[below left] {E}
+        % Base resistor
+        (Q.B) -- (-2,0.75) to[R, l=$\mathrm{R_B}$] (-4,0.75) to [rmeter, t = $\mathrm{\mu A}$,fill = yellow!60!white]  (-6,0.75)
+        to[battery, v_=$\mathrm{V_{BB}}$] (-6,-2) -- (0,-2)
+    
+        % Collector resistor
+        (Q.C) -- (0,2) to[R, l=$\mathrm{R_C}$] (4,2)
+        to [rmeter, t= $\mathrm{mA}$, fill = yellow!60!white] (5,2) -- (7,2)
+        to [battery, v=$\mathrm{V_{CC}}$] (7,-2) -- (0,-2) 
+    
+        % Ground connection
+        (Q.E) -- (0,-2) node[ground] {};
+    \end{circuitikz}   
+    \caption{Circuit diagram of a common emitter configuration of a NPN transistor}  
+\end{figure}
+
