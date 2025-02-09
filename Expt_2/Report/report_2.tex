@@ -1,7 +1,32 @@
 \documentclass{scrartcl}
+\usepackage{pgfplots}
 \usepackage{Style_File}
 \usepackage{circuitikz}
 \usepackage{fancyhdr}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+% Recommended preamble:
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{backgrounds}
+\usepgfplotslibrary{patchplots}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{%
+    layers/standard/.define layer set={%
+        background,axis background,axis grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis foreground%
+    }{
+        grid style={/pgfplots/on layer=axis grid},%
+        tick style={/pgfplots/on layer=axis ticks},%
+        axis line style={/pgfplots/on layer=axis lines},%
+        label style={/pgfplots/on layer=axis descriptions},%
+        legend style={/pgfplots/on layer=axis descriptions},%
+        title style={/pgfplots/on layer=axis descriptions},%
+        colorbar style={/pgfplots/on layer=axis descriptions},%
+        ticklabel style={/pgfplots/on layer=axis tick labels},%
+        axis background@ style={/pgfplots/on layer=axis background},%
+        3d box foreground style={/pgfplots/on layer=axis foreground},%
+    },
+}
+
 
 \setlength{\headheight}{0.75in}
 \setlength{\oddsidemargin}{0in}
@@ -46,5 +71,111 @@ a4paper]{geometry}
 
 \section{Theory}
 \input{transistor_circ.tex}
+\section{Data and Calculations}
+\subsection{Input Characteristics}
+\input{Plots/input_characteristics.tex}
+\subsection{Output Characteristics}
+
+\begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{V\textsubscript{BB} (V)} & 
+        \textbf{I\textsubscript{B} (\textmu A)} & 
+        \textbf{V\textsubscript{CC} (V)} & 
+        \textbf{V\textsubscript{CE} (mV)} & 
+        \textbf{I\textsubscript{C} (\textmu A)} \\ \hline
+            0.5 & 25 & 0.0 & 0.004 & 10 \\ \hline
+            0.5 & 25 & 0.5 & 0.04 & 506 \\ \hline
+            0.5 & 25 & 1.0 & 0.057 & 922 \\ \hline
+            0.5 & 25 & 1.5 & 0.069 & 1308 \\ \hline
+            0.5 & 25 & 2.0 & 0.081 & 1784 \\ \hline
+            0.5 & 25 & 2.5 & 0.099 & 2390 \\ \hline
+            0.5 & 25 & 3.0 & 0.107 & 2880 \\ \hline
+            0.5 & 25 & 3.5 & 0.127 & 3350 \\ \hline
+            0.5 & 25 & 4.0 & 0.15 & 3780 \\ \hline
+            0.6 & 25 & 4.2 & 0.172 & 3960 \\ \hline
+            0.6 & 25 & 4.4 & 0.2 & 4150 \\ \hline
+            0.6 & 25 & 4.6 & 0.228 & 4340 \\ \hline
+            0.6 & 25 & 4.8 & 0.42 & 4350 \\ \hline
+            0.6 & 25 & 4.7 & 0.349 & 4380 \\ \hline
+            0.6 & 25 & 5.0 & 0.49 & 4340 \\ \hline
+            0.6 & 25 & 5.2 & 0.696 & 4460 \\ \hline
+            0.6 & 25 & 5.5 & 0.978 & 4460 \\ \hline
+        \end{tabular}
+        \caption{Data obtained for output characteristics at I\textsubscript{B} = 25 \textmu A }
+    \end{table}
+
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{V\textsubscript{CC} (V)} & 
+        \textbf{V\textsubscript{BB} (V)} & 
+        \textbf{I\textsubscript{B} (\textmu A)} &
+        
+        \textbf{V\textsubscript{CE} (mV)} & 
+        \textbf{I\textsubscript{C} (\textmu A)} \\ \hline
+            0 & 0.5 & 30 & 0.007 & 37 \\ \hline
+            0.1 & 0.5 & 30 & 0.02 & 166 \\ \hline
+            0.2 & 0.5 & 30 & 0.022 & 214 \\ \hline
+            0.3 & 0.5 & 30 & 0.028 & 331 \\ \hline
+            0.4 & 0.5 & 30 & 0.03 & 362 \\ \hline
+            0.5 & 0.5 & 30 & 0.037 & 513 \\ \hline
+            0.6 & 0.5 & 30 & 0.04 & 610 \\ \hline
+            0.7 & 0.5 & 30 & 0.043 & 671 \\ \hline
+            0.8 & 0.5 & 30 & 0.045 & 737 \\ \hline
+            0.9 & 0.5 & 30 & 0.049 & 829 \\ \hline
+            1 & 0.5 & 30 & 0.05 & 884 \\ \hline
+            1.1 & 0.5 & 30 & 0.054 & 1016 \\ \hline
+            1.2 & 0.5 & 30 & 0.058 & 1118 \\ \hline
+            1.3 & 0.5 & 30 & 0.062 & 1294 \\ \hline
+            1.4 & 0.5 & 30 & 0.063 & 1296 \\ \hline
+            1.5 & 0.5 & 30 & 0.064 & 1335 \\ \hline
+            1.8 & 0.5 & 30 & 0.072 & 1599 \\ \hline
+            2 & 0.5 & 30 & 0.073 & 1770 \\ \hline
+            3 & 0.5 & 30 & 0.098 & 2950 \\ \hline
+            3.5 & 0.6 & 30 & 0.11 & 3420 \\ \hline
+            4 & 0.6 & 30 & 0.122 & 3850 \\ \hline
+            4.5 & 0.6 & 30 & 0.139 & 4350 \\ \hline
+            4.6 & 0.6 & 30 & 0.14 & 4430 \\ \hline
+            4.8 & 0.6 & 30 & 0.156 & 4630 \\ \hline
+            4.9 & 0.6 & 30 & 0.166 & 4690 \\ \hline
+            5 & 0.6 & 30 & 0.198 & 4820 \\ \hline
+            5.5 & 0.6 & 30 & 0.27 & 5070 \\ \hline
+            5.6 & 0.6 & 30 & 0.42 & 5110 \\ \hline
+            5.8 & 0.6 & 30 & 0.58 & 5130 \\ \hline
+            6 & 0.6 & 30 & 0.89 & 5090 \\ \hline
+        \end{tabular}
+        \caption{Data obtained for output characteristics at I\textsubscript{B} = 30 \textmu A }
+    \end{table}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{V\textsubscript{BB} (V)} & 
+        \textbf{I\textsubscript{B} (\textmu A)} & 
+        \textbf{V\textsubscript{CC} (V)} & 
+        \textbf{V\textsubscript{CE} (mV)} & 
+        \textbf{I\textsubscript{C} (\textmu A)} \\ \hline
+            0.5 & 40 & 0.0 & 0.004 & 12 \\ \hline
+            0.5 & 40 & 1.0 & 0.04 & 866 \\ \hline
+            0.5 & 40 & 2.0 & 0.061 & 1724 \\ \hline
+            0.5 & 40 & 3.0 & 0.08 & 2890 \\ \hline
+            0.5 & 40 & 4.0 & 0.094 & 3740 \\ \hline
+            0.6 & 40 & 5.0 & 0.109 & 4730 \\ \hline
+            0.6 & 40 & 6.0 & 0.134 & 5730 \\ \hline
+            0.6 & 40 & 6.5 & 0.147 & 6180 \\ \hline
+            0.6 & 40 & 7.0 & 0.167 & 6700 \\ \hline
+            0.6 & 40 & 7.2 & 0.188 & 6850 \\ \hline
+            0.6 & 40 & 7.4 & 0.388 & 6890 \\ \hline
+            0.6 & 40 & 7.6 & 0.533 & 6900 \\ \hline
+            0.6 & 40 & 8.0 & 0.921 & 7000 \\ \hline
+        \end{tabular}
+        \caption{Data obtained for output characteristics at I\textsubscript{B} = 40 \textmu A }
+    \end{table}
+    \input{Plots/output_characteristics.tex}
+
 
 \end{document}
