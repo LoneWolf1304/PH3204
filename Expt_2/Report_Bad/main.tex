@@ -1,0 +1,168 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage{float}
+\usepackage{longtable} 
+\usepackage{circuitikz}
+\usepackage[margin=1.2in]{geometry}
+
+
+\begin{document}
+\title{Sub-Group: A-7 \\ Experiment 2: Study of Transistor Characteristics}
+
+
+\author{Sayan Karmakar \\22MS163 }
+\date{}
+\maketitle
+
+\section{Aim}
+
+
+\section{Theory}
+
+\section{Data and Calculation}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+    $\mathrm{V_{BB} \ (V)}$ & $\mathrm{V_{BE} (V)}$ & $\mathrm{I_B (mA)}$ & $\mathrm{I_C (mA)}$ & $\mathrm{V_{CC} (V)}$ & $\mathrm{V_{CE} (V)}$ \\
+    \hline \hline
+    0         & 0.036     & 0            & 0            & 2     & 2             \\ \hline
+    0.1       & 0.178     & 0            & 0            & 2     & 2             \\ \hline
+    0.2       & 0.251     & 0            & 0            & 2     & 2             \\ \hline
+    0.3       & 0.378     & 0            & 0            & 2     & 2             \\ \hline
+    0.4       & 0.449     & 0            & 0            & 2     & 2             \\ \hline
+    0.5       & 0.589     & 3            & 5            & 2     & 2             \\ \hline
+    0.6       & 0.655     & 28           & 4.7          & 2     & 2             \\ \hline 
+    0.7       & 0.698     & 91           & 16.3         & 2     & 2             \\ \hline
+    0.8       & 0.729     & 182          & 32.6         & 2     & 2             \\ \hline
+    0.9       & 0.738     & 226          & 41.1         & 2     & 2             \\ \hline
+    1         & 0.762     & 338          & 61.6         & 2     & 2             \\ \hline 
+    1.1       & 0.778     & 414          & 76.1         & 2     & 2             \\ \hline
+    1.2       & 0.792     & 499          & 92.3         & 2     & 2             \\ 
+    \hline
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $\mathrm{V_{BB} \ (V)}$ & $\mathrm{V_{BE} (V)}$ & $\mathrm{I_B (mA)}$ & $\mathrm{I_C (mA)}$ & $\mathrm{V_{CC} (V)}$ & $\mathrm{V_{CE} (V)}$ \\
+    \hline \hline
+        0     & 0.038 & 0            & 0            & 3     & 3             \\ \hline
+        0.1   & 0.19  & 0            & 0            & 3     & 3             \\ \hline
+        0.2   & 0.259 & 0            & 0            & 3     & 3             \\ \hline
+        0.3   & 0.355 & 1            & 0            & 3     & 3             \\ \hline
+        0.4   & 0.466 & 1            & 0            & 3     & 3             \\ \hline
+        0.5   & 0.607 & 9            & 1.6          & 3     & 3             \\ \hline
+        0.6   & 0.642 & 27           & 5            & 3     & 3             \\ \hline
+        0.7   & 0.684 & 88           & 16.2         & 3     & 3             \\ \hline
+        0.8   & 0.71  & 158          & 29.4         & 3     & 3             \\ \hline
+        0.9   & 0.729 & 242          & 45.9         & 3     & 3             \\ \hline
+        1     & 0.749 & 334          & 64.8         & 3     & 3             \\ \hline
+        1.1   & 0.767 & 449          & 87.2         & 3     & 3             \\ \hline
+        1.2   & 0.765 & 468          & 93           & 3     & 3             \\
+        \hline           
+        \end{tabular}
+        \end{table}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width = 0.9\textwidth]{./Graphs/Input.svg}
+\end{figure}
+   
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+       $\mathrm{V_{CC}}$ (V) & $\mathrm{V_{CE}}$ (mV) & $\mathrm{I_C \ (\mu A)}$ & $\mathrm{I_B \ (\mu A)}$ & $\mathrm{V_{BB} \ (V)}$ \\ \hline \hline
+       0 & 0.004 & 10 & 25 & 0.5 \\ \hline
+       0.5 & 0.04 & 506 & 25 & 0.5 \\ \hline
+       1 & 0.057 & 922 & 25 & 0.5 \\ \hline
+       1.5 & 0.069 & 1308 & 25 & 0.5 \\ \hline
+       2 & 0.081 & 1784 & 25 & 0.5 \\ \hline
+       2.5 & 0.099 & 2390 & 25 & 0.5 \\ \hline
+       3 & 0.107 & 2880 & 25 & 0.5 \\ \hline
+       3.5 & 0.127 & 3350 & 25 & 0.5 \\ \hline
+       4 & 0.15 & 3780 & 25 & 0.5 \\ \hline
+       4.2 & 0.172 & 3960 & 25 & 0.6 \\ \hline
+       4.4 & 0.2 & 4150 & 25 & 0.6 \\ \hline
+       4.6 & 0.228 & 4340 & 25 & 0.6 \\ \hline
+       4.8 & 0.42 & 4350 & 25 & 0.6 \\ \hline
+       4.7 & 0.349 & 4380 & 25 & 0.6 \\ \hline
+       5.2 & 0.696 & 4460 &	25 & 0.6 \\ \hline
+       5.5 & 0.978 & 4460 &	25 & 0.6 \\ \hline
+
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+        $\mathrm{V_{CC}}$ (V) & $\mathrm{V_{CE}}$ (mV) & $\mathrm{I_C \ (\mu A)}$ & $\mathrm{I_B \ (\mu A)}$ & $\mathrm{V_{BB} \ (V)}$ \\ \hline \hline
+        0   & 0.007 & 37   & 30 & 0.5 \\ \hline
+        0.1 & 0.02  & 166  & 30 & 0.5 \\ \hline
+        0.2 & 0.022 & 214  & 30 & 0.5 \\ \hline
+        0.3 & 0.028 & 331  & 30 & 0.5 \\ \hline
+        0.4 & 0.03  & 362  & 30 & 0.5 \\ \hline
+        0.5 & 0.037 & 513  & 30 & 0.5 \\ \hline
+        0.6 & 0.04  & 610  & 30 & 0.5 \\ \hline
+        0.7 & 0.043 & 671  & 30 & 0.5 \\ \hline
+        0.8 & 0.045 & 737  & 30 & 0.5 \\ \hline
+        0.9 & 0.049 & 829  & 30 & 0.5 \\ \hline
+        1   & 0.05  & 884  & 30 & 0.5 \\ \hline
+        1.1 & 0.054 & 1016 & 30 & 0.5 \\ \hline
+        1.2 & 0.058 & 1118 & 30 & 0.5 \\ \hline
+        1.3 & 0.062 & 1294 & 30 & 0.5 \\ \hline
+        1.4 & 0.063 & 1296 & 30 & 0.5 \\ \hline
+        1.5 & 0.064 & 1335 & 30 & 0.5 \\ \hline
+        1.8 & 0.072 & 1599 & 30 & 0.5 \\ \hline
+        2   & 0.073 & 1770 & 30 & 0.5 \\ \hline
+        3   & 0.098 & 2950 & 30 & 0.5 \\ \hline
+        3.5 & 0.11  & 3420 & 30 & 0.6 \\ \hline
+        4   & 0.122 & 3850 & 30 & 0.6 \\ \hline
+        4.5 & 0.139 & 4350 & 30 & 0.6 \\ \hline
+        4.6 & 0.14  & 4430 & 30 & 0.6 \\ \hline
+        4.8 & 0.156 & 4630 & 30 & 0.6 \\ \hline
+        4.9 & 0.166 & 4690 & 30 & 0.6 \\ \hline
+        5   & 0.198 & 4820 & 30 & 0.6 \\ \hline
+        5.5 & 0.27  & 5070 & 30 & 0.6 \\ \hline
+        5.6 & 0.42  & 5110 & 30 & 0.6 \\ \hline
+        5.8 & 0.58  & 5130 & 30 & 0.6 \\ \hline
+        6   & 0.89  & 5090 & 30 & 0.6 \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+        $\mathrm{V_{CC}}$ (V) & $\mathrm{V_{CE}}$ (mV) & $\mathrm{I_C \ (\mu A)}$ & $\mathrm{I_B \ (\mu A)}$ & $\mathrm{V_{BB} \ (V)}$ \\ \hline \hline
+        0     & 0.004         & 12           & 40           & 0.5   \\  \hline
+        1     & 0.04          & 866          & 40           & 0.5   \\  \hline
+        2     & 0.061         & 1724         & 40           & 0.5   \\  \hline
+        3     & 0.08          & 2890         & 40           & 0.5   \\  \hline
+        4     & 0.094         & 3740         & 40           & 0.5   \\  \hline
+        5     & 0.109         & 4730         & 40           & 0.6   \\  \hline
+        6     & 0.134         & 5730         & 40           & 0.6   \\  \hline
+        6.5   & 0.147         & 6180         & 40           & 0.6   \\  \hline
+        7     & 0.167         & 6700         & 40           & 0.6   \\  \hline
+        7.2   & 0.188         & 6850         & 40           & 0.6   \\  \hline
+        7.4   & 0.388         & 6890         & 40           & 0.6   \\  \hline
+        7.6   & 0.533         & 6900         & 40           & 0.6   \\  \hline
+        8     & 0.921         & 7000         & 40           & 0.6   \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width = 0.9\textwidth]{./Graphs/Output.svg}
+\end{figure}
+   
+\section{Conclusion}
+\end{document}
