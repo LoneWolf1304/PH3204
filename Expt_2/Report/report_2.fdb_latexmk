@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1739433821.37039 "/home/shaggy1304/IISER/IISER_Courses/Sem_6/PH3204/Expt_2/Report/report_2.tex" "report_2.pdf" "report_2" 1739433823.61229 0
-  "/home/shaggy1304/IISER/IISER_Courses/Sem_6/PH3204/Expt_2/Report/report_2.tex" 1739433818.73692 10023 1cacfd41e8e2ac93a50934380d8088aa ""
+["pdflatex"] 1739463333.52575 "/home/shaggy1304/IISER/IISER_Courses/Sem_6/PH3204/Expt_2/Report/report_2.tex" "report_2.pdf" "report_2" 1739463336.69727 0
+  "/home/shaggy1304/IISER/IISER_Courses/Sem_6/PH3204/Expt_2/Report/report_2.tex" 1739463333.19872 11883 13413bc774585e4b80135e6dbe236356 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1736268207 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1736268207 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1736268207 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -328,11 +328,11 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1736268207 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1736494848.54466 5318467 8236939515598d005dfbcc2e1a40f206 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736494812 7112993 f24b6aaf8d361c912291654aef496e6f ""
-  "Plots/input_characteristics.tex" 1739433740.52065 5747 b36d3fdd676baffc054bacbb18b4a0a4 ""
-  "Plots/output_characteristics.tex" 1739112559.9727 6315 b75c89800485a73c0115843852da9970 ""
+  "Plots/input_characteristics.tex" 1739462311.48532 5854 aa8fa8cd522add5253511749272cae20 ""
+  "Plots/output_characteristics.tex" 1739463283.94027 6411 a86b7b0da9b4c8ff50113699749a4409 ""
   "Style_File.sty" 1738353224.89999 2386 e960bffeca87a662b16be308b74780e8 ""
-  "report_2.aux" 1739433823.4946 1874 cf620ea1f29c6f9c667ba2b18593db24 "pdflatex"
-  "report_2.tex" 1739433818.73692 10023 1cacfd41e8e2ac93a50934380d8088aa ""
+  "report_2.aux" 1739463336.55475 2150 16b4c1050690f6d82a4681cfb1c38c60 "pdflatex"
+  "report_2.tex" 1739463333.19872 11883 13413bc774585e4b80135e6dbe236356 ""
   "theory.tex" 1739433674.89689 172 3adfd7b72109a034c397946d2b9c1e15 ""
   "transistor_circ.tex" 1738356602.33621 925 3e78d2bec6a0fa6f01f5d18aa20ca5bd ""
   (generated)

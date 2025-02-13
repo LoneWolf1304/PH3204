@@ -74,6 +74,7 @@ To obtain the input and output characteristics of a transistor in CE configurati
  \input{theory.tex}
 \section{Data and Calculations}
 \subsection{Input Characteristics}
+The following tables show the data obtained for the input characteristics of the transistor in CE configuration. The data was obtained by varying the base voltage V\textsubscript{BB} from 0 to 1.2 V in steps of 0.1 V. The collector voltage V\textsubscript{CC} was kept constant at almost $\mathrm{2 V}$. The base current I\textsubscript{B} and collector current I\textsubscript{C} were measured for each value of V\textsubscript{BB}. The base-emitter voltage V\textsubscript{BE} and collector-emitter voltage V\textsubscript{CE} were also measured for each value of V\textsubscript{BB}. The data was obtained for two different values of V\textsubscript{CC} - 2 V and 3 V. 
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|}
@@ -120,10 +121,12 @@ To obtain the input and output characteristics of a transistor in CE configurati
         \end{tabular}
         \end{table}
 
-
+We plotted the $\mathrm{I_B}$ vs. $\mathrm{V_{BE}}$ graph for the two values of V\textsubscript{CC} and obtained the following graphs.
 \input{Plots/input_characteristics.tex}
+\noindent
+We note that the input characteristics for the two values of V\textsubscript{CC} are opposite of what is expected. The curve for $\mathrm{V_{CE}=3V}$ should be below that of $\mathrm{V_{CE}=2V}$. This can be due to the values being very close to each other, so these could not be clearly distinguished and hence the error.
 \subsection{Output Characteristics}
-
+The following tables show the data obtained for the output characteristics of the transistor in CE configuration. The data was obtained by varying the base voltage V\textsubscript{CC}. The base voltage V\textsubscript{BB} was kept constant at almost $\mathrm{0.5 V}$. The collector current I\textsubscript{C} and collector-emitter voltage V\textsubscript{CE} were measured. The data was obtained for three different values of I\textsubscript{B} = 25 \textmu A, 30 \textmu A and 40 \textmu A.
 \begin{table}[H]
         \centering
         \begin{tabular}{|c|c|c|c|c|}
@@ -224,6 +227,8 @@ To obtain the input and output characteristics of a transistor in CE configurati
         \caption{Data obtained for output characteristics at I\textsubscript{B} = 40 \textmu A }
     \end{table}
     \input{Plots/output_characteristics.tex}
+    \noindent
+    We see that the collector current I\textsubscript{C} initially increases steeply with the increase in V\textsubscript{CE} but reaches saturation and remains almost constant after a certain value of the voltage.
 \section{Sources of Error}
 \section{Discussion and Conclusion}
 
