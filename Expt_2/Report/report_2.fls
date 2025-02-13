@@ -515,10 +515,10 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecsx1000.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecsx1200.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecss0800.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecsx0800.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecss0800.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecsx0800.tfm
 INPUT ./Plots/input_characteristics.tex
 INPUT ./Plots/input_characteristics.tex
 INPUT Plots/input_characteristics.tex
