@@ -1,0 +1,14 @@
+# ALL log files
+*.log
+
+# All aux files
+*.aux 
+
+# All fbd_latexmk files
+*.fdb_latexmk
+
+# All fls siles
+*.fls 
+
+# All synctex.gz files
+*.synctex.gz 
