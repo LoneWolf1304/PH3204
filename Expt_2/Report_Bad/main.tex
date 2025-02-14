@@ -18,9 +18,59 @@
 \maketitle
 
 \section{Aim}
-
+To study input and output charecterestics of a common-emmiter configuration of a npn BJT transistor.
 
 \section{Theory}
+Transistors are a very common and useful device in modern days. It is used as oscillators, amplifiers, gates and many other instruments. One of the common type transistors are bipolar junction transistor. This bipolar junction transistor is a sandwich of semiconducting materials. In an npn transistor there is a p-type semiconductor in between two n-type semiconductors. And in a pnp transistor there is a n-type semiconductor in between two p-type semiconductors. In this experiment, we are going to study the input and output characteristics of npn semiconductors.
+
+In an npn semiconductor, out of the two n-type semiconductors one of them is very heavily doped and the other is larger in size and lightly doped compared to the other n-type. The heavily doped semiconductor is called Emitter. The comparatively lightly doped semiconductor is called Collector. The p-type semiconductor is generally very thin and very lightly doped. There are two pn junctions present in the transistor - base emitter junction and the collector base junction. Normally when used as an amplifier, the base emitter junction is kept in forward bias and the collector base junction is kept in reverse bias. So, due to the forward bias of the base emitter junction electrons go from emitter to the base, this electrons get affected by the reverse bias of the collector base junction and as the base is very thin and lightly doped most of the electrons go to the collector. So the emitter current is almost equal to the collector current. It is actually slightly more than the emitter current. We define a parameter \( \alpha \) as 
+
+\begin{equation*}
+\mathrm{I_C = \alpha I_E}
+.\end{equation*}
+\( \alpha \) is slightly smaller than 1. We can write also \( \mathrm{I_E = I_C + I_B}\). So if we define \( \beta \) as \( \mathrm{I_C = \beta I_B} \) then we can write 
+
+\begin{equation*}
+\beta = \frac{\alpha}{(1 - \alpha)} 
+\end{equation*}
+
+Now as the transistor is a three terminal device one of the terminals has to be considered as a common terminal while studying input or output characteristics. Depending on the terminal we can define three types of configuration - common emitter configuration, common base, common collector configuration. This experiment concerns only common emitter configuration.
+\begin{figure}[!ht]
+    \centering
+    \resizebox{0.7\textwidth}{!}{%
+    \begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw (4,14) to[short] (6,14);
+    \draw (4,14) to[short] (4,12.5);
+    \draw (4,12.5) to[battery ,l={ \normalsize $\mathrm{V_{BB}}$}] (4,11.25);
+    \draw (4,11.25) to[short] (4,10);
+    \draw (4,10) to[short] (9.75,10);
+    \draw  (6.5,14) circle (0.5cm) node {\normalsize $\mu \mathrm{A}$} ;
+    \draw (7,14) to[R,l={ \normalsize $\mathrm{R_B}$}] (9,14);
+    \draw (10,13) to[Tnpn, transistors/scale=1.19] (10,15);
+    \draw  (10,14) circle (1cm);
+    \draw [short] (10,13) -- (10,10);
+    \draw [short] (9.75,10) -- (16.5,10);
+    \draw [short] (10,15) -- (10,16);
+    \draw [short] (10,16) -- (12,16);
+    \draw (12,16) to[R,l={ \normalsize $\mathrm{R_C}$}] (14.25,16);
+    \draw  (15.25,16) circle (0.5cm) node {\normalsize mA} ;
+    \draw (14.25,16) to[short] (14.75,16);
+    \draw (15.75,16) to[short] (16.5,16);
+    \draw (16.5,16) to[battery ,l={ \normalsize $\mathrm{V_{CC}}$}] (16.5,10);
+    \draw (11.75,16) to[short] (11.75,13);
+    \draw  (11.75,12.5) circle (0.5cm) node {\normalsize $\mathrm{V_{CE}}$} ;
+    \draw (11.75,12) to[short] (11.75,10);
+    \node [font=\normalsize] at (6.5,14.25) {};
+    \draw (8.75,14) to[short] (8.75,13);
+    \draw  (8.75,12.5) circle (0.5cm) node {\normalsize $\mathrm{V_{BE}}$} ;
+    \draw (8.75,12) to[short] (8.75,10);
+    \end{circuitikz}
+    }%
+    
+    \label{fig:my_label}
+    \end{figure}
+For studying three terminal devices two sets of characteristics are necessary. Input characteristics is the study of dependency of input current (\( \mathrm{I_B} \)) and base emitter voltage (\( \mathrm{V_{BE}} \)) while keeping the collector current (\( \mathrm{I_C}\)) fixed and the output characteristics is the study of collector current(\( \mathrm{I_C }\)) and base collector voltage (\( \mathrm{V_{CE}} \)) fixed while keeping the base current (\( \mathrm{I_B } \)) fixed.
 
 \section{Data and Calculation}
 
