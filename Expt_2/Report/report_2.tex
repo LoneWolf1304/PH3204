@@ -74,7 +74,7 @@ To obtain the input and output characteristics of a transistor in CE configurati
  \input{theory.tex}
 \section{Data and Calculations}
 \subsection{Input Characteristics}
-The following tables show the data obtained for the input characteristics of the transistor in CE configuration. The data was obtained by varying the base voltage V\textsubscript{BB} from 0 to 1.2 V in steps of 0.1 V. The collector voltage V\textsubscript{CC} was kept constant at almost $\mathrm{2 V}$. The base current I\textsubscript{B} and collector current I\textsubscript{C} were measured for each value of V\textsubscript{BB}. The base-emitter voltage V\textsubscript{BE} and collector-emitter voltage V\textsubscript{CE} were also measured for each value of V\textsubscript{BB}. The data was obtained for two different values of V\textsubscript{CC} as 2 V and 3 V. 
+The following tables show the data obtained for the input characteristics of the transistor in CE configuration.  We used $\mathrm{R_B = 1 \ k\Omega}$ and $\mathrm{R_C = 1 \ \Omega}$. The data was obtained by varying the base voltage V\textsubscript{BB} from 0 to 1.2 V in steps of 0.1 V. The collector voltage V\textsubscript{CC} was kept constant at almost $\mathrm{2 V}$. The base current I\textsubscript{B} and collector current I\textsubscript{C} were measured for each value of V\textsubscript{BB}. The base-emitter voltage V\textsubscript{BE} and collector-emitter voltage V\textsubscript{CE} were also measured for each value of V\textsubscript{BB}. The data was obtained for two different values of V\textsubscript{CC} as 2 V and 3 V. 
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|}
@@ -126,7 +126,7 @@ We plotted the $\mathrm{I_B}$ vs. $\mathrm{V_{BE}}$ graph for the two values of 
 \noindent
 We note that the input characteristics for the two values of V\textsubscript{CC} are opposite of what is expected. The curve for $\mathrm{V_{CE}=3V}$ should be below that of $\mathrm{V_{CE}=2V}$. This can be due to the values being very close to each other, so these could not be clearly distinguished and hence the error.
 \subsection{Output Characteristics}
-The following tables show the data obtained for the output characteristics of the transistor in CE configuration. The data was obtained by varying the base voltage V\textsubscript{CC}. The base voltage V\textsubscript{BB} was kept constant at almost $\mathrm{0.5 V}$. The collector current I\textsubscript{C} and collector-emitter voltage V\textsubscript{CE} were measured. The data was obtained for three different values of I\textsubscript{B} = 25 \textmu A, 30 \textmu A and 40 \textmu A.
+The following tables show the data obtained for the output characteristics of the transistor in CE configuration. The data was obtained by varying the base voltage V\textsubscript{CC}. We used $\mathrm{R_B = 220 \ \Omega}$ and $\mathrm{R_C = 1 \ k\Omega}$. $\mathrm{I_B}$ was kept constant by varying $\mathrm{V_{BB}}$. The collector current I\textsubscript{C} and collector-emitter voltage V\textsubscript{CE} were measured. The data was obtained for three different values of I\textsubscript{B} = 25 \textmu A, 30 \textmu A and 40 \textmu A.
 \begin{table}[H]
         \centering
         \begin{tabular}{|c|c|c|c|c|}
@@ -158,78 +158,171 @@ The following tables show the data obtained for the output characteristics of th
     \end{table}
 
 
-    \begin{table}[H]
-        \centering
-        \begin{tabular}{|c|c|c|c|c|}
+    % \begin{table}[H]
+    %     \centering
+    %     \begin{tabular}{|c|c|c|c|c|}
+    %     \hline
+    %     \textbf{V\textsubscript{CC} (V)} & 
+    %     \textbf{V\textsubscript{BB} (V)} & 
+    %     \textbf{I\textsubscript{B} (\textmu A)} &
+        
+    %     \textbf{V\textsubscript{CE} (V)} & 
+    %     \textbf{I\textsubscript{C} (\textmu A)} \\ \hline
+    %         0.0 & 0.5 & 30 & 0.007 & 37 \\ \hline
+    %         0.1 & 0.5 & 30 & 0.02 & 166 \\ \hline
+    %         0.2 & 0.5 & 30 & 0.022 & 214 \\ \hline
+    %         0.3 & 0.5 & 30 & 0.028 & 331 \\ \hline
+    %         0.4 & 0.5 & 30 & 0.03 & 362 \\ \hline
+    %         0.5 & 0.5 & 30 & 0.037 & 513 \\ \hline
+    %         0.6 & 0.5 & 30 & 0.04 & 610 \\ \hline
+    %         0.7 & 0.5 & 30 & 0.043 & 671 \\ \hline
+    %         0.8 & 0.5 & 30 & 0.045 & 737 \\ \hline
+    %         0.9 & 0.5 & 30 & 0.049 & 829 \\ \hline
+    %         1.0 & 0.5 & 30 & 0.05 & 884 \\ \hline
+    %         1.1 & 0.5 & 30 & 0.054 & 1016 \\ \hline
+    %         1.2 & 0.5 & 30 & 0.058 & 1118 \\ \hline
+    %         1.3 & 0.5 & 30 & 0.062 & 1294 \\ \hline
+    %         1.4 & 0.5 & 30 & 0.063 & 1296 \\ \hline
+    %         1.5 & 0.5 & 30 & 0.064 & 1335 \\ \hline
+    %         1.8 & 0.5 & 30 & 0.072 & 1599 \\ \hline
+    %         2.0 & 0.5 & 30 & 0.073 & 1770 \\ \hline
+    %         3.0 & 0.5 & 30 & 0.098 & 2950 \\ \hline
+    %         3.5 & 0.6 & 30 & 0.11 & 3420 \\ \hline
+    %         4.0 & 0.6 & 30 & 0.122 & 3850 \\ \hline
+    %         4.5 & 0.6 & 30 & 0.139 & 4350 \\ \hline
+    %         4.6 & 0.6 & 30 & 0.14 & 4430 \\ \hline
+    %         4.8 & 0.6 & 30 & 0.156 & 4630 \\ \hline
+    %         4.9 & 0.6 & 30 & 0.166 & 4690 \\ \hline
+    %         5.0 & 0.6 & 30 & 0.198 & 4820 \\ \hline
+    %         5.5 & 0.6 & 30 & 0.27 & 5070 \\ \hline
+    %         5.6 & 0.6 & 30 & 0.42 & 5110 \\ \hline
+    %         5.8 & 0.6 & 30 & 0.58 & 5130 \\ \hline
+    %         6.0 & 0.6 & 30 & 0.89 & 5090 \\ \hline
+    %     \end{tabular}
+    %     \caption{Data obtained for output characteristics at I\textsubscript{B} = 30 \textmu A }
+    % \end{table}
+
+    \begin{longtable}{|c|c|c|c|c|}
         \hline
         \textbf{V\textsubscript{CC} (V)} & 
-        \textbf{V\textsubscript{BB} (V)} & 
-        \textbf{I\textsubscript{B} (\textmu A)} &
-        
-        \textbf{V\textsubscript{CE} (V)} & 
-        \textbf{I\textsubscript{C} (\textmu A)} \\ \hline
-            0.0 & 0.5 & 30 & 0.007 & 37 \\ \hline
-            0.1 & 0.5 & 30 & 0.02 & 166 \\ \hline
-            0.2 & 0.5 & 30 & 0.022 & 214 \\ \hline
-            0.3 & 0.5 & 30 & 0.028 & 331 \\ \hline
-            0.4 & 0.5 & 30 & 0.03 & 362 \\ \hline
-            0.5 & 0.5 & 30 & 0.037 & 513 \\ \hline
-            0.6 & 0.5 & 30 & 0.04 & 610 \\ \hline
-            0.7 & 0.5 & 30 & 0.043 & 671 \\ \hline
-            0.8 & 0.5 & 30 & 0.045 & 737 \\ \hline
-            0.9 & 0.5 & 30 & 0.049 & 829 \\ \hline
-            1.0 & 0.5 & 30 & 0.05 & 884 \\ \hline
-            1.1 & 0.5 & 30 & 0.054 & 1016 \\ \hline
-            1.2 & 0.5 & 30 & 0.058 & 1118 \\ \hline
-            1.3 & 0.5 & 30 & 0.062 & 1294 \\ \hline
-            1.4 & 0.5 & 30 & 0.063 & 1296 \\ \hline
-            1.5 & 0.5 & 30 & 0.064 & 1335 \\ \hline
-            1.8 & 0.5 & 30 & 0.072 & 1599 \\ \hline
-            2.0 & 0.5 & 30 & 0.073 & 1770 \\ \hline
-            3.0 & 0.5 & 30 & 0.098 & 2950 \\ \hline
-            3.5 & 0.6 & 30 & 0.11 & 3420 \\ \hline
-            4.0 & 0.6 & 30 & 0.122 & 3850 \\ \hline
-            4.5 & 0.6 & 30 & 0.139 & 4350 \\ \hline
-            4.6 & 0.6 & 30 & 0.14 & 4430 \\ \hline
-            4.8 & 0.6 & 30 & 0.156 & 4630 \\ \hline
-            4.9 & 0.6 & 30 & 0.166 & 4690 \\ \hline
-            5.0 & 0.6 & 30 & 0.198 & 4820 \\ \hline
-            5.5 & 0.6 & 30 & 0.27 & 5070 \\ \hline
-            5.6 & 0.6 & 30 & 0.42 & 5110 \\ \hline
-            5.8 & 0.6 & 30 & 0.58 & 5130 \\ \hline
-            6.0 & 0.6 & 30 & 0.89 & 5090 \\ \hline
-        \end{tabular}
-        \caption{Data obtained for output characteristics at I\textsubscript{B} = 30 \textmu A }
-    \end{table}
-    \begin{table}[H]
-        \centering
-        \begin{tabular}{|c|c|c|c|c|}
-        \hline
         \textbf{V\textsubscript{BB} (V)} & 
         \textbf{I\textsubscript{B} (\textmu A)} & 
-        \textbf{V\textsubscript{CC} (V)} & 
         \textbf{V\textsubscript{CE} (V)} & 
         \textbf{I\textsubscript{C} (\textmu A)} \\ \hline
-            0.5 & 40 & 0.0 & 0.004 & 12 \\ \hline
-            0.5 & 40 & 1.0 & 0.04 & 866 \\ \hline
-            0.5 & 40 & 2.0 & 0.061 & 1724 \\ \hline
-            0.5 & 40 & 3.0 & 0.08 & 2890 \\ \hline
-            0.5 & 40 & 4.0 & 0.094 & 3740 \\ \hline
-            0.6 & 40 & 5.0 & 0.109 & 4730 \\ \hline
-            0.6 & 40 & 6.0 & 0.134 & 5730 \\ \hline
-            0.6 & 40 & 6.5 & 0.147 & 6180 \\ \hline
-            0.6 & 40 & 7.0 & 0.167 & 6700 \\ \hline
-            0.6 & 40 & 7.2 & 0.188 & 6850 \\ \hline
-            0.6 & 40 & 7.4 & 0.388 & 6890 \\ \hline
-            0.6 & 40 & 7.6 & 0.533 & 6900 \\ \hline
-            0.6 & 40 & 8.0 & 0.921 & 7000 \\ \hline
-        \end{tabular}
-        \caption{Data obtained for output characteristics at I\textsubscript{B} = 40 \textmu A }
-    \end{table}
+        \endfirsthead
+        \hline
+        \textbf{V\textsubscript{CC} (V)} & 
+        \textbf{V\textsubscript{BB} (V)} & 
+        \textbf{I\textsubscript{B} (\textmu A)} & 
+        \textbf{V\textsubscript{CE} (V)} & 
+        \textbf{I\textsubscript{C} (\textmu A)} \\ \hline
+        \endhead
+    
+        0.0 & 0.5 & 30 & 0.007 & 37 \\ \hline
+        0.1 & 0.5 & 30 & 0.02 & 166 \\ \hline
+        0.2 & 0.5 & 30 & 0.022 & 214 \\ \hline
+        0.3 & 0.5 & 30 & 0.028 & 331 \\ \hline
+        0.4 & 0.5 & 30 & 0.03 & 362 \\ \hline
+        0.5 & 0.5 & 30 & 0.037 & 513 \\ \hline
+        0.6 & 0.5 & 30 & 0.04 & 610 \\ \hline
+        0.7 & 0.5 & 30 & 0.043 & 671 \\ \hline
+        0.8 & 0.5 & 30 & 0.045 & 737 \\ \hline
+        0.9 & 0.5 & 30 & 0.049 & 829 \\ \hline
+        1.0 & 0.5 & 30 & 0.05 & 884 \\ \hline
+        1.1 & 0.5 & 30 & 0.054 & 1016 \\ \hline
+        1.2 & 0.5 & 30 & 0.058 & 1118 \\ \hline
+        1.3 & 0.5 & 30 & 0.062 & 1294 \\ \hline
+        1.4 & 0.5 & 30 & 0.063 & 1296 \\ \hline
+        1.5 & 0.5 & 30 & 0.064 & 1335 \\ \hline
+        1.8 & 0.5 & 30 & 0.072 & 1599 \\ \hline
+        2.0 & 0.5 & 30 & 0.073 & 1770 \\ \hline
+        3.0 & 0.5 & 30 & 0.098 & 2950 \\ \hline
+        3.5 & 0.6 & 30 & 0.11 & 3420 \\ \hline
+        4.0 & 0.6 & 30 & 0.122 & 3850 \\ \hline
+        4.5 & 0.6 & 30 & 0.139 & 4350 \\ \hline
+        4.6 & 0.6 & 30 & 0.14 & 4430 \\ \hline
+        4.8 & 0.6 & 30 & 0.156 & 4630 \\ \hline
+        4.9 & 0.6 & 30 & 0.166 & 4690 \\ \hline
+        5.0 & 0.6 & 30 & 0.198 & 4820 \\ \hline
+        5.5 & 0.6 & 30 & 0.27 & 5070 \\ \hline
+        5.6 & 0.6 & 30 & 0.42 & 5110 \\ \hline
+        5.8 & 0.6 & 30 & 0.58 & 5130 \\ \hline
+        6.0 & 0.6 & 30 & 0.89 & 5090 \\ \hline
+        \caption{Data obtained for output characteristics at I\textsubscript{B} = 30 \textmu A} \\
+    \end{longtable}
+    % \begin{table}[H]
+    %     \centering
+    %     \begin{tabular}{|c|c|c|c|c|}
+    %     \hline
+    %     \textbf{V\textsubscript{BB} (V)} & 
+    %     \textbf{I\textsubscript{B} (\textmu A)} & 
+    %     \textbf{V\textsubscript{CC} (V)} & 
+    %     \textbf{V\textsubscript{CE} (V)} & 
+    %     \textbf{I\textsubscript{C} (\textmu A)} \\ \hline
+    %         0.5 & 40 & 0.0 & 0.004 & 12 \\ \hline
+    %         0.5 & 40 & 1.0 & 0.04 & 866 \\ \hline
+    %         0.5 & 40 & 2.0 & 0.061 & 1724 \\ \hline
+    %         0.5 & 40 & 3.0 & 0.08 & 2890 \\ \hline
+    %         0.5 & 40 & 4.0 & 0.094 & 3740 \\ \hline
+    %         0.6 & 40 & 5.0 & 0.109 & 4730 \\ \hline
+    %         0.6 & 40 & 6.0 & 0.134 & 5730 \\ \hline
+    %         0.6 & 40 & 6.5 & 0.147 & 6180 \\ \hline
+    %         0.6 & 40 & 7.0 & 0.167 & 6700 \\ \hline
+    %         0.6 & 40 & 7.2 & 0.188 & 6850 \\ \hline
+    %         0.6 & 40 & 7.4 & 0.388 & 6890 \\ \hline
+    %         0.6 & 40 & 7.6 & 0.533 & 6900 \\ \hline
+    %         0.6 & 40 & 8.0 & 0.921 & 7000 \\ \hline
+    %     \end{tabular}
+    %     \caption{Data obtained for output characteristics at I\textsubscript{B} = 40 \textmu A }
+    % \end{table}
+
+
+
+
+\begin{longtable}{|c|c|c|c|c|}
+    \hline
+    \textbf{V\textsubscript{BB} (V)} & 
+    \textbf{I\textsubscript{B} (\textmu A)} & 
+    \textbf{V\textsubscript{CC} (V)} & 
+    \textbf{V\textsubscript{CE} (V)} & 
+    \textbf{I\textsubscript{C} (\textmu A)} \\ \hline
+    \endfirsthead
+    \hline
+    \textbf{V\textsubscript{BB} (V)} & 
+    \textbf{I\textsubscript{B} (\textmu A)} & 
+    \textbf{V\textsubscript{CC} (V)} & 
+    \textbf{V\textsubscript{CE} (V)} & 
+    \textbf{I\textsubscript{C} (\textmu A)} \\ \hline
+    \endhead
+
+    \hline
+    \\ \hline
+    \endfoot
+
+    
+    \endlastfoot
+
+    0.5 & 40 & 0.0 & 0.004 & 12 \\ \hline
+    0.5 & 40 & 1.0 & 0.04 & 866 \\ \hline
+    0.5 & 40 & 2.0 & 0.061 & 1724 \\ \hline
+    0.5 & 40 & 3.0 & 0.08 & 2890 \\ \hline
+    0.5 & 40 & 4.0 & 0.094 & 3740 \\ \hline
+    0.6 & 40 & 5.0 & 0.109 & 4730 \\ \hline
+    0.6 & 40 & 6.0 & 0.134 & 5730 \\ \hline
+    0.6 & 40 & 6.5 & 0.147 & 6180 \\ \hline
+    0.6 & 40 & 7.0 & 0.167 & 6700 \\ \hline
+    0.6 & 40 & 7.2 & 0.188 & 6850 \\ \hline
+    0.6 & 40 & 7.4 & 0.388 & 6890 \\ \hline
+    0.6 & 40 & 7.6 & 0.533 & 6900 \\ \hline
+    0.6 & 40 & 8.0 & 0.921 & 7000 \\ \hline
+    \caption{Data obtained for output characteristics at I\textsubscript{B} = 40 \textmu A}
+\end{longtable}
     \input{Plots/output_characteristics.tex}
     \noindent
-    We see that the collector current I\textsubscript{C} initially increases steeply with the increase in V\textsubscript{CE} but reaches saturation and remains almost constant after a certain value of the voltage.
+    We see that the collector current I\textsubscript{C} initially increases steeply with the increase in V\textsubscript{CE} but reaches saturation and remains almost constant after a certain value of the voltage. Ideally, the collector current should increase linearly with the increase in V\textsubscript{CE} after a certain value of the voltage but we did not observe this in our experiment very clearly. 
 \section{Sources of Error}
 \section{Discussion and Conclusion}
-
-\end{document}
+In this experiment, we obtained the input and output characteristics of a transistor in CE configuration. For the input characteristics, we got an exponential like plot for $\mathrm{T_{B}}$ as expected. However, we observed that the input characteristics for two different values of $\mathrm{V_{CE}}$ are not as expected which could be due to the values of the two curves being very close to each other. \\[0.2cm]
+We could perform the experiment for two values of $\mathrm{V_{CE}}$ with larger difference for the input characteristics. However, we also have to maintain the maximum current through the transistor, otherwise due to heat generated by the current, the transistor may get destroyed. \\[0.2cm]
+ The output characteristics show that the collector current I\textsubscript{C} initially increases steeply with the increase in V\textsubscript{CE} but reaches saturation and remains almost constant after a certain value of the voltage. However, we did not observe the linear increase in I\textsubscript{C} with V\textsubscript{CE} after a certain value of the voltage. This could be due to the error in the measurement of the current and voltage. 
+ \end{document}
