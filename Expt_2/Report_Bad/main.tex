@@ -67,19 +67,25 @@ Now as the transistor is a three terminal device one of the terminals has to be 
     \draw (8.75,12) to[short] (8.75,10);
     \end{circuitikz}
     }%
-    
+    \caption{Circuit Diagram}
     \label{fig:my_label}
     \end{figure}
 For studying three terminal devices two sets of characteristics are necessary. Input characteristics is the study of dependency of input current (\( \mathrm{I_B} \)) and base emitter voltage (\( \mathrm{V_{BE}} \)) while keeping the collector current (\( \mathrm{I_C}\)) fixed and the output characteristics is the study of collector current(\( \mathrm{I_C }\)) and base collector voltage (\( \mathrm{V_{CE}} \)) fixed while keeping the base current (\( \mathrm{I_B } \)) fixed.
 
 \section{Data and Calculation}
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
-    $\mathrm{V_{BB} \ (V)}$ & $\mathrm{V_{BE} (V)}$ & $\mathrm{I_B (mA)}$ & $\mathrm{I_C (mA)}$ & $\mathrm{V_{CC} (V)}$ & $\mathrm{V_{CE} (V)}$ \\
-    \hline \hline
+\subsection{Input Characteristics}
+
+In the following two tables we noted down the values of necessary quantities for studying input characteristics and the first table we set the output voltage $\mathrm{V_{CE}}$ to be  2 V and in the next table we set the output voltage $\mathrm{V_{CE}}$ to be 3 V.  For these voltages, we took the measurements for the input voltage $\mathrm{V_{BE}}$ and the input current $\mathrm{I_B}$.
+
+\begin{longtable}[H]{|c|c|c|c|c|c|}
+    \caption{Table for \( \mathrm{V_{CE}} = 2\) V}
+    \endfirsthead
+    \hline
+    $\mathrm{V_{BB} \ (V)}$ & $\mathrm{V_{BE} (V)}$ & $\mathrm{I_B (mA)}$ & $\mathrm{I_C (mA)}$ & $\mathrm{V_{CC} (V)}$ & $\mathrm{V_{CE} (V)}$ \\ \hline \hline
+    \endhead
+    \hline
+    $\mathrm{V_{BB} \ (V)}$ & $\mathrm{V_{BE} (V)}$ & $\mathrm{I_B (mA)}$ & $\mathrm{I_C (mA)}$ & $\mathrm{V_{CC} (V)}$ & $\mathrm{V_{CE} (V)}$ \\ \hline \hline
     0         & 0.036     & 0            & 0            & 2     & 2             \\ \hline
     0.1       & 0.178     & 0            & 0            & 2     & 2             \\ \hline
     0.2       & 0.251     & 0            & 0            & 2     & 2             \\ \hline
@@ -92,44 +98,55 @@ For studying three terminal devices two sets of characteristics are necessary. I
     0.9       & 0.738     & 226          & 41.1         & 2     & 2             \\ \hline
     1         & 0.762     & 338          & 61.6         & 2     & 2             \\ \hline 
     1.1       & 0.778     & 414          & 76.1         & 2     & 2             \\ \hline
-    1.2       & 0.792     & 499          & 92.3         & 2     & 2             \\ 
-    \hline
-    \end{tabular}
-    \end{table}
+    1.2       & 0.792     & 499          & 92.3         & 2     & 2             \\ \hline 
+    
+\end{longtable}
 
-    \begin{table}[H]
-        \centering
-        \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
-        $\mathrm{V_{BB} \ (V)}$ & $\mathrm{V_{BE} (V)}$ & $\mathrm{I_B (mA)}$ & $\mathrm{I_C (mA)}$ & $\mathrm{V_{CC} (V)}$ & $\mathrm{V_{CE} (V)}$ \\
+
+\begin{longtable}[H]{|c|c|c|c|c|c|}
+    \caption{Table for \( \mathrm{V_{CE}} = 3 V\)}
+    \endfirsthead
+    \hline
+    $\mathrm{V_{BB} \ (V)}$ & $\mathrm{V_{BE} (V)}$ & $\mathrm{I_B (mA)}$ & $\mathrm{I_C (mA)}$ & $\mathrm{V_{CC} (V)}$ & $\mathrm{V_{CE} (V)}$ \\
     \hline \hline
-        0     & 0.038 & 0            & 0            & 3     & 3             \\ \hline
-        0.1   & 0.19  & 0            & 0            & 3     & 3             \\ \hline
-        0.2   & 0.259 & 0            & 0            & 3     & 3             \\ \hline
-        0.3   & 0.355 & 1            & 0            & 3     & 3             \\ \hline
-        0.4   & 0.466 & 1            & 0            & 3     & 3             \\ \hline
-        0.5   & 0.607 & 9            & 1.6          & 3     & 3             \\ \hline
-        0.6   & 0.642 & 27           & 5            & 3     & 3             \\ \hline
-        0.7   & 0.684 & 88           & 16.2         & 3     & 3             \\ \hline
-        0.8   & 0.71  & 158          & 29.4         & 3     & 3             \\ \hline
-        0.9   & 0.729 & 242          & 45.9         & 3     & 3             \\ \hline
-        1     & 0.749 & 334          & 64.8         & 3     & 3             \\ \hline
-        1.1   & 0.767 & 449          & 87.2         & 3     & 3             \\ \hline
-        1.2   & 0.765 & 468          & 93           & 3     & 3             \\
-        \hline           
-        \end{tabular}
-        \end{table}
+    \endhead
+    \hline
+    $\mathrm{V_{BB} \ (V)}$ & $\mathrm{V_{BE} (V)}$ & $\mathrm{I_B (mA)}$ & $\mathrm{I_C (mA)}$ & $\mathrm{V_{CC} (V)}$ & $\mathrm{V_{CE} (V)}$ \\
+    \hline \hline
+    0     & 0.038 & 0            & 0            & 3     & 3             \\ \hline
+    0.1   & 0.19  & 0            & 0            & 3     & 3             \\ \hline
+    0.2   & 0.259 & 0            & 0            & 3     & 3             \\ \hline
+    0.3   & 0.355 & 1            & 0            & 3     & 3             \\ \hline
+    0.4   & 0.466 & 1            & 0            & 3     & 3             \\ \hline
+    0.5   & 0.607 & 9            & 1.6          & 3     & 3             \\ \hline
+    0.6   & 0.642 & 27           & 5            & 3     & 3             \\ \hline
+    0.7   & 0.684 & 88           & 16.2         & 3     & 3             \\ \hline
+    0.8   & 0.71  & 158          & 29.4         & 3     & 3             \\ \hline
+    0.9   & 0.729 & 242          & 45.9         & 3     & 3             \\ \hline
+    1     & 0.749 & 334          & 64.8         & 3     & 3             \\ \hline
+    1.1   & 0.767 & 449          & 87.2         & 3     & 3             \\ \hline
+    1.2   & 0.765 & 468          & 93           & 3     & 3             \\ \hline           
+\end{longtable}
+
+From the above graphs we plotted the following graph. The graph shows the input characteristics of the transistor that is the dependency of input voltage and input current for different output voltage. We expected that for output voltage 3 V the graph to lie on the right of the graph for output voltage 2 V.
 
 \begin{figure}[H]
     \centering
     \includesvg[width = 0.9\textwidth]{./Graphs/Input.svg}
+    \caption{Input Characteristics of the Transistor}
 \end{figure}
-   
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|c|c|c|}
-    \hline
-       $\mathrm{V_{CC}}$ (V) & $\mathrm{V_{CE}}$ (mV) & $\mathrm{I_C \ (\mu A)}$ & $\mathrm{I_B \ (\mu A)}$ & $\mathrm{V_{BB} \ (V)}$ \\ \hline \hline
+
+\subsection{Output Characteristics}
+The following tables contain data for studying the output characteristics. Here we tabulated the collector current $\mathrm{I_C}$ and output voltage $\mathrm{V_{CE}}$ for different values of input current $I_B$. We took data corresponding to three different values of $I_B$ 25 $\mu$A, 30 $\mu$A and 40 $\mu$A respectively.
+
+\begin{longtable}[H]{|c|c|c|c|c|}
+    \caption{Table for \( \mathrm{I_B}\) = 25 \( \mu \)A }
+    \endfirsthead
+    \hline   
+    $\mathrm{V_{CC}}$ (V) & $\mathrm{V_{CE}}$ (mV) & $\mathrm{I_C \ (\mu A)}$ & $\mathrm{I_B \ (\mu A)}$ & $\mathrm{V_{BB} \ (V)}$ \\ \hline \hline
+    \endhead 
+    \hline   
+    $\mathrm{V_{CC}}$ (V) & $\mathrm{V_{CE}}$ (mV) & $\mathrm{I_C \ (\mu A)}$ & $\mathrm{I_B \ (\mu A)}$ & $\mathrm{V_{BB} \ (V)}$ \\ \hline \hline
        0 & 0.004 & 10 & 25 & 0.5 \\ \hline
        0.5 & 0.04 & 506 & 25 & 0.5 \\ \hline
        1 & 0.057 & 922 & 25 & 0.5 \\ \hline
@@ -146,15 +163,16 @@ For studying three terminal devices two sets of characteristics are necessary. I
        4.7 & 0.349 & 4380 & 25 & 0.6 \\ \hline
        5.2 & 0.696 & 4460 &	25 & 0.6 \\ \hline
        5.5 & 0.978 & 4460 &	25 & 0.6 \\ \hline
+\end{longtable}
 
-    \end{tabular}
-\end{table}
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|c|c|c|}
+\begin{longtable}[H]{|c|c|c|c|c|}
+    \caption{Table for \( \mathrm{I_B}\) = 30 \( \mu \)A }
+    \endfirsthead
     \hline
-        $\mathrm{V_{CC}}$ (V) & $\mathrm{V_{CE}}$ (mV) & $\mathrm{I_C \ (\mu A)}$ & $\mathrm{I_B \ (\mu A)}$ & $\mathrm{V_{BB} \ (V)}$ \\ \hline \hline
+    $\mathrm{V_{CC}}$ (V) & $\mathrm{V_{CE}}$ (mV) & $\mathrm{I_C \ (\mu A)}$ & $\mathrm{I_B \ (\mu A)}$ & $\mathrm{V_{BB} \ (V)}$ \\ \hline \hline
+    \endhead 
+    \hline
+    $\mathrm{V_{CC}}$ (V) & $\mathrm{V_{CE}}$ (mV) & $\mathrm{I_C \ (\mu A)}$ & $\mathrm{I_B \ (\mu A)}$ & $\mathrm{V_{BB} \ (V)}$ \\ \hline \hline
         0   & 0.007 & 37   & 30 & 0.5 \\ \hline
         0.1 & 0.02  & 166  & 30 & 0.5 \\ \hline
         0.2 & 0.022 & 214  & 30 & 0.5 \\ \hline
@@ -185,14 +203,16 @@ For studying three terminal devices two sets of characteristics are necessary. I
         5.6 & 0.42  & 5110 & 30 & 0.6 \\ \hline
         5.8 & 0.58  & 5130 & 30 & 0.6 \\ \hline
         6   & 0.89  & 5090 & 30 & 0.6 \\ \hline
-    \end{tabular}
-\end{table}
+\end{longtable}
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|c|c|c|}
+\begin{longtable}[H]{|c|c|c|c|c|}
+    \caption{Table for \( \mathrm{I_B}\) = 40 \( \mu \)A }
+    \endfirsthead
     \hline
-        $\mathrm{V_{CC}}$ (V) & $\mathrm{V_{CE}}$ (mV) & $\mathrm{I_C \ (\mu A)}$ & $\mathrm{I_B \ (\mu A)}$ & $\mathrm{V_{BB} \ (V)}$ \\ \hline \hline
+    $\mathrm{V_{CC}}$ (V) & $\mathrm{V_{CE}}$ (mV) & $\mathrm{I_C \ (\mu A)}$ & $\mathrm{I_B \ (\mu A)}$ & $\mathrm{V_{BB} \ (V)}$ \\ \hline \hline
+    \endhead 
+    \hline
+    $\mathrm{V_{CC}}$ (V) & $\mathrm{V_{CE}}$ (mV) & $\mathrm{I_C \ (\mu A)}$ & $\mathrm{I_B \ (\mu A)}$ & $\mathrm{V_{BB} \ (V)}$ \\ \hline \hline
         0     & 0.004         & 12           & 40           & 0.5   \\  \hline
         1     & 0.04          & 866          & 40           & 0.5   \\  \hline
         2     & 0.061         & 1724         & 40           & 0.5   \\  \hline
@@ -206,12 +226,13 @@ For studying three terminal devices two sets of characteristics are necessary. I
         7.4   & 0.388         & 6890         & 40           & 0.6   \\  \hline
         7.6   & 0.533         & 6900         & 40           & 0.6   \\  \hline
         8     & 0.921         & 7000         & 40           & 0.6   \\ \hline
-    \end{tabular}
-\end{table}
+\end{longtable}
 
+In the following figure, we plotted the dependencies of $\mathrm{I_C}$ and $\mathrm{V_{CE}}$. Here we see that initially the graphs are increasing, and then it reaches saturation after some point. We also see that this saturation value increases as \( \mathrm{I_B }\) value increases.
 \begin{figure}[H]
     \centering
     \includesvg[width = 0.9\textwidth]{./Graphs/Output.svg}
+    \caption{Output Characteristics of the Transistor}
 \end{figure}
    
 \section{Conclusion}
