@@ -68,19 +68,51 @@ a4paper]{geometry}
 \begin{document}
 \maketitle
 \section{Aim}
-To obtain the input and output characteristics of a transistor in CE configuration.
+To obtain the input and output characteristics of an n-p-n transistor in CE configuration.
 % \section{Theory}
 % HI
  \input{theory.tex}
 \section{Data and Calculations}
 \subsection{Input Characteristics}
-The following tables show the data obtained for the input characteristics of the transistor in CE configuration.  We used $\mathrm{R_B = 1 \ k\Omega}$ and $\mathrm{R_C = 1 \ \Omega}$. The data was obtained by varying the base voltage V\textsubscript{BB} from 0 to 1.2 V in steps of 0.1 V. The collector voltage V\textsubscript{CC} was kept constant at almost $\mathrm{2 V}$. The base current I\textsubscript{B} and collector current I\textsubscript{C} were measured for each value of V\textsubscript{BB}. The base-emitter voltage V\textsubscript{BE} and collector-emitter voltage V\textsubscript{CE} were also measured for each value of V\textsubscript{BB}. The data was obtained for two different values of V\textsubscript{CC} as 2 V and 3 V. 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
+The following tables show the data obtained for the input characteristics of the n-p-n transistor in CE configuration.  We used $\mathrm{R_B = 1 \ k\Omega}$ and $\mathrm{R_C = 1 \ \Omega}$. The data was obtained by varying the base voltage V\textsubscript{BB} from 0 to 1.2 V in steps of 0.1 V. The collector voltage V\textsubscript{CC} was kept constant at almost $\mathrm{2 V}$. The base current I\textsubscript{B} and collector current I\textsubscript{C} were measured for each value of V\textsubscript{BB}. The base-emitter voltage V\textsubscript{BE} and collector-emitter voltage V\textsubscript{CE} were also measured for each value of V\textsubscript{BB}. The data was obtained for two different values of V\textsubscript{CC} as 2 V and 3 V. 
+% \begin{table}[H]
+%     \centering
+%     \begin{tabular}{|c|c|c|c|c|c|}
+%         \hline
+%     \textbf{V\textsubscript{BB} (V)}  & \textbf{V\textsubscript{BE} (V)} &\textbf{I\textsubscript{B} (\textmu A)} & \textbf{I\textsubscript{C} (mA)} & \textbf{V\textsubscript{CC} (V)} &  \textbf{V\textsubscript{CE} (V)} \\
+%     \hline 
+%     0         & 0.036     & 0            & 0            & 2     & 2             \\ \hline
+%     0.1       & 0.178     & 0            & 0            & 2     & 2             \\ \hline
+%     0.2       & 0.251     & 0            & 0            & 2     & 2             \\ \hline
+%     0.3       & 0.378     & 0            & 0            & 2     & 2             \\ \hline
+%     0.4       & 0.449     & 0            & 0            & 2     & 2             \\ \hline
+%     0.5       & 0.589     & 3            & 5            & 2     & 2             \\ \hline
+%     0.6       & 0.655     & 28           & 4.7          & 2     & 2             \\ \hline 
+%     0.7       & 0.698     & 91           & 16.3         & 2     & 2             \\ \hline
+%     0.8       & 0.729     & 182          & 32.6         & 2     & 2             \\ \hline
+%     0.9       & 0.738     & 226          & 41.1         & 2     & 2             \\ \hline
+%     1         & 0.762     & 338          & 61.6         & 2     & 2             \\ \hline 
+%     1.1       & 0.778     & 414          & 76.1         & 2     & 2             \\ \hline
+%     1.2       & 0.792     & 499          & 92.3         & 2     & 2             \\ 
+%     \hline
+%     \end{tabular}
+%     \end{table}
+
+
+\begin{longtable}{|c|c|c|c|c|c|}
+    \hline
     \textbf{V\textsubscript{BB} (V)}  & \textbf{V\textsubscript{BE} (V)} &\textbf{I\textsubscript{B} (\textmu A)} & \textbf{I\textsubscript{C} (mA)} & \textbf{V\textsubscript{CC} (V)} &  \textbf{V\textsubscript{CE} (V)} \\
     \hline 
+    \endfirsthead
+    
+    \hline
+    \textbf{V\textsubscript{BB} (V)}  & \textbf{V\textsubscript{BE} (V)} &\textbf{I\textsubscript{B} (\textmu A)} & \textbf{I\textsubscript{C} (mA)} & \textbf{V\textsubscript{CC} (V)} &  \textbf{V\textsubscript{CE} (V)} \\
+    \hline 
+    \endhead
+    
+    \hline
+    \endfoot
+    
     0         & 0.036     & 0            & 0            & 2     & 2             \\ \hline
     0.1       & 0.178     & 0            & 0            & 2     & 2             \\ \hline
     0.2       & 0.251     & 0            & 0            & 2     & 2             \\ \hline
@@ -95,8 +127,7 @@ The following tables show the data obtained for the input characteristics of the
     1.1       & 0.778     & 414          & 76.1         & 2     & 2             \\ \hline
     1.2       & 0.792     & 499          & 92.3         & 2     & 2             \\ 
     \hline
-    \end{tabular}
-    \end{table}
+\end{longtable}
 
     \begin{table}[H]
         \centering
@@ -319,9 +350,32 @@ The following tables show the data obtained for the output characteristics of th
 \end{longtable}
     \input{Plots/output_characteristics.tex}
     \noindent
-    We see that the collector current I\textsubscript{C} initially increases steeply with the increase in V\textsubscript{CE} but reaches saturation and remains almost constant after a certain value of the voltage. Ideally, the collector current should increase linearly with the increase in V\textsubscript{CE} after a certain value of the voltage but we did not observe this in our experiment very clearly. 
+    We see that the collector current I\textsubscript{C} initially increases steeply with the increase in V\textsubscript{CE} but reaches saturation and remains almost constant after a certain value of the voltage. Ideally, the collector current should increase linearly with the increase in V\textsubscript{CE} after a certain value of the voltage but we did not observe this in our experiment very clearly. So may be the increasing rate is so small that it is getting suppressed by the
+    fluctuation in V\textsubscript{CE} values or maybe the increase would be more visible for higher values of V\textsubscript{CE} which we did not measure.
+    \subsubsection{Calculation of $\beta$}
+    We will calculate the value of the current gain $\beta$ for the transistor in the active region using the formula  $\mathrm{\beta = \frac{I_C}{I_B}}$. Once we reach the region where the transistor is in the active region, we take the values of the collector and the base current at different values of $\mathrm{V_{CE}}$. The following table shows the values of $\beta$ calculated for the transistor.\\[0.1cm]
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            \textbf{V\textsubscript{CE} (V)} &  \textbf{I\textsubscript{C} (\textmu A)} &  \textbf{I\textsubscript{B} (\textmu A)} & $\boldsymbol{\beta}$ \\ \hline
+            0.188 & 6850 & 40 & 171.25 \\ \hline
+            0.388 & 6890 & 40 & 172.25 \\ \hline
+            0.533 & 6900 & 40 & 172.5 \\ \hline
+            0.921 & 7000 & 40 & 175.00 \\ \hline
+            0.270 & 5070 & 30 & 169.00 \\ \hline
+            0.420 & 5110 & 30 & 170.33 \\ \hline
+            0.580 & 5130 & 30 & 171.00 \\ \hline
+            0.890 & 5090 & 30 & 169.66 \\ \hline
+            0.420 & 4350 & 25 & 174.00 \\ \hline
+            0.349 & 4380 & 25 & 175.20 \\ \hline
+            0.490 & 4340 & 25 & 173.60 \\ \hline
+            0.696 & 4460 & 25 & 178.40 \\ \hline
+            0.978 & 4460 & 25 & 178.40 \\ \hline
+            \end{tabular}
+    \end{center}
+   From this, we get the average value of $\beta$ for the transistor as $\mathrm{173.12}$.
 \section{Sources of Error}
-The following could be potential sources of error which could have afftected our results:
+The following could be potential sources of error which could have affected our results:
 \begin{itemize}
     \item Different multimeters could have different internal resistances which could have affected the measurement of current and voltage.
     \item There was much fluctuation in $\mathrm{I_B}$ in the output characteristics and thus, $\mathrm{I_B}$ may not be exactly constant for the curves. $\mathrm{I_B}$ was very sensitive to the change in $\mathrm{V_{BB}}$.
