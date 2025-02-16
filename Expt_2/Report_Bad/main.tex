@@ -70,13 +70,22 @@ Now as the transistor is a three terminal device one of the terminals has to be 
     \caption{Circuit Diagram}
     \label{fig:my_label}
     \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = \textwidth]{IN_OUT.png}
+    \caption{Output and Input Characterestics of an ideal Transistor}
+    \label{fig:char}
+\end{figure}
 For studying three terminal devices two sets of characteristics are necessary. Input characteristics is the study of dependency of input current (\( \mathrm{I_B} \)) and base emitter voltage (\( \mathrm{V_{BE}} \)) while keeping the collector current (\( \mathrm{I_C}\)) fixed and the output characteristics is the study of collector current(\( \mathrm{I_C }\)) and base collector voltage (\( \mathrm{V_{CE}} \)) fixed while keeping the base current (\( \mathrm{I_B } \)) fixed.
+
+
 
 \section{Data and Calculation}
 
 \subsection{Input Characteristics}
 
-In the following two tables we noted down the values of necessary quantities for studying input characteristics and the first table we set the output voltage $\mathrm{V_{CE}}$ to be  2 V and in the next table we set the output voltage $\mathrm{V_{CE}}$ to be 3 V.  For these voltages, we took the measurements for the input voltage $\mathrm{V_{BE}}$ and the input current $\mathrm{I_B}$.
+Firstly we made the circuit with \(\mathrm{R_B = 1 k\Omega}\) and \( \mathrm{R_C = 1 \Omega }\). In the following two tables we noted down the values of necessary quantities for studying input characteristics. For the first table we set the output voltage $\mathrm{V_{CE}}$ to be  2 V and in the next table we set the output voltage $\mathrm{V_{CE}}$ to be 3 V.  For these voltages, we took the measurements for the input voltage $\mathrm{V_{BE}}$ and the input current $\mathrm{I_B}$.
 
 \begin{longtable}[H]{|c|c|c|c|c|c|}
     \caption{Table for \( \mathrm{V_{CE}} = 2\) V}
@@ -104,7 +113,7 @@ In the following two tables we noted down the values of necessary quantities for
 
 
 \begin{longtable}[H]{|c|c|c|c|c|c|}
-    \caption{Table for \( \mathrm{V_{CE}} = 3 V\)}
+    \caption{Table for \( \mathrm{V_{CE}} = 3\) V}
     \endfirsthead
     \hline
     $\mathrm{V_{BB} \ (V)}$ & $\mathrm{V_{BE} (V)}$ & $\mathrm{I_B (mA)}$ & $\mathrm{I_C (mA)}$ & $\mathrm{V_{CC} (V)}$ & $\mathrm{V_{CE} (V)}$ \\
@@ -128,7 +137,7 @@ In the following two tables we noted down the values of necessary quantities for
     1.2   & 0.765 & 468          & 93           & 3     & 3             \\ \hline           
 \end{longtable}
 
-From the above graphs we plotted the following graph. The graph shows the input characteristics of the transistor that is the dependency of input voltage and input current for different output voltage. We expected that for output voltage 3 V the graph to lie on the right of the graph for output voltage 2 V.
+From the above graphs we plotted the following graph. The graph shows the input characteristics of the transistor that is the dependency of input voltage and input current for different output voltage. We expected that for output voltage 3 V the graph to lie on the right of the graph for output voltage 2 V. But from our graph we see that the graph corresponding to 3 V lies to the right of 2 V. This is opposite of what we expected.
 
 \begin{figure}[H]
     \centering
@@ -137,7 +146,7 @@ From the above graphs we plotted the following graph. The graph shows the input 
 \end{figure}
 
 \subsection{Output Characteristics}
-The following tables contain data for studying the output characteristics. Here we tabulated the collector current $\mathrm{I_C}$ and output voltage $\mathrm{V_{CE}}$ for different values of input current $I_B$. We took data corresponding to three different values of $I_B$ 25 $\mu$A, 30 $\mu$A and 40 $\mu$A respectively.
+The following tables contain data for studying the output characteristics. Here we tabulated the collector current $\mathrm{I_C}$ and output voltage $\mathrm{V_{CE}}$ for different values of input current $I_B$. We took data corresponding to three different values of $I_B$ 25 $\mu$A, 30 $\mu$A and 40 $\mu$A respectively. For the following data collection we set the resistance \( \mathrm{R_B = 220 \Omega }\) and the resistance \( \mathrm{R_C = 1 k \Omega}\).
 
 \begin{longtable}[H]{|c|c|c|c|c|}
     \caption{Table for \( \mathrm{I_B}\) = 25 \( \mu \)A }
@@ -228,12 +237,37 @@ The following tables contain data for studying the output characteristics. Here 
         8     & 0.921         & 7000         & 40           & 0.6   \\ \hline
 \end{longtable}
 
-In the following figure, we plotted the dependencies of $\mathrm{I_C}$ and $\mathrm{V_{CE}}$. Here we see that initially the graphs are increasing, and then it reaches saturation after some point. We also see that this saturation value increases as \( \mathrm{I_B }\) value increases.
+In the following figure, we plotted the dependencies of $\mathrm{I_C}$ and $\mathrm{V_{CE}}$. Here we see that initially the graphs are increasing, and then it reaches saturation after some point. We know for common emitter configuration, after initial increasing phase when the output characteristics graph saturates it does not saturate to a constant value. It gradually increases very slowly (as can be seen in figure \ref{fig:char}). This is not clear from the figure. From the figure we see that the saturation value remains almost same as \( \mathrm{I_B }\) value increases. So may be the increasing rate is so small that it is getting suppressed by the fluctuation in \( \mathrm{V_{CE}}\) values. 
 \begin{figure}[H]
     \centering
     \includesvg[width = 0.9\textwidth]{./Graphs/Output.svg}
     \caption{Output Characteristics of the Transistor}
 \end{figure}
-   
-\section{Conclusion}
+
+In this curve, we plotted another vertical line at \( \mathrm{V_{CE}}\) = 0.5 V. We see that it intersects with the graph for \( \mathrm{I_B}\) = 25 \( \mu\)A at about \( \mathrm{I_C}\) = 4340 \( \mathrm{\mu}A\), the graph for \( \mathrm{I_B}\) = 30 \( \mu\)A at about \( \mathrm{I_C}\) = 5110 \( \mathrm{\mu}A\), the graph for \( \mathrm{I_B}\) = 40 \( \mu\)A at about \( \mathrm{I_C}\) = 6890 \( \mathrm{\mu}A\). We know \( \mathrm{I_C = \beta I_B} \). So, we get
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+        $\mathrm{I_B}$ & $\mathrm{I_C}$ & \( \beta\) \\ \hline \hline
+        25 & 4340 & 173.6 \\ \hline
+        30 & 5110 & 170.33 \\ \hline
+        40 & 6890 & 172.25 \\ \hline
+    \end{tabular}
+\end{table}
+So, average value of \( \beta \) at 0.5 V is 172.06.
+
+\subsection{Sources of Error}
+The following can be the sources of error observed in this experiment:
+\begin{itemize}
+    \item Different multimeters have different internal resistances. This affect the measurement  of current and voltage. This can induce error while data collection.
+    \item As \( \mathrm{I_B}\) was taken in the microampere region, due to stability of the sources the value of \( \mathrm{I_B}\) was fluctuating a lot. It was not constant as it was supposed to be. This sensitivity may have introduced error in experiment.
+\end{itemize}
+
+\section{Discussion and Conclusion}
+In this experiment, we studied the input and output characteristics of a npn transistor in common emitter configuration. In input characteristics, the curve follows same pattern as the ideal input characteristics curve, but it was observed that the as the output voltages were increased the rate at which the curve increased, also increased, this is opposite of what we expected. One way to tackle it would be to check that this error is due to random fluctuation or not. An example of that is choosing two output voltage that are very different. But then the transistor gets limited by the maximum current that can pass through it. If the current through transistor reaches maximum limit then it gets destroyed from overheating.
+
+In the output characteristics, we noticed initially sudden increase in the output current which is expected. But when it gets saturated it should increase linearly with output voltage slowly. It was not observed in our experiment. This could be due to error in measurements. From the plot we also saw that the parameter \( \beta \) has value about 170.06, which is expected as for transistors \(\beta \) is in the range 100 to 200.
+
 \end{document}
