@@ -1,0 +1,33 @@
+\begin{center}
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[american voltages, scale=1.2, transform shape, font=\scriptsize]
+        % Op-Amp
+        \node[op amp, fill=cyan!20](opamp) at (0,0) {\texttt{op-Amp}};
+        
+        % Input voltage sources
+        \draw (opamp.-) -- ++(-1,0) coordinate (junction) {};
+        \draw (junction) -- ++(0,1.5)  to[R, l_=$\mathrm{R_1}$, *-] ++(-2,0) node[left] {$\mathrm{V_1}$};
+        \draw (junction) ++(0,0.0)  to[R, l_=$\mathrm{R_2}$, *-] ++(-2,0) node[left] {$\mathrm{V_2}$};
+        \draw (junction)--  ++(0,-1.5)  to[R, l_=$\mathrm{R_3}$, *-] ++(-2,0) node[left] {$\mathrm{V_3}$};
+        
+        % Feedback resistor
+        \draw (opamp.-) -- ++(0,2) to[R, l=$\mathrm{R_f}$] ++(2,0) -| (opamp.out);
+        
+        % Ground
+        \draw (opamp.+) to[short] ++(0,-1) node[ground] {};
+        
+        % Output
+        \draw (opamp.out) to[short, -*] ++(1,0) node[right] {$\mathrm{V_{\text{out}}}$};
+    
+        % Power supply connections
+        \draw (opamp.up) to[short] ++(0,0.5) node[above]{$\mathrm{+15V}$};
+        \draw (opamp.down) to[short] ++(0,-0.5) node[below]{$\mathrm{-15V}$};
+    
+        % Labels
+        \node at (opamp.-) [above left] {$\mathrm{-}$};
+        \node at (opamp.+) [above left] {$\mathrm{+}$};
+    \end{circuitikz}
+    \caption{Circuit for op-Amp as an adder}
+\end{figure}
+\end{center}

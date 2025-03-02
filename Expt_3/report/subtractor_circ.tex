@@ -1,0 +1,31 @@
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[american voltages, scale=1.2, transform shape, font=\scriptsize]
+        % Op-Amp
+        \node[op amp, fill=cyan!20](opamp) at (0,0) {\texttt{op-Amp}};
+        
+        % Input V1 (to the inverting terminal)
+        \draw (opamp.-) to[R, l=$\mathrm{R_1}$, *-] ++(-5,0) to[sV, l=$\mathrm{V_1}$, fill=yellow!40] ++(0,-2) node[ground] {};
+        
+        % Input V2 (to the non-inverting terminal)
+        \draw (opamp.+) to[R, l=$\mathrm{R_2}$, *-] ++(-3,0) to[sV, l=$\mathrm{V_2}$, fill=yellow!40] ++(0,-2) node[ground] {};
+        
+        % Feedback resistor
+        \draw (opamp.-) -- ++(0,1.5) to[R, l=$\mathrm{R_3}$] ++(2,0) -| (opamp.out);
+        
+        % Ground for the non-inverting terminal
+        \draw (opamp.+) -- ++(0,-1.5) to[R, l=$\mathrm{R_4}$] ++(0,-1.5) node[ground] {};
+        
+        % Output
+        \draw (opamp.out) to[short, -*] ++(1,0) node[right] {$\mathrm{V_{\text{out}}}$};
+    
+        % Power supply connections
+        \draw (opamp.up) to[short] ++(0,0.5) node[above]{$\mathrm{+15V}$};
+        \draw (opamp.down) to[short] ++(0,-0.5) node[below]{$\mathrm{-15V}$};
+    
+        % Labels
+        \node at (opamp.-) [above left] {$\mathrm{-}$};
+        \node at (opamp.+) [above left] {$\mathrm{+}$};
+    \end{circuitikz}
+    \caption{Circuit diagram for an op-Amp as a subtractor}
+\end{figure}
