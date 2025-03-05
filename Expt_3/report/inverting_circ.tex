@@ -1,29 +1,4 @@
-
-% \begin{center}
-%     \begin{circuitikz}[american voltages, scale =1.3, transform shape]
-%         % Op-Amp
-%         \node[op amp, fill=cyan!20](opamp) at (0,0) {\texttt{op-Amp}};
-        
-%         % Input voltage source
-%         \draw (opamp.-) to[R, l_=$\mathrm{R_i}$, -*] ++(-3,0) to[sV, v=${\mathrm{V_{in}}}$, fill=yellow!40] ++(0,-2) node[ground]{};    
-
-%         % Feedback resistor
-%         \draw (opamp.-) -- ++(0,1.5) to[R, l=$\mathrm{R_f}$] ++(2,0) -| (opamp.out);
-        
-%         % Ground
-%         \draw (opamp.+) to[short] ++(0,-1) node[ground] {};
-        
-%         % Output
-%         \draw (opamp.out) to[short, -*] ++(1,0) node[right] {$V_{\text{out}}$};
-
-%         \draw (opamp.up) to[short] ++(0,0.5) node[above]{$\mathrm{+15V}$};
-%     \draw (opamp.down) to[short] ++(0,-0.5) node[below]{$\mathrm{-15V}$};
-%         % Labels
-%         \node at (opamp.-) [above left] {$-$};
-%         \node at (opamp.+) [above left] {$+$};
-%     \end{circuitikz}
-% \end{center}
-    
+\textbf{op-Amp as Inverting Amplifier:}
 \begin{figure}[H]
     
 \begin{center}
@@ -50,8 +25,18 @@
     
         % Labels
         \node at (opamp.-) [above left] {$-$};
+        \node at (opamp.-) [below] {$v$};
+
+
         \node at (opamp.+) [above left] {$+$};
     \end{circuitikz}
     \end{center}
     \caption{Circuit diagram for an inverting op-Amp}
 \end{figure}
+\noindent
+Since current through op-Amp due to high resistance is almost negligible, from Kirchoff current law at the junction, we get:
+$$\mathrm{\frac{V_{in}-v}{R_i} = \frac{v-V_{out}}{R_f}}$$
+From virtual ground condition,
+$\mathrm{v \approx 0}$
+Hence we obtain an expression for the gain $\mathcal{A}$ as:
+$$\mathrm{V_{out} = -\left(\frac{R_f}{R_i}\right)V_{in}}\implies \boxed{\mathcal{A} = \mathrm{\frac{V_{out}}{V_{in}}= -\left(\frac{R_f}{R_i}\right) }}$$

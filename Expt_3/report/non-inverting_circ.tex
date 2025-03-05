@@ -1,35 +1,4 @@
-
-% \begin{center}
-   
-% \begin{center}
-%     \begin{circuitikz}[american voltages, scale =1.3, transform shape]
-%         % Op-Amp
-%         \node[op amp, fill=cyan!20](opamp) at (0,0) {\texttt{op-Amp}};
-        
-%         % Input voltage source
-%         \draw (opamp.-) to[R, l_=$\mathrm{R_i}$, -*] ++(-2,0) node[ground] {};
-        
-%         % Feedback resistor
-%         \draw (opamp.-) -- ++(0,1.5) to[R, l=$\mathrm{R_f}$] ++(2,0) -| (opamp.out);
-        
-%         % Ground
-%         \draw (opamp.+) to[short] ++(0,-1) to [sV, fill=yellow!40] ++(0,-1) node[left] {$\mathrm{V_{\text{in}}}$} node[ground] {};
-        
-%         % Output
-%         \draw (opamp.out) to[short, -*] ++(1,0) node[right] {$V_{\text{out}}$};
-
-%         \draw (opamp.up) to[short] ++(0,0.5) node[above]{$\mathrm{+15V}$};
-%     \draw (opamp.down) to[short] ++(0,-0.5) node[below]{$\mathrm{-15V}$};
-%         % Labels
-%         \node at (opamp.-) [above left] {$-$};
-%         \node at (opamp.+) [above left] {$+$};
-%     \end{circuitikz}
-% \end{center}
-    
-
-
-% \end{center}
-
+\textbf{op-Amp as Non-Inverting Amplifier:}
 \begin{figure}[H]
 \begin{center}
     \begin{circuitikz}[american voltages, scale=1.2, transform shape, font=\scriptsize]
@@ -55,7 +24,14 @@
         % Labels
         \node at (opamp.-) [above left] {$-$};
         \node at (opamp.+) [above left] {$+$};
+        \node at (opamp.-) [below] {$v$};
+
     \end{circuitikz}
 \end{center}
 \caption{Circuit diagram for an non-inverting op-Amp}
 \end{figure}
+\noindent
+Since current through op-Amp due to high resistance is almost negligible, from Kirchoff current law at the junction, we get:
+$$\mathrm{\frac{-v}{R_i} = \frac{v-V_{out}}{R_f} \implies V_{out} = v\brac{1+\frac{R_f}{R_i}}} $$
+From virtual ground condition, $\mathrm{v \approx V_{in}}$, hence we get an expression for the gain $\mathcal{A}$ as:
+$$\mathrm{V_{out} = V_{in}\brac{1+\frac{R_f}{R_i}}}\implies \boxed{\mathcal{A} = \mathrm{\frac{V_{out}}{V_{in}}= 1+\frac{R_f}{R_i}}}$$
