@@ -77,11 +77,15 @@ a4paper]{geometry}
     \item Study of application of op-Amp as adder and subtractor.
 \end{itemize}
 \section{Theory}
+An operational amplifier is a differential amplifier, which takes two voltage inputs and amplifies the difference between them. An ideal op-Amp has infinite input impedance, zero output impedance and large open loop voltage gain $\mathcal{A}_v^{(o)}$. For the open loop, if $v_+$ and $v_-$ are the voltages at the two input terminals of the op-Amp, we have the output voltage as: $$v_{\text{out}} = \mathcal{A}_v^{(o)}(v_+-v_-)$$
+The output of an op-Amp cannot be arbitrarily high and is limited by the power supply. After a certain point, the output saturates. Op-Amp is very useful in performing mathematical calculations like arithmetic operations, differentiation, integration, etc.  
 \begin{figure}[H]
     \centering
     \includesvg[width=0.5\textwidth]{LM741_Pinout_Square.svg}
     \caption{Real 8 pin op-Amp showing the pin configurations}
 \end{figure}
+\noindent 
+The op-Amp used in this experiment is the LM741, which is an 8 pin IC. The pin configuration of the LM741 is shown above.\\[0.3cm]
 \input{inverting_circ}
 \input{non-inverting_circ}
 \input{adder_circ}
