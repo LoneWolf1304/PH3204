@@ -1,10 +1,10 @@
+\textbf{op-Amp as Adder:}
 \begin{center}
 \begin{figure}[H]
     \centering
     \begin{circuitikz}[american voltages, scale=1.2, transform shape, font=\scriptsize]
         % Op-Amp
         \node[op amp, fill=cyan!20](opamp) at (0,0) {\texttt{op-Amp}};
-        
         % Input voltage sources
         \draw (opamp.-) -- ++(-1,0) coordinate (junction) {};
         \draw (junction) -- ++(0,1.5)  to[R, l_=$\mathrm{R_1}$, *-] ++(-2,0) node[left] {$\mathrm{V_1}$};
@@ -26,8 +26,18 @@
     
         % Labels
         \node at (opamp.-) [above left] {$\mathrm{-}$};
+        \node at (opamp.-) [below] {$\mathrm{V_i}$};
         \node at (opamp.+) [above left] {$\mathrm{+}$};
     \end{circuitikz}
     \caption{Circuit for op-Amp as an adder}
+
 \end{figure}
 \end{center}
+\noindent
+For the circuit shown above, the current through op-Amp is negligible, hence the total current through the three resistors $\mathrm{R_1}$, $\mathrm{R_2}$, $\mathrm{R_3}$ goes through $\mathrm{R_f}$. Applying Kirchoff's current law at the junction, we get: 
+$$ \mathrm{\frac{V_{out} - V_i}{R_f} = \frac{V_i - V_1}{R_1} + \frac{V_i - V_2}{R_2} + \frac{V_i - V_3}{R_3} }$$
+ From the virtual ground condition, $V_i \approx 0$, hence:
+    $$\mathrm{ V_{out} = -  R_f\left(\frac{V_1}{R_1}  + \frac{V_2}{R_2} + \frac{V_3}{R_3} \right) }$$
+    If we take $\mathrm{R_f = R_1 = R_2 = R_3}$, then:
+    $$ \boxed{\mathrm{V_{out} = - (V_1 + V_2 + V_3) }}$$
+    Hence, the circuit acts as an adder, that is, it adds the individual input voltages.

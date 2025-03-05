@@ -1,3 +1,5 @@
+\linebreak
+\textbf{op-Amp as Subtractor:}
 \begin{figure}[H]
     \centering
     \begin{circuitikz}[american voltages, scale=1.2, transform shape, font=\scriptsize]
@@ -24,8 +26,23 @@
         \draw (opamp.down) to[short] ++(0,-0.5) node[below]{$\mathrm{-15V}$};
     
         % Labels
-        \node at (opamp.-) [above left] {$\mathrm{-}$};
-        \node at (opamp.+) [above left] {$\mathrm{+}$};
+        \node at (opamp.-) [above left] {$\mathrm{v_1}$};
+        \node at (opamp.+) [above left] {$\mathrm{v_2}$};
     \end{circuitikz}
-    \caption{Circuit diagram for an op-Amp as a subtractor}
+    \caption{Circuit diagram for op-Amp as a subtractor}
 \end{figure}
+\noindent
+For the circuit shown above, the current through op-Amp is negligible. Thus, using Kirchoff's current law at the junctions, we get:
+\begin{align*}
+    \mathrm{\frac{V_{1} - v_1}{R_1}} &= \mathrm{\frac{v_1 - V_{\text{out}}}{R_3} = \frac{V_1 - V_{\text{out}}}{R_1+R_3}\implies  v_1 = \frac{R_3}{R_1+R_3}(V_1 - V_{\text{out}})+V_{\text{out}}}\\
+    \mathrm{\frac{V_{2} - v_2}{R_2}} &= \mathrm{\frac{v_2-0}{R_4} = \frac{V_2}{R_2+R_4}\implies  v_2 = \frac{R_4}{R_2+R_4}V_2}\\
+\end{align*}
+From the virtual ground condition, $\mathrm{v_1 \approx v_2}$, hence:
+\begin{align*}
+    \mathrm{\frac{R_3}{R_1+R_3}V_1+\frac{R_1}{R_1+R_3}V_{\text{out}} = \frac{R_4}{R_2+R_4}V_2\implies V_{out} = \frac{R_4(R_1+R_3)}{(R_4+R_2)R_1}V_1 - \frac{R_3}{R_1}V_2}
+\end{align*}
+If we take $\mathrm{R_1 = R_2 = R_3 = R_4}$, then:
+\begin{align*}
+    \boxed{\mathrm{V_{\text{out}} = -(V_2 - V_1)}}
+\end{align*}
+Hence, the circuit acts as a subtractor, that is, it subtracts the individual input voltages.
