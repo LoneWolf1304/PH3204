@@ -141,9 +141,9 @@ The op-Amp used in this experiment is the LM741, which is an 8 pin IC. The pin c
     \multicolumn{3}{c|}{$\mathrm{R_i} = \SI{1}{k\Omega}$, $\mathrm{R_f} = \SI{2.2}{k\Omega}$} & 
     \multicolumn{3}{c|}{$\mathrm{R_i} = \SI{10}{k\Omega}$, $\mathrm{R_f} = \SI{22}{k\Omega}$} \\
     \hline
-    \textbf{$V_{\mathrm{in}}$ (V)} & \textbf{$V_{\mathrm{out}}$ (V)} & \textbf{Gain} &
-    \textbf{$V_{\mathrm{in}}$ (V)} & \textbf{$V_{\mathrm{out}}$ (V)} & \textbf{Gain} &
-    \textbf{$V_{\mathrm{in}}$ (V)} & \textbf{$V_{\mathrm{out}}$ (V)} & \textbf{Gain} \\
+    {$\mathrm{V_{in}}$ (V)} & {$\mathrm{V_{out}}$ (V)} & {Gain} &
+    {$\mathrm{V_{in}}$ (V)} & {$\mathrm{V_{out}}$ (V)} & {Gain} &
+    {$\mathrm{V_{in}}$ (V)} & {$\mathrm{V_{out}}$ (V)} & {Gain} \\
     \hline
     0.0    & 0.07  & --    & 0.0    & 0.05  & --    & 0.0    & 0.05  & --    \\\hline
     0.2  & 1.74  & 8.70   & 0.5  & 1.91  & 3.82  & 0.5  & 1.84  & 3.68  \\\hline
@@ -226,5 +226,10 @@ From the measured output voltage and actual value of the different between input
 
 
 \section{Sources of Error}
+\begin{itemize}
+    \item Different multimeters (with different resistances) were used to measure the voltages and hence, the adder and subtractor readings deviated from the theoretical values expected from addition and subtraction since different resistances had different effect on the voltage reading.
+    \item 
+\end{itemize}
 \section{Discussion and Conclusion} 
+Using LM741 IC, we studied the properties of op-Amp as an inverting and non-inverting amplifier and calculated the corresponding gain. Then to demonstrate the use of op-Amp in performing mathematical calculations, we used it as an adder and subtractor and verified that the obtained output voltage was very close to the expected theoretical value. 
 \end{document}

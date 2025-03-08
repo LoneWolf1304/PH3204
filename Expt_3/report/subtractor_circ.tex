@@ -39,10 +39,10 @@ For the circuit shown above, the current through op-Amp is negligible. Thus, usi
 \end{align*}
 From the virtual ground condition, $\mathrm{v_1 \approx v_2}$, hence:
 \begin{align*}
-    \mathrm{\frac{R_3}{R_1+R_3}V_1+\frac{R_1}{R_1+R_3}V_{\text{out}} = \frac{R_4}{R_2+R_4}V_2\implies V_{out} = \frac{R_4(R_1+R_3)}{(R_4+R_2)R_1}V_1 - \frac{R_3}{R_1}V_2}
+    \mathrm{\frac{R_3}{R_1+R_3}V_1+\frac{R_1}{R_1+R_3}V_{\text{out}} = \frac{R_4}{R_2+R_4}V_2\implies V_{out} = \frac{R_4(R_1+R_3)}{(R_4+R_2)R_1}V_2 - \frac{R_3}{R_1}V_1}
 \end{align*}
 If we take $\mathrm{R_1 = R_2 = R_3 = R_4}$, then:
 \begin{align*}
-    \boxed{\mathrm{V_{\text{out}} = -(V_2 - V_1)}}
+    \boxed{\mathrm{V_{\text{out}} = (V_2 - V_1)}}
 \end{align*}
 Hence, the circuit acts as a subtractor, that is, it subtracts the individual input voltages.
