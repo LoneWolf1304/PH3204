@@ -1,0 +1,489 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{svg}
+\usepackage{float}
+\usepackage{longtable} 
+\usepackage{circuitikz}
+\usepackage[margin=1.2in]{geometry}
+
+
+\begin{document}
+\title{Sub-Group: A-7 \\ Experiment 3: Study of Operational Amplifier}
+
+
+\author{Sayan Karmakar \\22MS163 }
+\date{}
+\maketitle
+
+\section{Aim}
+To study operational amplifier (Op-Amp) as inverting and non-inverting amplifier and its application as adder and subtractor.
+
+\section{Theory}
+%==============================================================================================
+%                                   Theory
+%==============================================================================================
+Operational amplifier also called op-amp, is a DC-coupled high-gain electronic voltage amplifier with differential inputs and a single output. In ideal case, the input impedence is kept at infinity and the output impedence is zero. In real case, the input imdepedence can not be at infinite, but it is quite high, and the output impedence is very close to zero. A simple representation for op-amp is shown below,
+%==============================================================================================
+%                                      Op Amp Symbol Representation
+%==============================================================================================
+\begin{figure}[H]
+       \centering
+    \resizebox{0.3\textwidth}{!}{%
+    \begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw (9.5,11.75) node[op amp,scale=1] (opamp2) {};
+    \draw (opamp2.+) to[short] (8,11.25);
+    \draw  (opamp2.-) to[short] (8,12.25);
+    \draw (10.7,11.75) to[short](11,11.75);
+    \node [font=\normalsize] at (9.25,11.82) {A};
+    \node [font=\normalsize] at (7.60,12.25) {$V_{in_1}$};
+    \node [font=\normalsize] at (7.60,11.25) {$V_{in_2}$};
+    \node [font=\normalsize] at (9.25,13.5) {$V_{S+}$};
+    \node [font=\normalsize] at (9.25,10) {$V_{S-}$};
+    \node [font=\normalsize] at (11.25,11.75) {$V_o$};
+    \draw (9.25,12.36) to[short, -o] (9.25,13.20);
+    \draw (9.25,11.14) to[short, -o] (9.25,10.30);
+    \end{circuitikz}
+    }%
+    \label{fig:OA_symbol}
+    \caption{Representation of op-amp}
+\end{figure}
+
+In this picture, $ V_{in_1} $ is inverting input voltage, $ V_{in_2} $ is non-inverting voltage, $ V_o $ is output voltage, $ V_{S+} $ is positive power supply and $ V_{S-} $ is negative power supply. Actual operation amplifiers also has other terminals the helps in biasing the op-amp. When input voltage difference is zero, output voltage should be zero. Biasing means changing the bias voltage so that this happens. Pin configuration of an op-amp are, 
+
+%==============================================================================================
+%                               Op-Amp Pin Configutation
+%==============================================================================================
+\begin{figure}[H]
+    \centering
+    \resizebox{0.6\textwidth}{!}{%
+    \begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw  (11.25,14.5) rectangle (15,9.5);
+    \draw (14,14.5) arc[start angle=0, end angle=-180, radius=0.75cm];
+    \node [font=\normalsize] at (11.5,13.5) {$1$};
+    \node [font=\normalsize] at (11.5,12.5) {$2$};
+    \node [font=\normalsize] at (11.5,11.5) {$3$};
+    \node [font=\normalsize] at (11.5,10.5) {$4$};
+    \node [font=\normalsize] at (14.75,13.5) {$8$};
+    \node [font=\normalsize] at (14.75,12.5) {$7$};
+    \node [font=\normalsize] at (14.75,11.5) {$6$};
+    \node [font=\normalsize] at (14.75,10.5) {$5$};
+    \draw [short] (11,13.5) -- (11.25,13.5);
+    \draw [short] (11,12.5) -- (11.25,12.5);
+    \draw [short] (11,11.5) -- (11.25,11.5);
+    \draw [short] (11,10.5) -- (11.25,10.5);
+    \draw [short] (15.25,13.5) -- (15,13.5);
+    \draw [short] (15.25,12.5) -- (15,12.5);
+    \draw [short] (15.25,11.5) -- (15,11.5);
+    \draw [short] (15.25,10.5) -- (15,10.5);
+    \node [font=\normalsize] at (9.75,13.5) {Offset Null};
+    \node [font=\normalsize] at (9.5,12.5) {Inverting Input};
+    \node [font=\normalsize] at (9,11.5) {Non-inverting Input};
+    \node [font=\normalsize] at (10.5,10.5) {$V_{S-}$};
+    \node [font=\normalsize] at (15.75,13.5) {NC};
+    \node [font=\normalsize] at (15.75,12.5) {$V_{S+}$};
+    \node [font=\normalsize] at (16.5,11.5) {Output ($V_o$)};
+    \node [font=\normalsize] at (16.5,10.5) {Offset Null};
+    \end{circuitikz}
+    }%
+    \label{fig:OA_Pin}
+    \caption{Pin configuration of op-amp}
+\end{figure}
+Even though the amplification for an op-amp is infinite, the output voltage is limited by the supply voltage $ V_{S+} $ and $ V_{S-} $. Some important and useful op-amp circuits are shown below.
+\subsection{Inverting Op-Amp}
+%=============================================================================================
+%                               Inverting Op-amp Picture
+%==============================================================================================
+\begin{figure}[H]
+    \centering
+    \resizebox{0.5\textwidth}{!}{%
+    \begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw (10,11.75) to (10,10.5) node[ground]{};
+    \draw (10,11.75) to[sinusoidal voltage source, sources/symbol/rotate=auto,l={ \normalsize $V_{in}$}] (10,12.75);
+    \draw (10,12.75) to[short] (10,13.25);
+    \draw (10,13.25) to[short] (11,13.25);
+    \draw (11,13.25) to[R,l={ \normalsize $R_i$}] (13,13.25);
+    \draw (14.5,12.75) node[op amp,scale=1, yscale=1 ] (opamp2) {};
+    \draw (opamp2.-) to[short] (13,13.25);
+    \draw  (opamp2.+) to[short] (13,12.25);
+    \draw (15.7,12.75) to[short](16,12.75);
+    \draw (13,12.25) to (13,10.5) node[ground]{};
+    \draw (16,12.75) to[short, -o] (16.5,12.75) ;
+    \draw (13,13.25) to[short] (13,14.5);
+    \draw (13,14.5) to[R,l={ \normalsize $R_f$}] (15.75,14.5);
+    \draw (15.75,14.5) to[short] (15.75,12.75);
+    \draw (14.5,12.25) to[short, -o] (14.5,11.75) ;
+    \draw (14.5,13.25) to[short, -o] (14.5,13.75) ;
+    \node [font=\normalsize] at (10.5,13.5) {$I_{in}$};
+    \node [font=\normalsize] at (15.5,14.75) {$I_f$};
+    \node [font=\normalsize] at (15,13.5) {$V_{S+}$};
+    \node [font=\normalsize] at (15,12) {$V_{S-}$};
+    \node [font=\normalsize] at (17,13) {$V_{out}$};
+    \node [font=\normalsize] at (13,12.9) {$V_a$};
+    \end{circuitikz}
+    }%
+    \label{fig:Inverting_OA}
+    \caption{Inverting Op-amp}
+\end{figure}
+An operational amplifier can be operated as an inverting amplifier as shown in the figure. Biasing supply to op-amp, $ V_{S \pm} $  = $\pm 15$ V must be applied. The voltage gain in inverting op-amp is,
+\begin{equation*}
+A = \frac{V_{out}}{V_{in}} = -\frac{R_f}{R_i}.
+\end{equation*}
+\subsection{Non-inverting Op-Amp}
+%===============================================================================================
+%                               Non inverting Op-amp Picture
+%==============================================================================================
+\begin{figure}[H]
+    \centering
+    \resizebox{0.5\textwidth}{!}{%
+    \begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw (10,12.75) to[short] (10,13.25);
+    \draw (10,13.25) to[short] (11,13.25);
+    \draw (11,13.25) to[R,l={ \normalsize $R_i$}] (13,13.25);
+    \draw (14.5,12.75) node[op amp,scale=1, yscale=1 ] (opamp2) {};
+    \draw (opamp2.-) to[short] (13,13.25);
+    \draw  (opamp2.+) to[short] (13,12.25);
+    \draw (15.7,12.75) to[short](16,12.75);
+    \draw (16,12.75) to[short, -o] (16.5,12.75) ;
+    \draw (13,13.25) to[short] (13,14.5);
+    \draw (13,14.5) to[R,l={ \normalsize $R_f$}] (15.75,14.5);
+    \draw (15.75,14.5) to[short] (15.75,12.75);
+    \draw (14.5,12.25) to[short, -o] (14.5,11.75) ;
+    \draw (14.5,13.25) to[short, -o] (14.5,13.75) ;
+    \node [font=\normalsize] at (10.5,13.5) {$I_{in}$};
+    \node [font=\normalsize] at (15.5,14.75) {$I_f$};
+    \node [font=\normalsize] at (15,13.5) {$V_{S+}$};
+    \node [font=\normalsize] at (15,12) {$V_{S-}$};
+    \node [font=\normalsize] at (17,13) {$V_{out}$};
+    \node [font=\normalsize] at (13,12.9) {$V_a$};
+    \draw (10,12.75) to (10,11.75) node[ground]{};
+    \draw (13,10.75) to[sinusoidal voltage source, sources/symbol/rotate=auto,l={ \normalsize $V_{in}$}] (13,12.25);
+    \draw (13,10.75) to (13,10.5) node[ground]{};
+    \end{circuitikz}
+    }%
+    \caption{Non-inverting Op-Amp}  
+    \label{fig:Noninverting_OA}
+\end{figure}
+An operational amplifier can be operated as a non-inverting amplifier as shown in the figure. For this circuit the gain is, 
+\begin{equation*}
+	A = \frac{V_{out}}{V_{in}} = 1 + \frac{R_f}{R_i}.
+\end{equation*}  
+\subsection{Adder Circuit}
+%==============================================================================================
+%                                       Adder Circuit
+%==============================================================================================
+\begin{figure}[H]
+    \centering
+    \resizebox{0.7\textwidth}{!}{%
+    \begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw (10.5,13.25) to[R,l={ \normalsize $R_2$}] (13,13.25);
+    \draw (12.5,12.5) to[R,l={ \normalsize $R_1$}] (10.5,12.5);
+    \draw (14.5,12.75) node[op amp,scale=1, yscale=1 ] (opamp2) {};
+    \draw (opamp2.-) to[short] (13,13.25);
+    \draw  (opamp2.+) to[short] (13,12.25);
+    \draw (15.7,12.75) to[short](16,12.75);
+    \draw (16,12.75) to[short, -o] (16.5,12.75) ;
+    \draw (13,13.25) to[short] (13,14.5);
+    \draw (13,14.5) to[R,l={ \normalsize $R_f$}] (15.75,14.5);
+    \draw (15.75,14.5) to[short] (15.75,12.75);
+    \draw (14.5,12.25) to[short, -o] (14.5,11.75) ;
+    \draw (14.5,13.25) to[short, -o] (14.5,13.75) ;
+    \node [font=\normalsize] at (10.72,13.5) {$I_{2}$};
+    \node [font=\normalsize] at (15.5,14.75) {$I_f$};
+    \node [font=\normalsize] at (15,13.5) {$V_{S+}$};
+    \node [font=\normalsize] at (15,12) {$V_{S-}$};
+    \node [font=\normalsize] at (17,13) {$V_{out}$};
+    \node [font=\normalsize] at (13,12.9) {$V_a$};
+    \draw (13,12.25) to (13,11) node[ground]{};
+    \draw (10.5,13.25) to[short, -o] (10.25,13.25) ;
+    \draw (8,13.25) to[short, -o] (9.25,13.25) ;
+    \node [font=\normalsize] at (9.75,12.5) {$V_1$};
+    \node [font=\normalsize] at (9.75,13.25) {$V_2$};
+    \draw (8.75,12.5) to[short, -o] (9.25,12.5) ;
+    \draw (10.5,12.5) to[short, -o] (10.25,12.5) ;
+    \draw (10.5,14.25) to[R,l={ \normalsize $R_3$}] (12.5,14.25);
+    \draw (10.5,14.25) to[short, -o] (10.25,14.25) ;
+    \draw (8.75,14.25) to[short, -o] (9.25,14.25) ;
+    \node [font=\normalsize] at (9.75,14.25) {$V_3$};
+    \draw (12.5,14.25) to[short] (12.5,12.5);
+    \draw (8.75,12.5) to (8.75,11.75) node[ground]{};
+    \draw (8,13.25) to (8,11.75) node[ground]{};
+    \draw (7.25,14.25) to (7.25,11.75) node[ground]{};
+    \draw (7.25,14.25) to[short] (8.75,14.25);
+    \node [font=\normalsize] at (10.60,12.75) {$I_1$};
+    \node [font=\normalsize] at (10.60,14.5) {$I_3$};
+    \end{circuitikz}
+    }%
+    \label{fig:OA_Adder}
+    \caption{Adder Circuit}
+\end{figure}
+In the above configuration, the operation amplifier acts as an adder circuit. The output is proportional to the sum of all input voltages $ V_1, V_2, V_3 $. If the resistances $ R_1 = R_2 = R_3 = R_f  $, the output voltage is 
+\begin{equation*}
+	V_{out} = -(V_1 + V_2 + V_3).
+\end{equation*}
+
+\subsection{Subtractor Circuit}
+%==============================================================================================
+%                           Subtractor Circuit Picture
+%==============================================================================================
+\begin{figure}[H]
+    \centering
+    \resizebox{0.65\textwidth}{!}{%
+    \begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw (10.5,13.25) to[R,l={ \normalsize $R_1$}] (13,13.25);
+    \draw (13,12.25) to[R,l={ \normalsize $R_2$}] (10.5,12.25);
+    \draw (14.5,12.75) node[op amp,scale=1, yscale=1 ] (opamp2) {};
+    \draw (opamp2.-) to[short] (13,13.25);
+    \draw  (opamp2.+) to[short] (13,12.25);
+    \draw (15.7,12.75) to[short](16,12.75);
+    \draw (16,12.75) to[short, -o] (16.5,12.75) ;
+    \draw (13,13.25) to[short] (13,14.5);
+    \draw (13,14.5) to[R,l={ \normalsize $R_f$}] (15.75,14.5);
+    \draw (15.75,14.5) to[short] (15.75,12.75);
+    \draw (14.5,12.25) to[short, -o] (14.5,11.75) ;
+    \draw (14.5,13.25) to[short, -o] (14.5,13.75) ;
+    \node [font=\normalsize] at (10.75,12.5) {$I_{2}$};
+    \node [font=\normalsize] at (15.5,14.75) {$I_f$};
+    \node [font=\normalsize] at (15,13.5) {$V_{S+}$};
+    \node [font=\normalsize] at (15,12) {$V_{S-}$};
+    \node [font=\normalsize] at (17,13) {$V_{out}$};
+    \node [font=\normalsize] at (13,13) {$V_a$};
+    \draw (13,10.5) to (13,10.25) node[ground]{};
+    \draw (10.5,13.25) to[short, -o] (10.25,13.25) ;
+    \draw (8,13.25) to[short, -o] (9.25,13.25) ;
+    \node [font=\normalsize] at (9.75,13.25) {$V_1$};
+    \node [font=\normalsize] at (9.75,12.25) {$V_2$};
+    \draw (8.75,12.25) to[short, -o] (9.25,12.25) ;
+    \draw (10.5,12.25) to[short, -o] (10.25,12.25) ;
+    \draw (8.75,12.25) to (8.75,11.5) node[ground]{};
+    \draw (8,13.25) to (8,11.75) node[ground]{};
+    \node [font=\normalsize] at (10.75,13.5) {$I_1$};
+    \draw (13,12.25) to[R,l={ \normalsize $R_4$}] (13,10.5);
+    \node [font=\normalsize] at (13,12.5) {$V_b$};
+    \end{circuitikz}
+    }%
+    \label{fig:Subtractor_OA}
+    \caption{Subtractor Circuit}
+\end{figure}
+In the above configuration, op-amp circuit acts as a subtractor circuit. It subtracts one signal from the other signals. When the resistances $ R_1 = R_2 = R_3 = R_4 $, then the output voltage is 
+\begin{equation*}
+	V_{out} = (V_2 - V_1).
+\end{equation*}
+\section{Data and Calculation}
+In this experiment, we set up circuits for op-amp configurations given above, and for each of the configuration we tabulated the data found.
+\subsection{Inverting Op-Amp}
+We set up the circuit by taking different values of $ R_f $, and different values of $ R_i $.
+ %$ R_f = 2.2\, \mathrm{k \Omega}, 10\, \mathrm{k \Omega}, 22\, \mathrm{k \Omega}, Ri = 1.0\, \mathrm{k \Omega} , 2.2\, \mathrm{k \Omega} $. 
+ We changed the input voltage $ V_{in} $, and for each input voltage, we tabulated the data in the following table.
+\subsubsection{$\mathbf{R_i = 1\, k \Omega}$ and $\mathbf{R_f = 2.2\, k \Omega}$}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$\mathrm{V_{in}}$(Volt) & $\mathrm{V_{out}}$(Volt) & Gain             & Average                            \\ \hline \hline
+		0            & 0.02          &                  & \multirow{11}{*}{2.2773} \\ \cline{1-3}
+		0.5          & 1.22          & 2.44             &                                    \\ \cline{1-3}
+		1            & 2.35          & 2.35             &                                    \\ \cline{1-3}
+		1.5          & 3.39          & 2.26             &                                    \\ \cline{1-3}
+		2            & 4.56          & 2.28             &                                    \\ \cline{1-3}
+		2.5          & 5.64          & 2.256            &                                    \\ \cline{1-3}
+		3            & 6.77          & 2.2567 &                                    \\ \cline{1-3}
+		3.5          & 7.85          & 2.2428 &                                    \\ \cline{1-3}
+		4            & 8.97          & 2.2425           &                                    \\ \cline{1-3}
+		4.5          & 10.02         & 2.2267 &                                    \\ \cline{1-3}
+		5            & 11.09         & 2.218            &                                    \\ \hline
+	\end{tabular}
+\end{table}
+\subsubsection{$\mathbf{R_i = 1\, k \Omega}$ and $\mathbf{R_f = 10\, k \Omega}$}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		$\mathrm{V_{in}}$(Volt) & $\mathrm{V_{out}}$(Volt) & Gain             & Average                            \\ \hline \hline
+		0            & 0.12          &         & \multirow{8}{*}{10.8373} \\ \cline{1-3}
+		0.2          & 2.26          & 11.3    &                                   \\ \cline{1-3}
+		0.4          & 4.56          & 11.4    &                                   \\ \cline{1-3}
+		0.6          & 6.91          & 11.5167 &                                   \\ \cline{1-3}
+		0.8          & 8.91          & 11.1375 &                                   \\ \cline{1-3}
+		1            & 10.52         & 10.52   &                                   \\ \cline{1-3}
+		1.2          & 12.67         & 10.5583 &                                   \\ \cline{1-3}
+		1.4          & 13.2          & 9.4286  &                                   \\ \hline
+	\end{tabular}
+\end{table}
+\subsubsection{$\mathbf{R_i = 10\, k \Omega}$ and $\mathbf{R_f = 22\, k \Omega}$}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$\mathrm{V_{in}}$(Volt) & $\mathrm{V_{out}}$(Volt) & Gain             & Average                            \\ \hline \hline
+		0			 &0.02			&					& \multirow{13}{*}{2.3079} \\ \cline{1-3}
+		0.5          & 1.32          & 2.64             & 						   \\ \cline{1-3}
+		1            & 2.38          & 2.38             &                          \\ \cline{1-3}
+		1.5          & 3.53          & 2.3533 			&                          \\ \cline{1-3}
+		2            & 4.54          & 2.27             &                          \\ \cline{1-3}
+		2.5          & 5.67          & 2.268            &                          \\ \cline{1-3}
+		3            & 6.89          & 2.2967 			&                          \\ \cline{1-3}
+		3.5          & 7.9           & 2.2571			&                          \\ \cline{1-3}
+		4            & 9             & 2.25             &                          \\ \cline{1-3}
+		4.5          & 10.13         & 2.2511		    &                          \\ \cline{1-3}
+		5            & 11.22         & 2.244            &                          \\ \cline{1-3}
+		5.5          & 12.52         & 2.2763 			&                          \\ \cline{1-3}
+		6            & 13.25         & 2.2083 			&                          \\ \hline
+	\end{tabular}
+\end{table}
+\subsubsection{$\mathbf{R_i = 2.2\, k \Omega}$ and $\mathbf{R_f = 10\, k \Omega}$}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$\mathrm{V_{in}}$(Volt) & $\mathrm{V_{out}}$(Volt) & Gain             & Average                            \\ \hline \hline
+		0            & 0.05          &        & \multirow{16}{*}{4.8453} \\ \cline{1-3}
+		0.2          & 1.07          & 5.35   &                          \\ \cline{1-3}
+		0.4          & 2.24          & 5.6    &                          \\ \cline{1-3}
+		0.6          & 2.92          & 4.8667 &                          \\ \cline{1-3}
+		0.8          & 3.99          & 4.9875 &                          \\ \cline{1-3}
+		1            & 4.7           & 4.7    &                          \\ \cline{1-3}
+		1.2          & 5.9           & 4.9167 &                          \\ \cline{1-3}
+		1.4          & 6.76          & 4.8286 &                          \\ \cline{1-3}
+		1.6          & 7.46          & 4.6625 &                          \\ \cline{1-3}
+		1.8          & 8.61          & 4.7833 &                          \\ \cline{1-3}
+		2            & 9.45          & 4.725  &                          \\ \cline{1-3}
+		2.2          & 10.47         & 4.7591 &                          \\ \cline{1-3}
+		2.4          & 11.21         & 4.6709 &                          \\ \cline{1-3}
+		2.6          & 12.37         & 4.7577 &                          \\ \cline{1-3}
+		2.8          & 13.07         & 4.6679 &                          \\ \cline{1-3}
+		3            & 13.21         & 4.4033 &                          \\ \hline
+	\end{tabular}
+\end{table}
+\subsection{Non-Inverting Circuit}
+\subsubsection{$\mathbf{R_i = 2.2\, k \Omega}$ and $\mathbf{R_f = 10\, k \Omega}$}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$\mathrm{V_{in}}$(Volt) & $\mathrm{V_{out}}$(Volt) & Gain             & Average                            \\ \hline \hline
+		0            & 0.07          &        & \multirow{14}{*}{6.0397} \\ \cline{1-3}
+		0.2          & 1.74          & 8.7    &                          \\ \cline{1-3}
+		0.4          & 2.6           & 6.5    &                          \\ \cline{1-3}
+		0.6          & 3.51          & 5.85   &                          \\ \cline{1-3}
+		0.8          & 4.75          & 5.9375 &                          \\ \cline{1-3}
+		1            & 5.71          & 5.71   &                          \\ \cline{1-3}
+		1.2          & 6.93          & 5.775  &                          \\ \cline{1-3}
+		1.4          & 7.96          & 5.6857 &                          \\ \cline{1-3}
+		1.6          & 9.07          & 5.6687 &                          \\ \cline{1-3}
+		1.8          & 10.46         & 5.8111 &                          \\ \cline{1-3}
+		2            & 11.68         & 5.84   &                          \\ \cline{1-3}
+		2.2          & 12.68         & 5.7636 &                          \\ \cline{1-3}
+		2.4          & 13.85         & 5.7708 &                          \\ \cline{1-3}
+		2.6          & 14.31         & 5.5038 &                          \\ \hline
+	\end{tabular}
+\end{table}
+\subsubsection{$\mathbf{R_i = 1\, k \Omega}$ and $\mathbf{R_f = 2.2\, k \Omega}$}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$\mathrm{V_{in}}$(Volt) & $\mathrm{V_{out}}$(Volt) & Gain             & Average                            \\ \hline \hline
+		0            & 0.05          &                  & \multirow{10}{*}{3.3234} 			 \\ \cline{1-3}
+		0.5          & 1.91          & 3.82             &                                    \\ \cline{1-3}
+		1            & 3.31          & 3.31             &                                    \\ \cline{1-3}
+		1.5          & 4.92          & 3.28             &                                    \\ \cline{1-3}
+		2            & 6.57          & 3.285            &                                    \\ \cline{1-3}
+		2.5          & 8.24          & 3.296            &                                    \\ \cline{1-3}
+		3            & 9.73          & 3.2433 			&                                    \\ \cline{1-3}
+		3.5          & 11.51         & 3.2886 			&                                    \\ \cline{1-3}
+		4            & 12.93         & 3.2325           &                                    \\ \cline{1-3}
+		4.5          & 14.2          & 3.1556 			&                                    \\ \hline
+	\end{tabular}
+\end{table}
+\subsubsection{$\mathbf{R_i = 10\, k \Omega}$ and $\mathbf{R_f = 22\, k \Omega}$}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$\mathrm{V_{in}}$(Volt) & $\mathrm{V_{out}}$(Volt) & Gain             & Average                            \\ \hline \hline
+		0            & 0.05          &        & \multirow{10}{*}{3.3902} \\ \cline{1-3}
+		0.5          & 1.84          & 3.68   &                          \\ \cline{1-3}
+		1            & 3.55          & 3.55   &                          \\ \cline{1-3}
+		1.5          & 5.15          & 3.4333 &                          \\ \cline{1-3}
+		2            & 6.76          & 3.38   &                          \\ \cline{1-3}
+		2.5          & 8.39          & 3.356  &                          \\ \cline{1-3}
+		3            & 10.07         & 3.3567 &                          \\ \cline{1-3}
+		3.5          & 11.55         & 3.3    &                          \\ \cline{1-3}
+		4            & 13.06         & 3.265  &                          \\ \cline{1-3}
+		4.5          & 14.36         & 3.1911 &                          \\ \hline
+	\end{tabular}
+\end{table}
+\subsection{Adder Circuit}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		V$_1$(Volt) & V$_2$(Volt) & V$_3$(Volt) & V$_\mathrm{out}$(Volt) & Actual \\ \hline \hline
+		0                    & 0                    & 0.01                 & 0.02                   & 0.01            \\ \hline
+		1                    & 1.06                 & 1.07                 & 3.18                   & 3.13            \\ \hline
+		1                    & 0.68                 & 1.08                 & 2.79                   & 2.76            \\ \hline
+		1.5                  & 1.01                 & 1.28                 & 3.83                   & 3.79            \\ \hline
+		1.5                  & 0.85                 & 0.85                 & 3.25                   & 3.2             \\ \hline
+		2                    & 1.12                 & 1.33                 & 4.47                   & 4.45            \\ \hline
+		2                    & 2.09                 & 1.12                 & 5.22                   & 5.21            \\ \hline
+		2.5                  & 1.52                 & 1.66                 & 5.66                   & 5.68            \\ \hline
+		3.1                  & 1.72                 & 2.57                 & 7.33                   & 7.39            \\ \hline
+		3.1                  & 2.68                 & 2.57                 & 8.28                   & 8.35            \\ \hline
+		3.5                  & 2.91                 & 2.91                 & 9.21                   & 9.32            \\ \hline
+		4                    & 2.96                 & 3.22                 & 9.96                   & 10.18           \\ \hline
+		4.5                  & 3.36                 & 2.37                 & 10.01                  & 10.23           \\ \hline
+		4.5                  & 4.35                 & 2.9                  & 11.44                  & 11.75           \\ \hline
+		5                    & 2.55                 & 2.53                 & 9.88                   & 10.08           \\ \hline
+	\end{tabular}
+\end{table}
+\subsection{Subtractor Circuit}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		V$_1$(Volt) & V$_2$(Volt) & V$_\mathrm{out}$(Volt) & V$_2$-V$_1$(Volt) \\ \hline \hline
+		1                    & 0.79                 & 0.29                   & -0.21                       \\ \hline
+		2                    & 1.45                 & 0.54                   & -0.55                       \\ \hline
+		2.5                  & 2.52                 & 0.06                   & 0.02                        \\ \hline
+		2.5                  & 1.82                 & 0.65                   & -0.68                       \\ \hline
+		4.3                  & 2.91                 & 1.39                   & -1.39                       \\ \hline
+		5                    & 3.37                 & 1.6                    & -1.63                       \\ \hline
+		5.5                  & 4.29                 & 1.15                   & -1.21                       \\ \hline
+		6                    & 4.32                 & 1.58                   & -1.68                       \\ \hline
+		6.5                  & 4.38                 & 2.02                   & -2.12                       \\ \hline
+		7                    & 4.64                 & 2.21                   & -2.36                       \\ \hline
+		7.5                  & 5.23                 & 2.06                   & -2.27                       \\ \hline
+		8                    & 5.52                 & 2.18                   & -2.48                       \\ \hline
+		8.5                  & 6.62                 & 1.54                   & -1.88                       \\ \hline
+		9                    & 7.32                 & 1.48                   & -1.68                       \\ \hline
+		9.5                  & 7.67                 & 1.56                   & -1.83                       \\ \hline
+		10                   & 8.19                 & 1.64                   & 1.81                        \\ \hline
+	\end{tabular}
+\end{table}
+\section{Discussion and Conclusion}
+
+\end{document}
