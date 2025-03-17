@@ -74,7 +74,7 @@ a4paper]{geometry}
 \section{Aim}
 \begin{itemize}
     \item Study of op-Amp as inverting and non-inverting amplifiers.
-    \item Study of application of op-Amp as adder and subtractor.
+    \item Study the application of op-Amp as adder and subtractor.
 \end{itemize}
 \section{Theory}
 An operational amplifier is a differential amplifier, which takes two voltage inputs and amplifies the difference between them. An ideal op-Amp has infinite input impedance, zero output impedance and large open loop voltage gain $\mathcal{A}_v^{(o)}$. For the open loop, if $v_+$ and $v_-$ are the voltages at the two input terminals of the op-Amp, we have the output voltage as: $$v_{\text{out}} = \mathcal{A}_v^{(o)}(v_+-v_-)$$
@@ -82,16 +82,17 @@ The output of an op-Amp cannot be arbitrarily high and is limited by the power s
 \begin{figure}[H]
     \centering
     \includesvg[width=0.5\textwidth]{LM741_Pinout_Square.svg}
-    \caption{Real 8 pin op-Amp showing the pin configurations}
+    \caption{LM741 IC as an op-Amp, showing the pin configurations}
 \end{figure}
 \noindent 
-The op-Amp used in this experiment is the LM741, which is an 8 pin IC. The pin configuration of the LM741 is shown above.\\[0.3cm]
+The op-Amp used in this experiment is the LM741, which is an 8 pin IC. The pin configuration of the LM741 is shown above.\\[0.3cm] $\mathrm{V}_+$ and $\mathrm{V}_-$ denote the supply voltage to the op-Amp. Offset Null refers to a calibration feature in the op-Amp that allows adjusting the output voltage to zero when the input is zero, compensating for internal voltage discrepancies. The NC stands for Not Connected Terminal which is used as a filler space, so that the number of pins become even and it becomes easier to place the IC on the breadboard. \\[0.3cm]
 \input{inverting_circ}
 \input{non-inverting_circ}
 \input{adder_circ}
 \input{subtractor_circ.tex}
 \section{Data and Calculation}
-\begin{table}[h!]
+In the first part, we studied the op-Amp as an inverting amplifier and obtained the gained by changing different values of the input and the feedback resistances. We then compared the average gain obtained to the theoretical value obtained from the ratio of the resistances.
+\begin{table}[H]
     \centering
     \small % Reduce font size for better fit
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
@@ -129,8 +130,8 @@ The op-Amp used in this experiment is the LM741, which is an 8 pin IC. The pin c
     \caption{Experimental data for different $\mathrm{R_i}$ and $\mathrm{R_f}$ values with average gains for op-Amp as an inverting amplifier.}
     \label{tab:multi_column_table}
 \end{table}
-
-
+\noindent
+In the second part, we studied the op-Amp as an non-inverting amplifier and obtained the gained by changing different values of the input and the feedback resistances. We then compared the average gain obtained to the theoretical value obtained from the ratio of the resistances.
 
 \begin{table}[H]
     \centering
@@ -167,7 +168,8 @@ The op-Amp used in this experiment is the LM741, which is an 8 pin IC. The pin c
     \caption{Experimental data for different $\mathrm{R_i}$ and $\mathrm{R_f}$ values with average gains for op-Amp as a non-inverting amplifier.}
     \label{tab:multi_column_table}
 \end{table}
-
+\noindent
+In the third part, we studied the op-Amp as an adder. From the main voltage from the power supply, we took two branches in parallel and used different resistances across each branch to obtain three different input voltages which we used as input to the op-Amp and calculated the corresponding output voltage.
 
 
 \begin{table}[H]
@@ -196,6 +198,8 @@ The op-Amp used in this experiment is the LM741, which is an 8 pin IC. The pin c
     \end{table}
     \noindent
     From the measured output voltage and actual value of the addition between input voltages, we can see that both the values are very close to each other. Thus, we showed the op-Amp as a adder.
+    \noindent\\[0.4cm]
+In the fourth part, we studied the op-Amp as a subtractor. From the main voltage from the power supply, we took another branch in parallel and used different resistance across this branch to obtain another input voltage which we used as input to the op-Amp and calculated the corresponding output voltage.
     \begin{table}[H]
         \centering
         \begin{tabular}{|c|c|c|c|}
@@ -228,7 +232,7 @@ From the measured output voltage and actual value of the different between input
 \section{Sources of Error}
 \begin{itemize}
     \item Different multimeters (with different resistances) were used to measure the voltages and hence, the adder and subtractor readings deviated from the theoretical values expected from addition and subtraction since different resistances had different effect on the voltage reading.
-    \item 
+    \item There could be some error in the measurement of the resistances and the voltage readings due to internal resistance of the multimeter. Thus, the gains could have been slightly different from the theoretical values.
 \end{itemize}
 \section{Discussion and Conclusion} 
 Using LM741 IC, we studied the properties of op-Amp as an inverting and non-inverting amplifier and calculated the corresponding gain. Then to demonstrate the use of op-Amp in performing mathematical calculations, we used it as an adder and subtractor and verified that the obtained output voltage was very close to the expected theoretical value. 

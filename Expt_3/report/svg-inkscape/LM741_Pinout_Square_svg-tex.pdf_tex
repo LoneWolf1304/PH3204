@@ -50,12 +50,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.69598907)%
+  \begin{picture}(1,0.69269435)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{LM741_Pinout_Square_svg-tex.pdf}}%
     \put(0.14585309,-0){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}\textit{ }\end{tabular}}}}%
-    \put(0.66292835,0.02370501){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c} \end{tabular}}}}%
+    \put(0.66292835,0.023705){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c} \end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{LM741_Pinout_Square_svg-tex.pdf}}%
     \put(0.31854199,0.57699107){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{LM741_Pinout_Square_svg-tex.pdf}}%
@@ -67,17 +67,17 @@
     \put(0,0){\includegraphics[width=\unitlength,page=6]{LM741_Pinout_Square_svg-tex.pdf}}%
     \put(0.75720084,0.57626304){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}8\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=7]{LM741_Pinout_Square_svg-tex.pdf}}%
-    \put(0.75783868,0.48095297){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}7\end{tabular}}}}%
+    \put(0.75783868,0.48095296){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}7\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=8]{LM741_Pinout_Square_svg-tex.pdf}}%
-    \put(0.75837238,0.38523936){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}6\end{tabular}}}}%
+    \put(0.75837238,0.38523935){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}6\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=9]{LM741_Pinout_Square_svg-tex.pdf}}%
     \put(0.75816411,0.2902547){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}5\end{tabular}}}}%
     \put(0.81449423,0.57983195){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}NC\end{tabular}}}}%
-    \put(0.26415284,0.58078405){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}Offset null\end{tabular}}}}%
+    \put(0.26415284,0.58078404){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}Offset null\end{tabular}}}}%
     \put(0.53809951,0.23555576){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}LM741\end{tabular}}}}%
     \put(0.24245286,0.29229544){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}V\end{tabular}}}}%
     \put(0.26415284,0.41606942){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}Non-inverting\\input\end{tabular}}}}%
-    \put(0.26415284,0.51128019){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}Inverting input\end{tabular}}}}%
+    \put(0.26415284,0.51128018){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}Inverting input\end{tabular}}}}%
     \put(0.81207674,0.3908386){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Output\end{tabular}}}}%
     \put(0.81207674,0.29419964){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Offset null\end{tabular}}}}%
     \put(0.84418494,0.48652544){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}V\end{tabular}}}}%
