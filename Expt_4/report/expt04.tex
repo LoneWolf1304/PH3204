@@ -1,0 +1,177 @@
+\documentclass{scrartcl}
+\usepackage{pgfplots}
+\usepackage{makecell}
+\usepackage{multirow} % For merged cells
+\usepackage{booktabs} % For better table formatting
+\usepackage{calc}
+\usepackage{Style_File}
+\usepackage{circuitikz}
+\usepackage{fancyhdr}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+% Recommended preamble:
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{backgrounds}
+\usepgfplotslibrary{patchplots}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{%
+    layers/standard/.define layer set={%
+        background,axis background,axis grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis foreground%
+    }{
+        grid style={/pgfplots/on layer=axis grid},%
+        tick style={/pgfplots/on layer=axis ticks},%
+        axis line style={/pgfplots/on layer=axis lines},%
+        label style={/pgfplots/on layer=axis descriptions},%
+        legend style={/pgfplots/on layer=axis descriptions},%
+        title style={/pgfplots/on layer=axis descriptions},%
+        colorbar style={/pgfplots/on layer=axis descriptions},%
+        ticklabel style={/pgfplots/on layer=axis tick labels},%
+        axis background@ style={/pgfplots/on layer=axis background},%
+        3d box foreground style={/pgfplots/on layer=axis foreground},%
+    },
+}
+
+
+\setlength{\headheight}{0.75in}
+\setlength{\oddsidemargin}{0in}
+        \setlength{\evensidemargin}{0in}
+        \setlength{\textwidth}{6.5in}
+        \setlength{\headwidth}{7.3in}
+        \setlength{\textheight}{8.75in}
+        \rfoot{\thepage}
+        \renewcommand{\headrulewidth}{0pt} % Remove the header line
+        \renewcommand{\footrulewidth}{0pt}
+\fancyhead[L,C]{}
+\fancyhead[L]{PH3204: Experiment 4}
+\fancyhead[R]{0\thepage}
+\fancyhead[C]{ Boolean Algebra}
+\fancyfoot[C]{0\thepage}
+\fancyfoot[R,L]{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+
+
+\usepackage{siunitx}
+\usepackage{longtable} 
+\usepackage[left = 0.7in,
+right = 0.7in,
+bottom = 0.9in,
+top = 0.9in,
+a4paper]{geometry}
+
+\title{
+        \Large\textsc{Experiment 03: }
+        \huge\textbf{Study of Boolean Algebra} \\
+}
+
+
+\author{{\Large Sagnik Seth} -\   \texttt{22MS026}\\ ({\small Subgroup - A7}) }
+\date{}
+
+
+\begin{document}
+\maketitle
+\section{Aim}
+To study the basic laws of Boolean Algebra and verify them using implementation of logic gates using Integrated Circuits.
+\section{Theory}
+\section{Verification of Truth Tables and Observations}
+\begin{figure}[H]
+    \centering
+    \input{eg1_circ.tex}
+    \caption{Logic Gate circuit diagram for for Example 1}
+\end{figure}
+\begin{table}[H]
+    \centering
+    \caption{Truth Table for \( Y = \overline{\mathrm{A}}\mathrm{B}(\mathrm{C + D}) \)}
+    \vspace{0.2cm}
+    \begin{tabular}{|c|c|c|c||c|}
+    \hline
+    \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{Y} \\
+    \hline
+    0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 0 \\
+    0 & 0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 1 & 0 \\
+    0 & 1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 1 & 1 \\
+    0 & 1 & 1 & 0 & 1 \\
+    0 & 1 & 1 & 1 & 1 \\
+    1 & 0 & 0 & 0 & 0 \\
+    1 & 0 & 0 & 1 & 0 \\
+    1 & 0 & 1 & 0 & 0 \\
+    1 & 0 & 1 & 1 & 0 \\
+    1 & 1 & 0 & 0 & 0 \\
+    1 & 1 & 0 & 1 & 0 \\
+    1 & 1 & 1 & 0 & 0 \\
+    1 & 1 & 1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+    \end{table}
+\begin{figure}[H]
+    \centering
+    \input{eg2_circ.tex}
+    \caption{Logic Gate circuit diagram for for Example 2}
+
+\end{figure}
+\begin{table}[H]
+    \centering
+    \caption{Truth Table for \( Y = \mathrm{\overline{A}\,\overline{C} + \overline{A}\,\overline{D} + \overline{B}} \)}
+    \vspace{0.2cm}
+    \begin{tabular}{|c|c|c|c||c|}
+    \hline
+    \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{Y} \\
+    \hline
+    0 & 0 & 0 & 0 & 1 \\
+    0 & 0 & 0 & 1 & 1 \\
+    0 & 0 & 1 & 0 & 1 \\
+    0 & 0 & 1 & 1 & 1 \\
+    0 & 1 & 0 & 0 & 1 \\
+    0 & 1 & 0 & 1 & 1 \\
+    0 & 1 & 1 & 0 & 1 \\
+    0 & 1 & 1 & 1 & 0 \\
+    1 & 0 & 0 & 0 & 1 \\
+    1 & 0 & 0 & 1 & 1 \\
+    1 & 0 & 1 & 0 & 1 \\
+    1 & 0 & 1 & 1 & 1 \\
+    1 & 1 & 0 & 0 & 1 \\
+    1 & 1 & 0 & 1 & 0 \\
+    1 & 1 & 1 & 0 & 0 \\
+    1 & 1 & 1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+    \end{table}
+\begin{figure}[H]
+    \centering
+    \input{eg3_circ.tex}
+    \caption{Logic Gate circuit diagram for for Example 3}
+\end{figure}
+\begin{table}[H]
+    \centering
+    \caption{Truth Table for \(\mathrm{ Y = \overline{A}\,\overline{B} + \overline{D} + \overline{C} }\)}
+    \vspace{0.2cm}
+    \begin{tabular}{|c|c|c|c||c|}
+    \hline
+    \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{Y} \\
+    \hline
+    0 & 0 & 0 & 0 & 1 \\
+    0 & 0 & 0 & 1 & 1 \\
+    0 & 0 & 1 & 0 & 1 \\
+    0 & 0 & 1 & 1 & 1 \\
+    0 & 1 & 0 & 0 & 1 \\
+    0 & 1 & 0 & 1 & 1 \\
+    0 & 1 & 1 & 0 & 1 \\
+    0 & 1 & 1 & 1 & 0 \\
+    1 & 0 & 0 & 0 & 1 \\
+    1 & 0 & 0 & 1 & 1 \\
+    1 & 0 & 1 & 0 & 1 \\
+    1 & 0 & 1 & 1 & 0 \\
+    1 & 1 & 0 & 0 & 1 \\
+    1 & 1 & 0 & 1 & 1 \\
+    1 & 1 & 1 & 0 & 1 \\
+    1 & 1 & 1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+    \end{table}
+\section{Sources of Error}
+\section{Discussion and Conclusion}
+\end{document}
