@@ -60,7 +60,7 @@ top = 0.9in,
 a4paper]{geometry}
 
 \title{
-        \Large\textsc{Experiment 03: }
+        \Large\textsc{Experiment 04: }
         \huge\textbf{Study of Boolean Algebra} \\
 }
 
@@ -74,6 +74,97 @@ a4paper]{geometry}
 \section{Aim}
 To study the basic laws of Boolean Algebra and verify them using implementation of logic gates using Integrated Circuits.
 \section{Theory}
+Boolean Algebra deals with logical operations of binary variables. A Boolean function $f$ is generally defined as $f: \{0,1\}^k \rightarrow \{0,1\} $, that is, it takes input from $k$ cartesian products of the set $\{0,1\}$ and returns a single output which can be 0 or 1. The basic boolean functions are: 
+\begin{itemize}
+    \item \textbf{NOT Gate}\\[0.3cm]
+    It is a unary operator which takes a single input and returns the negation of the input. It is represented by the symbol $\overline{\mathrm{A}}$. If input is 1, it return 0 and if input is 0, it returns 1.
+    \begin{figure}[H]
+        \centering
+        \begin{circuitikz}
+            \draw (0,0) node[ieeestd not port, fill=cyan!40!white] (mynot) {};
+            \draw (mynot.in) -- ++(-1,0) node[left] {A};
+            \draw (mynot.out) -- ++(1,0) node[right] {Y};
+        \end{circuitikz}
+        \caption{Representation of NOT Gate}
+    \end{figure}
+    \item \textbf{AND Gate}\\[0.3cm]
+    It is a binary operator which takes two inputs and returns the logical AND of the inputs. It is represented by the symbol $\mathrm{A}\cdot \mathrm{B}$. It returns 1 only if both inputs are 1, otherwise it returns 0.
+    \begin{figure}[H]
+        \centering
+        \begin{circuitikz}
+            \draw (0,0) node[ieeestd and port, fill=cyan!40!white] (myand) {};
+            \draw (myand.in 1) -- ++(-1,0) node[left] {A};
+            \draw (myand.in 2) -- ++(-1,0) node[left] {B};
+            \draw (myand.out) -- ++(1,0) node[right] {Y};
+        \end{circuitikz}
+        \caption{Representation of AND Gate}
+    \end{figure}
+    \item  \textbf{OR Gate}\\[0.3cm]
+    It is a binary operator which takes two inputs and returns the logical OR of the inputs. It is represented by the symbol $\mathrm{A} + \mathrm{B}$. It returns 1 if any of the inputs is 1, otherwise it returns 0.
+    \begin{figure}[H]
+        \centering
+        \begin{circuitikz}
+            \draw (0,0) node[ieeestd or port, fill=cyan!40!white] (myor) {};
+            \draw (myor.in 1) -- ++(-1,0) node[left] {A};
+            \draw (myor.in 2) -- ++(-1,0) node[left] {B};
+            \draw (myor.out) -- ++(1,0) node[right] {Y};
+        \end{circuitikz}
+        \caption{Representation of OR Gate}
+    \end{figure}
+    \item \textbf{XOR Gate}\\[0.3cm]
+    It is a binary operator which takes two inputs and returns the logical XOR of the inputs. It is represented by the symbol $\mathrm{A} \oplus \mathrm{B}$. It can be showed that the expression for XOR is equivalent to $\mathrm{\overline{A}B+A\overline{B}}$. It returns 1 if the inputs are different, otherwise it returns 0.
+    \begin{figure}[H]
+        \centering
+        \begin{circuitikz}
+            \draw (0,0) node[ieeestd xor port, fill=cyan!40!white] (myxor) {};
+            \draw (myxor.in 1) -- ++(-1,0) node[left] {A};
+            \draw (myxor.in 2) -- ++(-1,0) node[left] {B};
+            \draw (myxor.out) -- ++(1,0) node[right] {Y};
+        \end{circuitikz}
+        \caption{Representation of XOR Gate}
+    \end{figure}
+    \item \textbf{NAND Gate}\\[0.3cm]
+    It is a binary operator which takes two inputs and returns the logical NAND of the inputs. It is represented by the symbol $\overline{\mathrm{A} \mathrm{B}}$. Thus, it is a composition of AND and NOT operations. From de Morgan's law, it can be shown that NAND is equivalent to $\overline{\mathrm{A}} + \overline{\mathrm{B}}$. 
+    \begin{figure}[H]
+        \centering
+        \begin{circuitikz}
+            \draw (0,0) node[ieeestd nand port, fill=cyan!40!white] (mynand) {};
+            \draw (mynand.in 1) -- ++(-1,0) node[left] {A};
+            \draw (mynand.in 2) -- ++(-1,0) node[left] {B};
+            \draw (mynand.out) -- ++(1,0) node[right] {Y};
+        \end{circuitikz}
+        \caption{Representation of NAND Gate}
+    \end{figure}
+    \item \textbf{NOR Gate}
+    It is a binary operator which takes two inputs and returns the logical NOR of the inputs. It is represented by the symbol $\overline{\mathrm{A} + \mathrm{B}}$. Thus, it is a composition of OR and NOT operations. From de Morgan's law, it can be shown that NOR is equivalent to $\overline{\mathrm{A}} \cdot \overline{\mathrm{B}}$.
+    \begin{figure}[H]
+        \centering
+        \begin{circuitikz}
+            \draw (0,0) node[ieeestd nor port, fill=cyan!40!white] (mynor) {};
+            \draw (mynor.in 1) -- ++(-1,0) node[left] {A};
+            \draw (mynor.in 2) -- ++(-1,0) node[left] {B};
+            \draw (mynor.out) -- ++(1,0) node[right] {Y};
+        \end{circuitikz}
+        \caption{Representation of NOR Gate}
+    \end{figure}
+\end{itemize}
+\begin{table}[H]
+    \centering
+    \label{tab:truth_table}
+    \renewcommand{\arraystretch}{1.5} % Increase row height
+    \begin{tabular}{|c|c||c|c|c|c|c|}
+    \hline
+    \textbf{A} & \textbf{B} & {$AB$} & {$A + B$} & {$\overline{AB}$} & {$\overline{A+B}$} & {$A \oplus B$} \\
+    \hline
+    0 & 0 & 0 & 0 & 1 & 1 & 0 \\
+    0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+    1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+    1 & 1 & 1 & 1 & 0 & 0 & 0 \\
+    \hline
+    \end{tabular}
+    \renewcommand{\arraystretch}{1} % Reset to default
+    \caption{Truth Table for the above logical operations}
+\end{table}
 \section{Verification of Truth Tables and Observations}
 \begin{figure}[H]
     \centering

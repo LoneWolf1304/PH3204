@@ -1,21 +1,21 @@
 \begin{circuitikz}
     % Draw the AND gate
-    \node[american nor port, fill=cyan!20] (nor) at (0,0) {};
+    \node[ieeestd nor port, fill=cyan!20] (nor) at (0,0) {};
 
     % Draw the OR gate
-    \node[and port, fill=cyan!20] (and) at (0,-4) {};
+    \node[ieeestd and port, fill=cyan!20] (and) at (0,-4) {};
 
     % Draw the NAND gate
-    \node[or port, fill=cyan!20] (or) at (3,-2) {};
+    \node[ieeestd or port, fill=cyan!20] (or) at (3,-2) {};
 
     % Draw the NOR gate
-    \node[american nand port, fill=cyan!20] (nand) at (6,-1) {};
+    \node[ieeestd nand port, fill=cyan!20] (nand) at (6,-1) {};
 
     % Draw the XOR gate
-    \node[and port, fill=cyan!20] (and2) at (6,-3.72) {};
+    \node[ieeestd and port, fill=cyan!20] (and2) at (6,-3.72) {};
 
     % Draw the final AND gate
-    \node[american xor port, fill=cyan!20] (xor) at (9,-2) {};
+    \node[ieeestd xor port, fill=cyan!20] (xor) at (9,-2) {};
 
     % Connect the AND gate to the NAND gate
     \draw (nor.in 2) -- ++(-0,-1) |- (or.in 1);
