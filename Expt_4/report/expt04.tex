@@ -165,15 +165,28 @@ Boolean Algebra deals with logical operations of binary variables. A Boolean fun
     \renewcommand{\arraystretch}{1} % Reset to default
     \caption{Truth Table for the above logical operations}
 \end{table}
+The logic gates can be implemented using Integrated Circuit (IC). They generally have 14 pins and multiple gates of the same kind are implemented on the same IC chip. The ICs used in this experiment are:
+\begin{itemize}
+    \item  IC 7408 (AND Gate)
+    \item IC 7432 (OR Gate)
+    \item IC 7404 (NOT Gate)
+    \item IC 7400 (NAND Gate)
+    \item IC 7402 (NOR Gate)
+    \item IC 7486 (XOR Gate)
+
+\end{itemize}
+ Each of these chips have a V\textsubscript{CC} and Ground terminal which connects it to the main circuit. 
 \section{Verification of Truth Tables and Observations}
+\textbf{Example 1:}
 \begin{figure}[H]
     \centering
     \input{eg1_circ.tex}
     \caption{Logic Gate circuit diagram for for Example 1}
 \end{figure}
+The analytic expression for the above circuit was found out to be: $$\mathrm{Q = \overline{A}B(C+D)}$$
 \begin{table}[H]
     \centering
-    \caption{Truth Table for \( Y = \overline{\mathrm{A}}\mathrm{B}(\mathrm{C + D}) \)}
+    \caption{Truth Table for \( \mathrm{Q} = \overline{\mathrm{A}}\mathrm{B}(\mathrm{C + D}) \)}
     \vspace{0.2cm}
     \begin{tabular}{|c|c|c|c||c|}
     \hline
@@ -198,15 +211,21 @@ Boolean Algebra deals with logical operations of binary variables. A Boolean fun
     \hline
     \end{tabular}
     \end{table}
-\begin{figure}[H]
+    \noindent
+    We created the circuit on the breadboard using the integrated circuits and connected all the components. Then, using an LED Bulb, we verified the above truth table for the circuit shown. For all configurations of the 4 inputs, the output in the circuit matched with the theoretical truth table, that is, the LED bulb glowed when the output was 1 and it did not glow when the output was 0. \\[0.2cm]
+    \textbf{Example 2:}  
+    \begin{figure}[H]
     \centering
     \input{eg2_circ.tex}
     \caption{Logic Gate circuit diagram for for Example 2}
 
 \end{figure}
+The analytic expression for the above circuit was found out to be: 
+$$\mathrm{Q = \overline{A}\ \overline{C}+ \overline{A}\ \overline{D} + \overline{B}}$$
+
 \begin{table}[H]
     \centering
-    \caption{Truth Table for \( Y = \mathrm{\overline{A}\,\overline{C} + \overline{A}\,\overline{D} + \overline{B}} \)}
+    \caption{Truth Table for \( \mathrm{Q} = \mathrm{\overline{A}\,\overline{C} + \overline{A}\,\overline{D} + \overline{B}} \)}
     \vspace{0.2cm}
     \begin{tabular}{|c|c|c|c||c|}
     \hline
@@ -231,14 +250,19 @@ Boolean Algebra deals with logical operations of binary variables. A Boolean fun
     \hline
     \end{tabular}
     \end{table}
+    \noindent
+    We created the circuit on the breadboard using the integrated circuits and connected all the components. Then, using an LED Bulb, we verified the above truth table for the circuit shown. For all configurations of the 4 inputs, the output in the circuit matched with the theoretical truth table, that is, the LED bulb glowed when the output was 1 and it did not glow when the output was 0. \\[0.2cm]
+    \textbf{Example 3:}  
 \begin{figure}[H]
     \centering
     \input{eg3_circ.tex}
     \caption{Logic Gate circuit diagram for for Example 3}
 \end{figure}
+The analytic expression for the above circuit was found out to be: 
+$$\mathrm{Q = \overline{A}\ \overline{B}+ \overline{C} + \overline{D}}$$
 \begin{table}[H]
     \centering
-    \caption{Truth Table for \(\mathrm{ Y = \overline{A}\,\overline{B} + \overline{D} + \overline{C} }\)}
+    \caption{Truth Table for \(\mathrm{ \mathrm{Q} = \overline{A}\,\overline{B} + \overline{D} + \overline{C} }\)}
     \vspace{0.2cm}
     \begin{tabular}{|c|c|c|c||c|}
     \hline
@@ -263,6 +287,8 @@ Boolean Algebra deals with logical operations of binary variables. A Boolean fun
     \hline
     \end{tabular}
     \end{table}
+    \noindent
+    We created the circuit on the breadboard using the integrated circuits and connected all the components. Then, using an LED Bulb, we verified the above truth table for the circuit shown. For all configurations of the 4 inputs, the output in the circuit matched with the theoretical truth table, that is, the LED bulb glowed when the output was 1 and it did not glow when the output was 0. \\[0.2cm]
 \section{Sources of Error}
 \section{Discussion and Conclusion}
 \end{document}
