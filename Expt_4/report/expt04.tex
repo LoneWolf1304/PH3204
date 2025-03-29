@@ -175,8 +175,10 @@ The logic gates can be implemented using Integrated Circuit (IC). They generally
     \item IC 7486 (XOR Gate)
 
 \end{itemize}
- Each of these chips have a V\textsubscript{CC} and Ground terminal which connects it to the main circuit. 
-\section{Verification of Truth Tables and Observations}
+ Each of these chips have a V\textsubscript{CC} and Ground terminal which connects it to the main circuit. \\[0.3cm]
+ The logic gates forms basic structure of digital electronics characterised by discrete bands of analog levels, contrary to the continuous range in analog electronics. The zero state represents the \textbf{OFF} state while the one state represents the \textbf{ON} state. 
+ 
+ \section{Verification of Truth Tables and Observations}
 \textbf{Example 1:}
 \begin{figure}[H]
     \centering
@@ -288,7 +290,12 @@ $$\mathrm{Q = \overline{A}\ \overline{B}+ \overline{C} + \overline{D}}$$
     \end{tabular}
     \end{table}
     \noindent
-    We created the circuit on the breadboard using the integrated circuits and connected all the components. Then, using an LED Bulb, we verified the above truth table for the circuit shown. For all configurations of the 4 inputs, the output in the circuit matched with the theoretical truth table, that is, the LED bulb glowed when the output was 1 and it did not glow when the output was 0. \\[0.2cm]
+    We created the circuit on the breadboard using the integrated circuits and connected all the components. Then, using an LED Bulb, we verified the above truth table for the circuit shown. For all configurations of the 4 inputs, the output in the circuit matched with the theoretical truth table, that is, the LED bulb glowed when the output was 1 and it did not glow when the output was 0. 
 \section{Sources of Error}
+\begin{itemize}
+    \item The ICs used may be faulty or damaged. We encountered an IC which did not gave an expected output. 
+    \item We had to use a resistance with the LED bulb, otherwise it would burn out due to excessive current. 
+\end{itemize}
 \section{Discussion and Conclusion}
+We verified the truth tables for the above circuits using the logic gates and ICs. The output of the circuit matched with the theoretical truth table for all configurations of the inputs. 
 \end{document}
