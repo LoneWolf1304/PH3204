@@ -1,0 +1,395 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{svg}
+\usepackage{float}
+\usepackage{longtable} 
+\usepackage{siunitx}
+\usepackage{circuitikz}
+\usepackage[margin=1.2in]{geometry}
+
+
+\begin{document}
+	\title{Sub-Group: A-7 \\ Experiment 4: Study of Boolean Algebra}
+	
+	
+	\author{Sayan Karmakar \\22MS163 }
+	\date{}
+	\maketitle
+
+\section{Aim}
+To study Boolean algebra by verifying them in circuit using logic gates (integrated circuits.)
+%=========================================================================================
+%						   	        	Theory											  
+%=========================================================================================
+\section{Theory}
+In digital electronics signals are represented by discrete bands of analog levels, rather than continuous signals as commonly seen in analog devices, In most cases in digital electronics, there are only two discrete levels. One of them is 0 volts. And the other one is 5 Volts. Voltage value of 0 corresponds to “false” or “0” or “off” state, and the voltage value of 5 volts corresponds to “true” or “1” or “on” state. This states satisfies the Boolean algebra.
+
+Boolean algebra is set of rules of that we can use to do arithmetic with inputs 1 and 0. The rules are given for two inputs and the outcome of the operations are normally truth tables where all the inputs and outputs are presented. The basic boolean functions are NOT, AND, OR, XOR, NAND, NOR gates. These gates are explained below.
+
+\subsection{NOT gate}
+NOT gate is single input and single input operation. It takes one value and gives the negation of the input. So, if the input is 1, it returns 0 and if the input is 0, then it returns 1. If the input is A, then NOT operation on \textbf{A} as $ \mathbf{\overline{A}}$.
+%Representation of NOT gate
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0,0) node[ieeestd not port] (not) {};
+		\draw (not.in) -- ++(-0.5,0) node[left] {\textbf{A}};
+		\draw (not.out) -- ++(0.5,0) node[right] {$\mathbf{\overline{A}}$};
+	\end{circuitikz}
+	\caption{Representation of NOT Gate}
+\end{figure}
+\subsection{AND gate} 
+AND gate takes two input and returns one output. If both the inputs are 1 then it returns 1 and if even one of the inputs is 0 then the output is 0. If the inputs are \textbf{A} and \textbf{B}, we represent the operation as $ \mathbf{A\cdot B}$.
+%Representation of AND gate
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0,0) node[ieeestd and port] (and) {};
+		\draw (and.in 1) -- ++(-0.5,0) node[left] {\textbf{A}};
+		\draw (and.in 2) -- ++(-0.5,0) node[left] {\textbf{B}};
+		\draw (and.out) -- ++(0.5,0) node[right] {$ \mathbf{A\cdot B}$};
+	\end{circuitikz}
+	\caption{Representation of AND Gate}
+\end{figure}
+\subsection{OR gate}
+OR gate is also a gate with two inputs and one output. If both the inputs of OR gates are 0 only then the output is 0, otherwise the output is 1. It is represented as $ \mathbf{A + B}$ if the inputs are \textbf{A} and \textbf{B}. 
+%Representation of OR gate
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0,0) node[ieeestd or port] (and) {};
+		\draw (and.in 1) -- ++(-0.5,0) node[left] {\textbf{A}};
+		\draw (and.in 2) -- ++(-0.5,0) node[left] {\textbf{B}};
+		\draw (and.out) -- ++(0.5,0) node[right] {$\mathbf{A + B}$};
+	\end{circuitikz}
+	\caption{Representation of OR Gate}
+\end{figure}
+\subsection{XOR gate}
+XOR gate also takes two inputs and returns one output. It represented as $ \mathbf{A \oplus B}$ if the inputs are \textbf{A} and \textbf{B}. It returns 0 if both the inputs are same. Analytical expression of the XOR gate is $ \mathbf{A \overline{B} + \overline{A} B}$.
+%Representation of XOR gate
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0,0) node[ieeestd xor port] (and) {};
+		\draw (and.in 1) -- ++(-0.5,0) node[left] {\textbf{A}};
+		\draw (and.in 2) -- ++(-0.5,0) node[left] {\textbf{B}};
+		\draw (and.out) -- ++(0.5,0) node[right] {$\mathbf{A \oplus B}$};
+	\end{circuitikz}
+	\caption{Representation of XOR Gate}
+\end{figure}
+\subsection{NAND gate} 
+NAND gate is the composition of AND and NOT gate. So taking the inputs it gives the negation of the AND output. For inputs \textbf{A} and \textbf{B}, the ouput is represented as $\mathbf{\overline{A\cdot B}}$.
+%Representation of NAND gate
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0,0) node[ieeestd nand port] (and) {};
+		\draw (and.in 1) -- ++(-0.5,0) node[left] {\textbf{A}};
+		\draw (and.in 2) -- ++(-0.5,0) node[left] {\textbf{B}};
+		\draw (and.out) -- ++(0.5,0) node[right] {$\mathbf{\overline{A\cdot B}}$};
+	\end{circuitikz}
+	\caption{Representation of NAND Gate}
+\end{figure}
+\subsection{NOR gate}
+Similar to NAND gate, NOR gate is also composition of two gates. These gates are NOT gate and AND gate. NOR gate returns the negation of OR output. For inputs \textbf{A} and \textbf{B}, the output is denoted as $ \mathbf{\overline{A + B}}$ 
+%Representation of NOR gate
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0,0) node[ieeestd nor port] (and) {};
+		\draw (and.in 1) -- ++(-0.5,0) node[left] {\textbf{A}};
+		\draw (and.in 2) -- ++(-0.5,0) node[left] {\textbf{B}};
+		\draw (and.out) -- ++(0.5,0) node[right] {$ \mathbf{\overline{A + B}}$};
+	\end{circuitikz}
+	\caption{Representation of NOR Gate}
+\end{figure}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline 
+		\rule{0pt}{2.5ex} $\mathbf{A}$ & $\mathbf{B}$ & $\mathbf{A \cdot B}$ & $ \mathbf{A+B} $ & $\mathbf{\overline{AB}}$ & $\mathbf{\overline{A+B}}$ & $\mathbf{A \oplus B}$ \\
+		\hline \hline
+		0 & 0 & 0 & 0 & 1 & 1 & 0 \\
+		\hline
+		0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+		\hline
+		1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+		\hline
+		1 & 1 & 1 & 1 & 0 & 0 & 0 \\
+		\hline
+	\end{tabular}
+\caption{Truth Table for the Logic Gates}
+\end{table}
+\section{Verification of Boolean Algebra}
+To verify the rules of Boolean algebra we created three circuits in bread board using ICs as the logic gates. From the circuit we experimentally computed the truth table. For each of them we also computed the truth table just using boolean algebra. And then we verified if the results are consistent or not. The circuits are shown below.
+\subsection{Circuit 1}
+%Circuit Diagram for circuit 1
+\begin{figure}[H]
+	\centering
+	\resizebox{0.8\textwidth}{!}{%
+		\begin{circuitikz}
+			\tikzstyle{every node}=[font=\normalsize]
+			\draw (3.5,13.75) to[short] (3.75,13.75);
+			\draw (3.5,13.25) to[short] (3.75,13.25);
+			\draw (3.75,13.75) node[ieeestd and port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (5.5,13.5);
+			\draw (5.75,12.25) to[short] (6,12.25);
+			\draw (5.75,11.75) to[short] (6,11.75);
+			\draw (6,12.25) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (7.75,12);
+			\draw (8.75,13.5) to[short] (9,13.5);
+			\draw (8.75,13) to[short] (9,13);
+			\draw (9,13.5) node[ieeestd nor port, anchor=in 1, scale=0.887](port){} (port.out) to[short] (11,13.25);
+			\draw (3.5,9.75) to[short] (3.75,9.75);
+			\draw (3.5,9.25) to[short] (3.75,9.25);
+			\draw (3.75,9.75) node[ieeestd or port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (5.5,9.5);
+			\draw (7.9,10) to[short] (8,10);
+			\draw (7.75,9.5) to[short] (8,9.5);
+			\draw (8,10) node[ieeestd xor port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (9.75,9.75);
+			\draw (11,12.25) to[short] (11.75,12.25);
+			\draw (11,11.75) to[short] (11.75,11.75);
+			\draw (11.75,12.25) node[ieeestd and port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (13.5,12);
+			\draw (5.5,13.5) to[short] (8.75,13.5);
+			\draw (3.5,13.25) to[short] (3.5,12.25);
+			\draw (3.5,12.25) to[short] (5.75,12.25);
+			\draw (5.75,11.75) to[short] (5.75,9.5);
+			\draw (5.5,9.5) to[short] (7.9,9.5);
+			\draw (8.75,13) to[short] (7.9,13);
+			\draw (7.9,13) to[short] (7.9,10);
+			\draw (11,13.25) to[short] (11,12.25);
+			\draw (11.5,11.75) to[short] (11,11.75);
+			\draw (11,11.75) to[short] (11,9.75);
+			\draw (11,9.75) to[short] (9.75,9.75);
+			\node [font=\normalsize] at (3,13.75) {A};
+			\node [font=\normalsize] at (3,13.25) {B};
+			\node [font=\normalsize] at (3,9.75) {C};
+			\node [font=\normalsize] at (3,9.25) {D};
+			\node [font=\normalsize] at (14,11.9) {Q};
+		\end{circuitikz}
+	}%
+	\caption{Circuit 1}
+	\label{fig:cir1}
+\end{figure}
+Using a LED, we calculated the result of different inputs for this circuit. 1 corresponds to LED being on and 0 corresponds to LED being off. Truth table of the circuit is shown below.  This truth table matches with the truth table computed using Boolean algebra.
+%Truth Table for circuit 1
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{Q} \\
+	\hline \hline
+	\rule[-1ex]{0pt}{2.5ex} 0 & 0 & 0 & 0 & 0 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 0 & 0 & 0 & 1 & 0 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 0 & 0 & 1 & 0 & 0 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 0 & 0 & 1 & 1 & 0 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 0 & 1 & 0 & 0 & 0 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 0 & 1 & 0 & 1 & 1 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 0 & 1 & 1 & 0 & 1 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 0 & 1 & 1 & 1 & 1 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 1 & 0 & 0 & 0 & 0 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 1 & 0 & 0 & 1 & 0 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 1 & 0 & 1 & 0 & 0 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 1 & 0 & 1 & 1 & 0 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 1 & 1 & 0 & 0 & 0 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 1 & 1 & 0 & 1 & 0 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 1 & 1 & 1 & 0 & 0 \\
+	\hline
+	\rule[-1ex]{0pt}{2.5ex} 1 & 1 & 1 & 1 & 0 \\
+	\hline	
+\end{tabular}
+\caption{Truth table for Circuit 1}
+\end{center}
+\end{table}
+\subsection{Circuit 2}
+%Circuit Diagram for circuit 2
+\begin{figure}[H]	
+	\centering
+	\resizebox{0.8\textwidth}{!}{%
+		\begin{circuitikz}
+			\tikzstyle{every node}=[font=\normalsize]
+			\draw (2,14.5) to[short] (2.25,14.5);
+			\draw (2,14) to[short] (2.25,14);
+			\draw (2.25,14.5) node[ieeestd and port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (4,14.25);
+			\draw (7.75,13.75) to[short] (8,13.75);
+			\draw (8,14.25) node[ieeestd nor port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (9.75,14);
+			\draw (4.75,12.5) to[short] (5,12.5);
+			\draw (4.75,12) to[short] (5,12);
+			\draw (5,12.5) node[ieeestd xor port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (6.75,12.25);
+			\draw (10.5,12.5) to[short] (10.75,12.5);
+			\draw (10.5,12) to[short] (10.75,12);
+			\draw (10.75,12.5) node[ieeestd or port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (12.5,12.25);
+			\draw (7.75,10.5) to[short] (8,10.5);
+			\draw (7.75,10) to[short] (8,10);
+			\draw (8,10.5) node[ieeestd and port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (9.75,10.25);
+			\draw (2.25,10.25) to[short] (2.5,10.25);
+			\draw (2.25,9.75) to[short] (2.5,9.75);
+			\draw (2.5,10.25) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (4.25,10);
+			\draw (4,14.25) to[short] (8,14.25);
+			\draw (7.75,13.75) to[short] (6.9,13.75);
+			\draw (6.9,13.75) to[short] (6.9,10.5);
+			\draw (6.9,10.5) to[short] (7.75,10.5);
+			\draw (9.9,14) to[short] (9.9,12.5);
+			\draw (9.9,12.5) to[short] (10.5,12.5);
+			\draw (9.9,10.25) to[short] (9.9,12);
+			\draw (9.9,12) to[short] (10.5,12);
+			\draw (7.75,10) to[short] (4.25,10);
+			\draw (4.75,12) to[short] (4.75,10);
+			\draw (2.25,14) to[short] (2.25,12.5);
+			\draw (2.25,12.5) to[short] (4.75,12.5);
+			\node [font=\normalsize] at (1.75,14.5) {A};
+			\node [font=\normalsize] at (1.75,14) {B};
+			\node [font=\normalsize] at (2,10.25) {C};
+			\node [font=\normalsize] at (2,9.75) {D};
+			\node [font=\normalsize] at (13,12.25) {Q};
+		\end{circuitikz}
+	}%
+	\caption{Circuit 2}
+	\label{fig:cir2}
+\end{figure}I
+Using different ICs this circuit was made on a breadboard. The output was measured using a LED. The truth table for this circuit is captured in the following table. This matches our expected results.
+%Truth Table for circuit 2
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{Q} \\
+		\hline \hline
+		0 & 0 & 0 & 0 & 1 \\
+		\hline
+		0 & 0 & 0 & 1 & 1 \\
+		\hline
+		0 & 0 & 1 & 0 & 1 \\
+		\hline
+		0 & 0 & 1 & 1 & 1 \\
+		\hline
+		0 & 1 & 0 & 0 & 1 \\
+		\hline
+		0 & 1 & 0 & 1 & 1 \\
+		\hline
+		0 & 1 & 1 & 0 & 1 \\
+		\hline
+		0 & 1 & 1 & 1 & 0 \\
+		\hline
+		1 & 0 & 0 & 0 & 1 \\
+		\hline
+		1 & 0 & 0 & 1 & 1 \\
+		\hline
+		1 & 0 & 1 & 0 & 1 \\
+		\hline
+		1 & 0 & 1 & 1 & 1 \\
+		\hline
+		1 & 1 & 0 & 0 & 1 \\
+		\hline
+		1 & 1 & 0 & 1 & 0 \\
+		\hline
+		1 & 1 & 1 & 0 & 0 \\
+		\hline
+		1 & 1 & 1 & 1 & 0 \\
+		\hline
+	\end{tabular}
+\caption{Truth table for Circuit 2}
+\end{table}
+\subsection{Circuit 3}
+%Circuit Diagram for circuit 3
+\begin{figure}[H]
+	\centering
+	\resizebox{0.8\textwidth}{!}{%
+		\begin{circuitikz}
+			\tikzstyle{every node}=[font=\normalsize]
+			\node [font=\normalsize] at (13,11.75) {Q};
+			\draw (3.5,13.75) to[short] (3.75,13.75);
+			\draw (3.5,13.25) to[short] (3.75,13.25);
+			\draw (3.75,13.75) node[ieeestd nor port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (5.5,13.5);
+			\draw (8,13.5) to[short] (8.25,13.5);
+			%\draw (8,13) to[short] (8.25,13);
+			\draw (8.25,13.5) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (10,13.25);
+			\draw (10.5,12) to[short] (10.75,12);
+			\draw (10.5,11.5) to[short] (10.75,11.5);
+			\draw (10.75,12) node[ieeestd xor port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (12.5,11.75);
+			\draw (6,12) to[short] (6.25,12);
+			\draw (6,11.5) to[short] (6.25,11.5);
+			\draw (6.25,12) node[ieeestd or port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (8.25,11.75);
+			\draw (8.5,10.5) to[short] (8.25,10.5);
+			\draw (8.5,10) to[short] (8.25,10);
+			\draw (8.25,10.5) node[ieeestd and port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (10,10.25);
+			\draw (3.5,10.25) to[short] (3.75,10.25);
+			\draw (3.5,9.75) to[short] (3.75,9.75);
+			\draw (3.75,10.25) node[ieeestd and port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (5.5,10);
+			\draw (5.5,13.5) to[short] (8,13.5);
+			\draw (8.25,13) to[short] (8.25,10.5);
+			\draw (3.75,13.25) to[short] (3.75,12);
+			\draw (3.75,12) to[short] (6,12);
+			\draw (6,11.5) to[short] (6,10);
+			\draw (5.5,10) to[short] (8.25,10);
+			\draw (10.18,13.26) to[short] (10.18,12);
+			\draw (10.18,12) to[short] (10.5,12);
+			\draw (10.5,11.5) to[short] (10.18,11.5);
+			\draw (10.18,11.5) to[short] (10.18,10.25);
+			\node [font=\normalsize] at (3,13.75) {A};
+			\node [font=\normalsize] at (3,13.25) {B};
+			\node [font=\normalsize] at (3,10.25) {C};
+			\node [font=\normalsize] at (3,9.75) {D};
+		\end{circuitikz}
+	}%
+	\caption{Circuit 3}	
+	\label{fig:cir3}
+\end{figure}
+%Table for circuit 3
+\begin{table}
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{Q} \\
+		\hline
+		0 & 0 & 0 & 0 & 1 \\
+		\hline
+		0 & 0 & 0 & 1 & 1 \\
+		\hline
+		0 & 0 & 1 & 0 & 1 \\
+		\hline
+		0 & 0 & 1 & 1 & 1 \\
+		\hline
+		0 & 1 & 0 & 0 & 1 \\
+		\hline
+		0 & 1 & 0 & 1 & 1 \\
+		\hline
+		0 & 1 & 1 & 0 & 1 \\
+		\hline
+		0 & 1 & 1 & 1 & 0 \\
+		\hline
+		1 & 0 & 0 & 0 & 1 \\
+		\hline
+		1 & 0 & 0 & 1 & 1 \\
+		\hline
+		1 & 0 & 1 & 0 & 1 \\
+		\hline
+		1 & 0 & 1 & 1 & 0 \\
+		\hline
+		1 & 1 & 0 & 0 & 1 \\
+		\hline
+		1 & 1 & 0 & 1 & 1 \\
+		\hline
+		1 & 1 & 1 & 0 & 1 \\
+		\hline
+		1 & 1 & 1 & 1 & 0 \\
+		\hline
+	\end{tabular}
+\end{table}
+\section{Discussion}
+\section{Conclusion}
+\end{document}
