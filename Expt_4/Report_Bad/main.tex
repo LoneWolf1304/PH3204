@@ -20,17 +20,17 @@
 	\maketitle
 
 \section{Aim:}
-To study Boolean algebra by verifying them in circuit using logic gates (integrated circuits.)
+To study Boolean algebra by verifying them in circuits using logic gates (integrated circuits.)
 %=========================================================================================
 %						   	        	THEORY											  
 %=========================================================================================
 \section{Theory:}
-In digital electronics signals are represented by discrete bands of analog levels, rather than continuous signals as commonly seen in analog devices, In most cases in digital electronics, there are only two discrete levels. One of them is 0 volts. And the other one is 5 Volts. Voltage value of 0 corresponds to “false” or “0” or “off” state, and the voltage value of 5 volts corresponds to “true” or “1” or “on” state. This states satisfies the Boolean algebra.
+In digital electronics signals are represented by discrete bands of analog levels, rather than continuous signals as commonly seen in analog devices, In most cases in digital electronics, there are only two discrete levels. One of them is 0 volts. And the other one is 5 Volts. Voltage value of 0 corresponds to “false” or “0” or “off” state, and the voltage value of 5 volts corresponds to “true” or “1” or “on” state. These states satisfies the Boolean algebra.
 
 Boolean algebra is set of rules of that we can use to do arithmetic with inputs 1 and 0. The rules are given for two inputs and the outcome of the operations are normally truth tables where all the inputs and outputs are presented. The basic boolean functions are NOT, AND, OR, XOR, NAND, NOR gates. These gates are explained below.
 
 \subsection{NOT gate:}
-NOT gate is single input and single input operation. It takes one value and gives the negation of the input. So, if the input is 1, it returns 0 and if the input is 0, then it returns 1. If the input is A, then NOT operation on \textbf{A} as $ \mathbf{\overline{A}}$.
+NOT gate is single input and single output gate. It takes one value and gives the negation of the input. So, if the input is 1, it returns 0 and if the input is 0, then it returns 1. If the input is A, then NOT operation on \textbf{A} as $ \mathbf{\overline{A}}$.
 \begin{figure}[H]  %Representation of NOT gate
 	\centering
 	\begin{circuitikz}
@@ -182,7 +182,7 @@ Using a LED, we calculated the result of different inputs for this circuit. 1 co
 %Truth Table for circuit 1
 \begin{table}[H]
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c||c|}
 	\hline
 	\rule[-1ex]{0pt}{2.5ex} \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{Q} \\
 	\hline \hline
@@ -402,7 +402,9 @@ We created this circuit in breadboard using different ICs. Using a LED we checke
 %								CONCLUSION											      
 %=========================================================================================
 \section{Discussion:}
-During this experiment, we encountered a faulty IC which initially returned wrong outputs. Also we did not add any resistance along with the LED. The output current was more than the maximum LED current. After the resistance was added the circuit worked.
+During this experiment, we encountered a faulty IC which returned wrong outputs. Also initially we did not add any resistance along with the LED. The output current was more than the maximum LED current. This burnt the LED. After the resistance was added the circuit worked.
 \section{Conclusion:}
-In this experiment, we studied Boolean algebra and verified the the rules for three different circuits. The output of the circuit matched the theoritical calculations for the circuits.
+In this experiment, we studied Boolean algebra and verified the the rules for three different circuits. The output of the circuit matched the theoretical calculations for the circuits.
+
+
 \end{document}
