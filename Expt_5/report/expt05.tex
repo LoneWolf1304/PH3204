@@ -1,0 +1,113 @@
+\documentclass{scrartcl}
+\usepackage{pgfplots}
+\usepackage{makecell}
+\usepackage{multirow} % For merged cells
+\usepackage{booktabs} % For better table formatting
+\usepackage{calc}
+\usepackage{Style_File}
+\usepackage{circuitikz}
+\usepackage{fancyhdr}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+% Recommended preamble:
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{backgrounds}
+\usepgfplotslibrary{patchplots}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{%
+    layers/standard/.define layer set={%
+        background,axis background,axis grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis foreground%
+    }{
+        grid style={/pgfplots/on layer=axis grid},%
+        tick style={/pgfplots/on layer=axis ticks},%
+        axis line style={/pgfplots/on layer=axis lines},%
+        label style={/pgfplots/on layer=axis descriptions},%
+        legend style={/pgfplots/on layer=axis descriptions},%
+        title style={/pgfplots/on layer=axis descriptions},%
+        colorbar style={/pgfplots/on layer=axis descriptions},%
+        ticklabel style={/pgfplots/on layer=axis tick labels},%
+        axis background@ style={/pgfplots/on layer=axis background},%
+        3d box foreground style={/pgfplots/on layer=axis foreground},%
+    },
+}
+
+
+\setlength{\headheight}{0.75in}
+\setlength{\oddsidemargin}{0in}
+        \setlength{\evensidemargin}{0in}
+        \setlength{\textwidth}{6.5in}
+        \setlength{\headwidth}{7.3in}
+        \setlength{\textheight}{8.75in}
+        \rfoot{\thepage}
+        \renewcommand{\headrulewidth}{0pt} % Remove the header line
+        \renewcommand{\footrulewidth}{0pt}
+\fancyhead[L,C]{}
+\fancyhead[L]{PH3204: Experiment 5}
+\fancyhead[R]{0\thepage}
+\fancyhead[C]{ Boolean Algebra}
+\fancyfoot[C]{0\thepage}
+\fancyfoot[R,L]{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+
+
+\usepackage{siunitx}
+\usepackage{longtable} 
+\usepackage[left = 0.7in,
+right = 0.7in,
+bottom = 0.9in,
+top = 0.9in,
+a4paper]{geometry}
+
+\title{
+        \Large\textsc{Experiment 05: }
+        \huge\textbf{ Study of 555 Timer IC} \\
+}
+
+
+\author{{\Large Sagnik Seth} -\   \texttt{22MS026}\\ ({\small Subgroup - A7}) }
+\date{}
+
+
+\begin{document}
+\maketitle
+\section{Aim}
+To  study the use of 555 Time IC as an astable
+multivibrator.
+
+\section{Theory}
+
+\tikzstyle{icdev}=[draw, text width=5.5em, minimum height=7.3em, fill=cyan!40!white]
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[every node/.style = {font = \tiny},american]
+        \draw (0,4) node[left]{$\mathrm{V_{s}}$}  % from top Vcc to bottom Gnd
+            to[short,o-] (0.8,4)
+            to[/tikz/circuitikz/bipoles/length=0.7cm,R, l_=$\mathrm{R_1}$] (0.8,2.6) % set bipole device size
+            to[/tikz/circuitikz/bipoles/length=0.7cm,R, l_=$\mathrm{R_2}$] (0.8,1.8)  to[/tikz/circuitikz/bipoles/length=0.7cm,C, l_=$\mathrm{C_1}$] (0.8,0.09) -- (0.8,0)
+            to[short,-o] (0,0) node[left]{GND}
+        ;
+        \node (digichip) [icdev,xshift=3cm,yshift=2cm] {};
+        \draw[blue] (3,2) node [align=center]{\large 555\\TIMER};  % position IC device body
+    % top terminal lines/pins - 4 RESET, 8 Vcc
+        \path [draw](0.8,4) -| (2.5,3.4) node[below]{RESET} node[above left]{4};
+        \path [draw](2.5,4) -| (3.5,3.4) node[below]{$\mathrm{V_{s}}$} node[above left] {8};
+    % bottom terminal lines/pins - 1 GND, 5 CTRL
+        \path [draw](0.8,0) -| (2.5,0.6) node[above]{GND} node[below left]{1};
+        \path [draw](2.5,0) -- (3.5,0)
+            to[/tikz/circuitikz/bipoles/length=0.7cm,C](3.5,0.6)  
+            node[above]{CTRL} node[below right]{\ \ 5}; % C = 10nf
+    % leftside terminal lines/pins - 7 DIS, 6 THR, 2 TRG
+        \draw (0.8,2.7) -- (1.83,2.7) node[right]{DIS} node[above left]{7}
+             (1.83,2) node[right]{THR} node[above left]{6} |- (1.3,2) -- (1.3,1.5) --
+            (0.8,1.5) -- (1.83,1.5) node[right]{TRG} node[above left]{2};
+    % rightside terminal line/pin - 3 out
+        \draw (4.17,2) node[left]{Out} -- (4.8,2) node[above left]{3} to[short,o-] (4.8,2);
+    \end{tikzpicture}
+    \caption{Circuit Diagram of 555 Timer IC}
+\end{figure}
+
+\section{Data and Calculation}
+\section{Sources of Error}
+\section{Discussion and Conclusion}
+\end{document}
