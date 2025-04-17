@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{svg}
+\usepackage{float}
+\usepackage{longtable} 
+\usepackage{siunitx}
+\usepackage{circuitikz}
+\usepackage[margin=1.2in]{geometry}
+
+
+\begin{document}
+	\title{Sub-Group: A-7 \\ Experiment 5: Study of 555 Timer IC}
+	
+	
+	\author{Sayan Karmakar \\22MS163 }
+	\date{}
+	\maketitle
+
+\section{Aim:}
+Study of 555 Timer IC as Astable multivibrator with different frequency.
+%=========================================================================================
+%						   	        	THEORY											  
+%=========================================================================================
+\section{Theory:}
+\textbf{Pin Functions: }
+\begin{enumerate}
+	\item \textbf{Trigger Input:} When it is less than $V_S/3$ it makes the output high $V_S$. It monitors the discharging of timing capacitor in astable circuit.
+	\item \textbf{Threshold Input:} When it is greater than $2 V_S/ 3$, it makes the output low (0 V). But this only happens if the trigger input is more than $V_S/ 3$. If the trigger input is low then it forces the output to be high. This input monitors the charging of time capacitor in astable and monostable circuit.
+	\item \textbf{Reset Input:} When it is less than 0.7 V, it makes the output low(0 V), overriding other inputs. When it is unnecessary it should be connected to the source voltage.
+	\item \textbf{Control Input:} If there is a need to change the threshold voltage which is normally set to $2 V_S/3$, 	usually this is connected to 0 V with a very low capacitor of 0.01 $\mu$F to avoid electrical noise.
+	\item \textbf{Discharge Pin: }
+\end{enumerate}
+
+\subsection{555/ 556 Astable Circuit:}
+Time period ($T$) of the square wave is the time for one complete cycle. And frequency ($f$) of the wave is no. of complete cycles per second.
+
+\begin{equation*}
+	\begin{split}
+		&T = 0.7 (R_1 + 2 R_2) C_1 \\
+		&f = \frac{1.4}{(R_1 + 2 R_2) C_1}
+	\end{split}
+	\end{equation*}
+
+Time period can be split into two part, when the output is high, \textbf{mark time} ($T_m$) and when the output is low,  \textbf{space time} ($T_s$).
+
+\begin{equation*}
+	\begin{split}
+		&T_m = 0.7 (R_1 + R_2) C_1 \\
+		&T_s = 0.7 R_2 C_1
+	\end{split}.
+\end{equation*}
+
+%=========================================================================================
+%									Data and Analysis									  
+%=========================================================================================
+
+\section{Data and Analysis}
+
+\end{document}
