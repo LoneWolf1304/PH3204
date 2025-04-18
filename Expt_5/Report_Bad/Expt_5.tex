@@ -26,24 +26,31 @@ Study of 555 Timer IC as Astable multivibrator with different frequency.
 %						   	        	THEORY											  
 %=========================================================================================
 \section{Theory:}
-\textbf{Pin Functions: }
+555 timer IC is one of the most useful ICs ever made. The most popular 555-timer is the 8 pin one. A dual version of the 555 IC is 556 IC which has 14 pins. It contains two timer circuits which share the same power supply.
+
+\vspace{1em}\noindent\textbf{Pin Functions: }
 \begin{enumerate}
 	\item \textbf{Trigger Input:} When it is less than $V_S/3$ it makes the output high $V_S$. It monitors the discharging of timing capacitor in astable circuit.
 	\item \textbf{Threshold Input:} When it is greater than $2 V_S/ 3$, it makes the output low (0 V). But this only happens if the trigger input is more than $V_S/ 3$. If the trigger input is low then it forces the output to be high. This input monitors the charging of time capacitor in astable and monostable circuit.
 	\item \textbf{Reset Input:} When it is less than 0.7 V, it makes the output low(0 V), overriding other inputs. When it is unnecessary it should be connected to the source voltage.
-	\item \textbf{Control Input:} If there is a need to change the threshold voltage which is normally set to $2 V_S/3$, 	usually this is connected to 0 V with a very low capacitor of 0.01 $\mu$F to avoid electrical noise.
-	\item \textbf{Discharge Pin: }
+	\item \textbf{Control Input:} If there is a need to change the threshold voltage which is normally set to $2 V_S/3$,	usually this is connected to 0 V with a very low capacitor of 0.01 $\mu$F to avoid electrical noise.
+	\item \textbf{Discharge Pin: } It is connected to the ground when the timer output is low. This pin is used to discharge the capacitor in astable and monostable circuits.
 \end{enumerate}
+\newpage
+\vspace{1em}\noindent
+\textbf{555/ 556 Astable Circuit:}
 
-\subsection{555/ 556 Astable Circuit:}
+One of the modes of 555 timer circuit is the astable circuit. It creates continuous pulses. The circuit diagram is shown in the figure \ref{Circuit 1}. It contains two phases, charging phase and discharging phase. In charging phase, the capacitor $C_1$ gets charged through the resistaces $R_1 + R_2$. When this happens the threshold voltage increases, and eventually it reaches $2 V_S/3$. So, the output voltage becomes low 0 V. In discharging phase, the capacitor gets discharged through $R_2$, and this decreases the voltage at trigger pin. When the trigger voltage decrease $V_S/3$, the output becomes high.
+
 Time period ($T$) of the square wave is the time for one complete cycle. And frequency ($f$) of the wave is no. of complete cycles per second.
 
-\begin{equation*}
+\begin{equation}
 	\begin{split}
 		&T = 0.7 (R_1 + 2 R_2) C_1 \\
 		&f = \frac{1.4}{(R_1 + 2 R_2) C_1}
 	\end{split}
-	\end{equation*}
+\label{equation_1}
+	\end{equation}
 
 Time period can be split into two part, when the output is high, \textbf{mark time} ($T_m$) and when the output is low,  \textbf{space time} ($T_s$).
 
@@ -53,12 +60,59 @@ Time period can be split into two part, when the output is high, \textbf{mark ti
 		&T_s = 0.7 R_2 C_1
 	\end{split}.
 \end{equation*}
-
+\begin{figure}[H]
+	\label{Circuit 1}
+	\centering
+	\resizebox{0.6\textwidth}{!}{%
+		\begin{circuitikz}
+			\tikzstyle{every node}=[font=\normalsize]
+			
+			
+			\draw  (6.5,12.5) rectangle (11,6.5);
+			\draw (3,14) to[R,l={ \normalsize $R_1$}] (3,11.5);
+			\draw (3,11.5) to[R,l={ \normalsize $R_2$}] (3,8.25);
+			\draw (3,8.5) to[C,l={ \normalsize $C_1$}] (3,5.25);
+			\draw (10,6.5) to[C] (10,5.25);
+			\draw (1.25,14) to[short] (10,14);
+			\draw (10,14) to[short] (10,12.5);
+			\draw (8,14) to[short] (8,12.5);
+			\draw (3,11.5) to[short] (6.5,11.5);
+			\draw (3,8.25) to[short] (6.5,8.25);
+			\draw (6.5,9.75) to[short] (5,9.75);
+			\draw (5,9.75) to[short] (5,8.25);
+			\draw (1.25,5.25) to[short] (10,5.25);
+			\draw (8,6.5) to[short] (8,5.25);
+			\draw (11,9.25) to[short] (12.25,9.25);
+			\draw (1.25,14) to[short, -o] (0.75,14) ;
+			\draw (1.25,5.25) to[short, -o] (1,5.25) ;
+			\node [font=\normalsize] at (0.75,14.5) {$V_S$};
+			\node [font=\normalsize] at (1,5.75) {GND};
+			\node [font=\normalsize] at (7.25,11.5) {DIS};
+			\node [font=\normalsize] at (7.25,9.75) {THR};
+			\node [font=\normalsize] at (7.25,8.25) {TRG};
+			\node [font=\normalsize] at (6.25,11.75) {$7$};
+			\node [font=\normalsize] at (6.25,10) {$6$};
+			\node [font=\normalsize] at (6.25,8.5) {$2$};
+			\node [font=\normalsize] at (7.75,12.75) {$4$};
+			\node [font=\normalsize] at (8,12) {RESET};
+			\node [font=\normalsize] at (10,12) {$V_S$};
+			\node [font=\normalsize] at (10.25,12.75) {$8$};
+			\node [font=\normalsize] at (12.5,9.25) {$3$};
+			\node [font=\normalsize] at (10.5,9.25) {Out};
+			\node [font=\normalsize] at (10,7) {CTRL};
+			\node [font=\normalsize] at (8,7) {GND};
+			\node [font=\normalsize] at (10.5,6) {$5$};
+			\node [font=\normalsize] at (8.25,6) {$1$};
+		\end{circuitikz}
+	}%
+	\caption{555 Timer IC}
+\end{figure}
 %=========================================================================================
 %									Data and Analysis									  
 %=========================================================================================
 
 \section{Data and Analysis}
+We first prepared the circuit from figure \ref{Circuit 1}. As $R_1$, $R_2$, we choose different values of resistance and for $C_1$ we chose different capacitance values. And for each $R_1$, $R_2$, and $C_1$, we calculated $f_{theo}$ from the equation \eqref{equation_1}. In each circuit configurations, we calculated the mark time $T_m$ and space time $T_s$ from oscilloscope. From that calculated time period $T= T_m + T_s$ and frequency, so that we can compare it with $f_{theo}$. The data for the experiment is shown in the following table. For each configuration we also calculated the percentage error.
 \begin{table}[H]
 		\centering
 		\caption{Experimental and Theoretical Time Constants}
@@ -74,28 +128,31 @@ Time period can be split into two part, when the output is high, \textbf{mark ti
 				S[table-format=2.1e1]
 				S[table-format=2.2]
 			}
-			\toprule
-			\toprule
+			\midrule
 			{$C_1$(\si{\micro\farad})} & {$R_1$} & {$R_2$} & {$f_{\text{theo}}$(\si{\kilo\hertz})} & {$T_m$(\si{\micro\second})} & {$T_s$(\si{\pico\second})} & {$T$(\si{\pico\second})} & {$f_{\text{expt}}$(\si{\kilo\hertz})} & {Error(\%)} \\
 			\midrule
 			\midrule 
 			0.001 & 1 & 10 & 6.667e1 & 9.5e0 & 8.5e0 & 1.8e1 & 5.556e1 & 16.67 \\
 			0.001 & 10 & 100 & 6.667e0 & 8.4e1 & 7.4e1 & 1.58e2 & 6.329e0 & 5.06 \\
 			0.001 & 100 & 1000 & 6.667e-1 & 7.8e2 & 7.0e2 & 1.480e3 & 6.757e-1 & 1.35 \\
+			\midrule
 			0.01 & 1 & 10 & 6.667e0 & 7.6e1 & 7.0e1 & 1.46e2 & 6.849e0 & 2.74 \\
 			0.01 & 10 & 100 & 6.667e-1 & 8.2e2 & 7.8e2 & 1.600e3 & 6.250e-1 & 6.25 \\
 			0.01 & 100 & 1000 & 6.667e-2 & 8.4e3 & 7.6e3 & 1.600e4 & 6.250e-2 & 6.25 \\
+			\midrule
 			0.1 & 1 & 10 & 6.667e-1 & 6.4e2 & 6.0e2 & 1.280e3 & 7.813e-1 & 17.19 \\
 			0.1 & 10 & 100 & 6.667e-2 & 7.2e3 & 6.8e3 & 1.400e4 & 7.143e-2 & 7.14 \\
 			0.1 & 100 & 1000 & 6.667e-3 & 7.4e4 & 7.0e4 & 1.440e5 & 6.944e-3 & 4.16 \\
+			\midrule
 			1 & 1 & 10 & 6.667e-2 & 7.0e3 & 6.4e3 & 1.340e4 & 7.463e-2 & 11.94 \\
 			1 & 10 & 100 & 6.667e-3 & 7.2e4 & 6.6e4 & 1.380e5 & 7.246e-3 & 8.69 \\
 			1 & 100 & 1000 & 6.667e-4 & 7.0e5 & 6.4e5 & 1.340e6 & 7.463e-4 & 11.90 \\
+			\midrule
 			10 & 1 & 10 & 6.667e-3 & 7.4e4 & 6.8e4 & 1.420e5 & 7.042e-3 & 5.63 \\
 			10 & 10 & 100 & 6.667e-4 & 8.0e5 & 7.2e5 & 1.520e5 & 6.579e-4 & 1.30 \\
 			10 & 100 & 1000 & 6.667e-5 & 7.5e6 & 6.0e6 & 1.350e7 & 7.407e-5 & 11.00 \\
-			\bottomrule
-			\bottomrule
+			\midrule
 		\end{tabular}
 	\end{table}
+From the error from the table above, we can say that the two values of the frequency are comparable.
 \end{document}
