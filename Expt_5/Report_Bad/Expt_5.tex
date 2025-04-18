@@ -5,7 +5,8 @@
 \usepackage{multirow}
 \usepackage{svg}
 \usepackage{float}
-\usepackage{longtable} 
+\usepackage{longtable}
+\usepackage{booktabs}
 \usepackage{siunitx}
 \usepackage{circuitikz}
 \usepackage[margin=1.2in]{geometry}
@@ -58,5 +59,43 @@ Time period can be split into two part, when the output is high, \textbf{mark ti
 %=========================================================================================
 
 \section{Data and Analysis}
-
+\begin{table}[H]
+		\centering
+		\caption{Experimental and Theoretical Time Constants}
+		\label{tab:time_constants}
+		\begin{tabular}{
+				S[table-format=1.3]
+				S[table-format=1.0]
+				S[table-format=3.0]
+				S[table-format=1.1e1]
+				S[table-format=3.1e1]
+				S[table-format=1.1e1]
+				S[table-format=1.1e1]
+				S[table-format=2.1e1]
+				S[table-format=2.2]
+			}
+			\toprule
+			\toprule
+			{$C_1$(\si{\micro\farad})} & {$R_1$} & {$R_2$} & {$f_{\text{theo}}$(\si{\kilo\hertz})} & {$T_m$(\si{\micro\second})} & {$T_s$(\si{\pico\second})} & {$T$(\si{\pico\second})} & {$f_{\text{expt}}$(\si{\kilo\hertz})} & {Error(\%)} \\
+			\midrule
+			\midrule 
+			0.001 & 1 & 10 & 6.667e1 & 9.5e0 & 8.5e0 & 1.8e1 & 5.556e1 & 16.67 \\
+			0.001 & 10 & 100 & 6.667e0 & 8.4e1 & 7.4e1 & 1.58e2 & 6.329e0 & 5.06 \\
+			0.001 & 100 & 1000 & 6.667e-1 & 7.8e2 & 7.0e2 & 1.480e3 & 6.757e-1 & 1.35 \\
+			0.01 & 1 & 10 & 6.667e0 & 7.6e1 & 7.0e1 & 1.46e2 & 6.849e0 & 2.74 \\
+			0.01 & 10 & 100 & 6.667e-1 & 8.2e2 & 7.8e2 & 1.600e3 & 6.250e-1 & 6.25 \\
+			0.01 & 100 & 1000 & 6.667e-2 & 8.4e3 & 7.6e3 & 1.600e4 & 6.250e-2 & 6.25 \\
+			0.1 & 1 & 10 & 6.667e-1 & 6.4e2 & 6.0e2 & 1.280e3 & 7.813e-1 & 17.19 \\
+			0.1 & 10 & 100 & 6.667e-2 & 7.2e3 & 6.8e3 & 1.400e4 & 7.143e-2 & 7.14 \\
+			0.1 & 100 & 1000 & 6.667e-3 & 7.4e4 & 7.0e4 & 1.440e5 & 6.944e-3 & 4.16 \\
+			1 & 1 & 10 & 6.667e-2 & 7.0e3 & 6.4e3 & 1.340e4 & 7.463e-2 & 11.94 \\
+			1 & 10 & 100 & 6.667e-3 & 7.2e4 & 6.6e4 & 1.380e5 & 7.246e-3 & 8.69 \\
+			1 & 100 & 1000 & 6.667e-4 & 7.0e5 & 6.4e5 & 1.340e6 & 7.463e-4 & 11.90 \\
+			10 & 1 & 10 & 6.667e-3 & 7.4e4 & 6.8e4 & 1.420e5 & 7.042e-3 & 5.63 \\
+			10 & 10 & 100 & 6.667e-4 & 8.0e5 & 7.2e5 & 1.520e5 & 6.579e-4 & 1.30 \\
+			10 & 100 & 1000 & 6.667e-5 & 7.5e6 & 6.0e6 & 1.350e7 & 7.407e-5 & 11.00 \\
+			\bottomrule
+			\bottomrule
+		\end{tabular}
+	\end{table}
 \end{document}
