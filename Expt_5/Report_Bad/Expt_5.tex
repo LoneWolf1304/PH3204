@@ -26,7 +26,7 @@ Study of 555 Timer IC as Astable multivibrator with different frequency.
 %						   	        	THEORY											  
 %=========================================================================================
 \section{Theory:}
-555 timer IC is one of the most useful ICs ever made. The most popular 555-timer is the 8 pin one. A dual version of the 555 IC is 556 IC which has 14 pins. It contains two timer circuits which share the same power supply.
+555 timer IC is one of the most useful ICs ever made. The most popular 555-timer is the 8 pin one. A dual version of the 555 IC is 556 IC which has 14 pins. It contains two timer circuits which share the same power supply. One can use 556 timer IC also in place of 555 timer IC.
 
 \vspace{1em}\noindent\textbf{Pin Functions: }
 \begin{enumerate}
@@ -40,7 +40,7 @@ Study of 555 Timer IC as Astable multivibrator with different frequency.
 \vspace{1em}\noindent
 \textbf{555/ 556 Astable Circuit:}
 
-One of the modes of 555 timer circuit is the astable circuit. It creates continuous pulses. The circuit diagram is shown in the figure \ref{Circuit 1}. It contains two phases, charging phase and discharging phase. In charging phase, the capacitor $C_1$ gets charged through the resistaces $R_1 + R_2$. When this happens the threshold voltage increases, and eventually it reaches $2 V_S/3$. So, the output voltage becomes low 0 V. In discharging phase, the capacitor gets discharged through $R_2$, and this decreases the voltage at trigger pin. When the trigger voltage decrease $V_S/3$, the output becomes high.
+One of the modes of 555 timer circuit is the astable circuit. It creates continuous pulses. The circuit diagram is shown in the figure 1. It contains two phases, charging phase and discharging phase. In charging phase, the capacitor $C_1$ gets charged through the resistaces $R_1 + R_2$. When this happens the threshold voltage increases, and eventually it reaches $2 V_S/3$. So, the output voltage becomes low 0 V. In discharging phase, the capacitor gets discharged through $R_2$, and this decreases the voltage at trigger pin. When the trigger voltage decrease $V_S/3$, the output becomes high.
 
 Time period ($T$) of the square wave is the time for one complete cycle. And frequency ($f$) of the wave is no. of complete cycles per second.
 
@@ -112,10 +112,10 @@ Time period can be split into two part, when the output is high, \textbf{mark ti
 %=========================================================================================
 
 \section{Data and Analysis}
-We first prepared the circuit from figure \ref{Circuit 1}. As $R_1$, $R_2$, we choose different values of resistance and for $C_1$ we chose different capacitance values. And for each $R_1$, $R_2$, and $C_1$, we calculated $f_{theo}$ from the equation \eqref{equation_1}. In each circuit configurations, we calculated the mark time $T_m$ and space time $T_s$ from oscilloscope. From that calculated time period $T= T_m + T_s$ and frequency, so that we can compare it with $f_{theo}$. The data for the experiment is shown in the following table. For each configuration we also calculated the percentage error.
+We first prepared the circuit from figure 1. As $R_1$, $R_2$, we choose different values of resistance and for $C_1$ we chose different capacitance values. And for each $R_1$, $R_2$, and $C_1$, we calculated $f_{theo}$ from the equation \eqref{equation_1}. In each circuit configurations, we calculated the mark time $T_m$ and space time $T_s$ from oscilloscope. From that calculated time period $T= T_m + T_s$ and frequency, so that we can compare it with $f_{theo}$. The data for the experiment is shown in the following table. For each configuration we also calculated the percentage error.
 \begin{table}[H]
 		\centering
-		\caption{Experimental and Theoretical Time Constants}
+		\caption{Experimental and Theoretical Frequency}
 		\label{tab:time_constants}
 		\begin{tabular}{
 				S[table-format=1.3]
@@ -154,5 +154,14 @@ We first prepared the circuit from figure \ref{Circuit 1}. As $R_1$, $R_2$, we c
 			\midrule
 		\end{tabular}
 	\end{table}
-From the error from the table above, we can say that the two values of the frequency are comparable.
+From the error column of the table above, we can say that the two values of the frequency are comparable. Maximum error was found to be about $17\%$. This shows that our theoretical prediction is almost same as the experimental result.
+
+\section{Sources of Error:}
+\begin{enumerate}
+	\item This experiment is very sensitive to loose connection. Many times there were wrong output or no output in the oscilloscope screen.
+	\item For calculating of the mark time and space time only one waveform was selected in oscilloscope. Ideally we should take more data and then take average of them.
+\end{enumerate}
+
+\section{Conclusion:}
+In this experiment, we used 555 timer IC to make a astable multivibrator circuit, which gives continuous square wave form. We also calculated the frequency of the output waveform and verified that it is same as the theoretical prediction.
 \end{document}
