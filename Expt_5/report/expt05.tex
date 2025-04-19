@@ -44,7 +44,7 @@
 \fancyhead[L,C]{}
 \fancyhead[L]{PH3204: Experiment 5}
 \fancyhead[R]{0\thepage}
-\fancyhead[C]{ Boolean Algebra}
+\fancyhead[C]{ 555 Time IC}
 \fancyfoot[C]{0\thepage}
 \fancyfoot[R,L]{}
 \pagestyle{fancy}
@@ -76,7 +76,7 @@ To  study the use of 555 Time IC as an astable
 multivibrator.
 
 \section{Theory}
-
+555 timer IC is one of the most useful ICs ever made. The most popular 555-timer is the 8 pin one. A dual version of the 555 IC is 556 IC which has 14 pins. It contains two timer circuits which share the same power supply. One can use 556 timer IC also in place of 555 timer IC.
 \tikzstyle{icdev}=[draw, text width=5.5em, minimum height=7.3em, fill=cyan!40!white]
 \begin{figure}[H]
     \centering
@@ -105,9 +105,91 @@ multivibrator.
         \draw (4.17,2) node[left]{Out} -- (4.8,2) node[above left]{3} to[short,o-] (4.8,2);
     \end{tikzpicture}
     \caption{Circuit Diagram of 555 Timer IC}
+    \label{fig:555}
 \end{figure}
+\vspace{1em}\noindent\textbf{Pin Functions: }
+\begin{enumerate}
+	\item \textbf{Trigger Input:} When it is less than $\frac{V_s}{3}$ it makes the output high ($V_S$). It monitors the discharging of timing capacitor in astable circuit.
+	\item \textbf{Threshold Input:} When it is greater than $\frac{2V_s}{3}$, it makes the output low (0 V). But this only happens if the trigger input is more than $\frac{V_s}{3}$. If the trigger input is low then it forces the output to be high. This input monitors the charging of time capacitor in astable and monostable circuit.
+	\item \textbf{Reset Input:} When it is less than 0.7 V, it makes the output low(0 V), overriding other inputs. When it is unnecessary it should be connected to the source voltage.
+	\item \textbf{Control Input:} If there is a need to change the threshold voltage which is normally set to $2 V_S/3$,	usually this is connected to 0 V with a very low capacitor of 0.01 $\mu$F to avoid electrical noise.
+	\item \textbf{Discharge Pin: } It is connected to the ground when the timer output is low. This pin is used to discharge the capacitor in astable and monostable circuits.
+\end{enumerate}
+\newpage
+\vspace{1em}\noindent
+\textbf{555/ 556 Astable Circuit:}\\[0.3cm]
+One of the modes of 555 timer circuit is the astable circuit. It creates continuous pulses. The circuit diagram is shown in \figurename{\ref{fig:555}}. It contains two phases, charging phase and discharging phase. In charging phase, the capacitor $C_1$ gets charged through the resistaces $R_1 + R_2$. When this happens the threshold voltage increases, and eventually it reaches $\frac{2V_s}{3}$. So, the output voltage becomes low 0 V. In discharging phase, the capacitor gets discharged through $R_2$, and this decreases the voltage at trigger pin. When the trigger voltage decrease $V_S/3$, the output becomes high.\\[0.3cm]
+Time period ($T$) of the square wave is the time for one complete cycle and frequency ($f$) of the wave is the numer of complete cycles per second. Thus we have:
+
+\begin{equation}
+	\begin{split}
+		&T = 0.7 (R_1 + 2 R_2) C_1 \\
+		&f = \frac{1.4}{(R_1 + 2 R_2) C_1}
+	\end{split}
+\label{equation_1}
+	\end{equation}
+    \noindent
+Time period can be split into two part, when the output is high, \textbf{mark time} ($T_m$) and when the output is low,  \textbf{space time} ($T_s$).
+
+\begin{equation*}
+	\begin{split}
+		&T_m = 0.7 (R_1 + R_2) C_1 \\
+		&T_s = 0.7 R_2 C_1
+	\end{split}.
+\end{equation*}
+
 
 \section{Data and Calculation}
-\section{Sources of Error}
-\section{Discussion and Conclusion}
+We first prepared the circuit from figure 1. As $R_1$, $R_2$, we choose different values of resistance and for $C_1$ we chose different capacitance values. And for each $R_1$, $R_2$, and $C_1$, we calculated $f_{theo}$ from the equation \eqref{equation_1}. In each circuit configurations, we calculated the mark time $T_m$ and space time $T_s$ from oscilloscope. From that calculated time period $T= T_m + T_s$ and frequency, so that we can compare it with $f_{theo}$. The data for the experiment is shown in the following table. For each configuration we also calculated the percentage error.
+\begin{table}[H]
+		\centering
+		\caption{Experimental and Theoretical Frequency}
+		\label{tab:time_constants}
+		\begin{tabular}{
+				S[table-format=1.3]
+				S[table-format=1.0]
+				S[table-format=3.0]
+				S[table-format=1.1e1]
+				S[table-format=3.1e1]
+				S[table-format=1.1e1]
+				S[table-format=1.1e1]
+				S[table-format=2.1e1]
+				S[table-format=2.2]
+			}
+			\midrule
+			{$\mathrm{C_1}$(\si{\micro\farad})} & {$\mathrm{R_1}$} & {$\mathrm{R_2}$} & {$\mathrm{f_{\text{theo}}}$(\si{\kilo\hertz})} & {$\mathrm{T_m}$(\si{\micro\second})} & {$\mathrm{T_s}$(\si{\pico\second})} & {$\mathrm{T}$(\si{\pico\second})} & {$\mathrm{f_{\text{expt}}}$(\si{\kilo\hertz})} & {Error($\%$)} \\
+			\midrule
+			\midrule 
+			0.001 & 1 & 10 & 6.667e1 & 9.5e0 & 8.5e0 & 1.8e1 & 5.556e1 & 16.67 \\
+			0.001 & 10 & 100 & 6.667e0 & 8.4e1 & 7.4e1 & 1.58e2 & 6.329e0 & 05.06 \\
+			0.001 & 100 & 1000 & 6.667e-1 & 7.8e2 & 7.0e2 & 1.480e3 & 6.757e-1 & 01.35 \\
+			\midrule
+			0.01 & 1 & 10 & 6.667e0 & 7.6e1 & 7.0e1 & 1.46e2 & 6.849e0 & 2.74 \\
+			0.01 & 10 & 100 & 6.667e-1 & 8.2e2 & 7.8e2 & 1.600e3 & 6.250e-1 & 6.25 \\
+			0.01 & 100 & 1000 & 6.667e-2 & 8.4e3 & 7.6e3 & 1.600e4 & 6.250e-2 & 6.25 \\
+			\midrule
+			0.1 & 1 & 10 & 6.667e-1 & 6.4e2 & 6.0e2 & 1.280e3 & 7.813e-1 & 17.19 \\
+			0.1 & 10 & 100 & 6.667e-2 & 7.2e3 & 6.8e3 & 1.400e4 & 7.143e-2 & 7.14 \\
+			0.1 & 100 & 1000 & 6.667e-3 & 7.4e4 & 7.0e4 & 1.440e5 & 6.944e-3 & 4.16 \\
+			\midrule
+			1 & 1 & 10 & 6.667e-2 & 7.0e3 & 6.4e3 & 1.340e4 & 7.463e-2 & 11.94 \\
+			1 & 10 & 100 & 6.667e-3 & 7.2e4 & 6.6e4 & 1.380e5 & 7.246e-3 & 8.69 \\
+			1 & 100 & 1000 & 6.667e-4 & 7.0e5 & 6.4e5 & 1.340e6 & 7.463e-4 & 11.90 \\
+			\midrule
+			10 & 1 & 10 & 6.667e-3 & 7.4e4 & 6.8e4 & 1.420e5 & 7.042e-3 & 5.63 \\
+			10 & 10 & 100 & 6.667e-4 & 8.0e5 & 7.2e5 & 1.520e5 & 6.579e-4 & 1.30 \\
+			10 & 100 & 1000 & 6.667e-5 & 7.5e6 & 6.0e6 & 1.350e7 & 7.407e-5 & 11.00 \\
+			\midrule
+		\end{tabular}
+	\end{table}
+From the error column of the table above, we can say that the two values of the frequency are comparable. Maximum error was found to be about $17\%$. This shows that our theoretical prediction is almost same as the experimental result.
+
+\section{Sources of Error:}
+\begin{enumerate}
+	\item This experiment is very sensitive to loose connection. Many times there were wrong output or no output in the oscilloscope screen.
+	\item For calculating of the mark time and space time only one waveform was selected in oscilloscope. Ideally we should take more data and then take average of them.
+\end{enumerate}
+
+\section{Conclusion:}
+In this experiment, we used 555 timer IC to make a astable multivibrator circuit, which gives continuous square wave form. We also calculated the frequency of the output waveform and verified that it is same as the theoretical prediction.
 \end{document}
